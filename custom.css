@@ -1,0 +1,62 @@
+/* Anti Webhost Logo */
+
+body > :last-child {display:none!important}
+
+
+
+/* Sticky Filters */
+
+#nav-filters {
+  background-color: white;
+  z-index: 9999;
+  top: -50px;
+}
+
+#nav-filters.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all .25s linear .25s;
+}
+
+#nav-filters.sticky .py-5 {
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important;
+}
+
+.portsticky {
+  margin-top: 127px;
+}
+
+
+
+/* Packery Grid */
+
+@media screen and (min-width: 768px) {
+  .grid-item {width: 25%;}
+}
+@media screen and (min-width: 768px) {
+  .grid-item {width: 25%;}
+}
+@media screen and (min-width: 1200px) {
+  .grid-item {width: 20%;}
+}
+@media screen and (min-width: 1850px) {
+  .grid-item {width: 14.28571428571429%;}
+}
+
+@media screen and (min-width: 768px) {
+  .grid-item--width2 {width: 50%;}
+}
+@media screen and (min-width: 960px) {
+  .grid-item--width2 {width: 50%;}
+}
+@media screen and (min-width: 1200px) {
+  .grid-item--width2 {width: 40%;}
+}
+@media screen and (min-width: 1850px) {
+  .grid-item--width2 {width: 28.57142857142858%;}
+}
+
+
+

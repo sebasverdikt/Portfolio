@@ -1,0 +1,178 @@
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sebas Verdikt | Home</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="custom.css">
+  </head>
+
+  <body>
+
+    <!-- Main Menu -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Portfolio Filters -->
+    <div class="container-fluid" id="nav-filters">
+      <div class="row gx-0 py-5 px-0">
+        <div class="col-12 text-center p-0">
+          <div class="btn-group btn-group-sm filters" role="group" aria-label="Large button group">
+            <button type="button" class="btn btn-outline-secondary" data-filter=".1">branding</button>
+            <button type="button" class="btn btn-outline-secondary" data-filter=".2">graphics</button>
+            <button type="button" class="btn btn-outline-secondary" data-filter=".3">frontend</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Content -->
+    <section id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row p-0 gx-0">
+          <div class="grid">
+            <div class="grid-item 1"><img class="img-fluid" src="./img/1.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 1"><img class="img-fluid" src="./img/2.jpg" loading="eager"></div>
+            <div class="grid-item 1"><img class="img-fluid" src="./img/3.jpg" loading="eager"></div>
+            <div class="grid-item 2"><img class="img-fluid" src="./img/4.jpg" loading="eager"></div>
+            <div class="grid-item 3"><img class="img-fluid" src="./img/3.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 2"><img class="img-fluid" src="./img/5.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 2"><img class="img-fluid" src="./img/6.jpg" loading="eager"></div>
+            <div class="grid-item 3"><img class="img-fluid" src="./img/7.jpg" loading="eager"></div>
+            <div class="grid-item 3"><img class="img-fluid" src="./img/8.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 3"><img class="img-fluid" src="./img/9.jpg" loading="eager"></div>
+            <div class="grid-item 1"><img class="img-fluid" src="./img/1.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 1"><img class="img-fluid" src="./img/2.jpg" loading="eager"></div>
+            <div class="grid-item 1"><img class="img-fluid" src="./img/3.jpg" loading="eager"></div>
+            <div class="grid-item 2"><img class="img-fluid" src="./img/4.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 2"><img class="img-fluid" src="./img/5.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 2"><img class="img-fluid" src="./img/6.jpg" loading="eager"></div>
+            <div class="grid-item 3"><img class="img-fluid" src="./img/7.jpg" loading="eager"></div>
+            <div class="grid-item 3"><img class="img-fluid" src="./img/8.jpg" loading="eager"></div>
+            <div class="grid-item grid-item--width2 3"><img class="img-fluid" src="./img/9.jpg" loading="eager"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="back2top position-fixed bottom-0 end-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#fd7e14" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+      </svg>
+    </div>
+
+    <!-- JS -->
+    <script src="jquery.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="imagesloaded.pkgd.js"></script>
+    <script src="isotope.pkgd.js"></script>
+    <script src="packery-mode.pkgd.js"></script>
+    <script>
+      var $grid = $('.grid').imagesLoaded( function() {
+        $grid.isotope({
+          itemSelector: '.grid-item',
+          percentPosition: true,
+          layoutMode: 'packery',
+          packery: {
+            gutter: 0,
+            fitWidth: true
+          },
+          getSortData: {
+            name: function (element) {
+              return $(element).text();
+            }
+          }
+        });
+      });
+      $grid.imagesLoaded().progress( function() {
+        $grid.isotope('layout');
+      });
+      
+      // store filter for each group
+      var filters = [];
+
+      // change is-checked class on buttons
+      $('.filters').on( 'click', 'button', function( event ) {
+        var $target = $( event.currentTarget );
+        $target.toggleClass('active');
+        var isChecked = $target.hasClass('active');
+        var filter = $target.attr('data-filter');
+        if ( isChecked ) {
+          addFilter( filter );
+        } else {
+          removeFilter( filter );
+        }
+        // filter isotope
+        // group filters together, inclusive
+        $grid.isotope({ filter: filters.join(',') });
+      });
+        
+      function addFilter( filter ) {
+        if ( filters.indexOf( filter ) == -1 ) {
+          filters.push( filter );
+        }
+      }
+
+      function removeFilter( filter ) {
+        var index = filters.indexOf( filter);
+        if ( index != -1 ) {
+          filters.splice( index, 1 );
+        }
+      }
+
+      // When the user scrolls the page, execute stickyFilters
+      window.onscroll = function() {stickyFilters()};
+
+      // Get the navbar
+      var navFilters = document.getElementById("nav-filters");
+      var portfolio = document.getElementById("portfolio");
+
+      // Get the offset position of the navbar
+      var sticky = navFilters.offsetTop;
+
+      // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      function stickyFilters() {
+        if (window.pageYOffset > 183) {
+          navFilters.classList.add("sticky");
+          portfolio.classList.add("portsticky")
+        } else {
+          navFilters.classList.remove("sticky");
+          portfolio.classList.remove("portsticky")
+        }
+      }
+    </script>
+  </body>
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <span>All content copyright Sebasti&aacute;n Verdikt 2022 ©</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</html>
