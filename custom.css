@@ -1,7 +1,14 @@
 /* Anti Webhost Logo */
 
-body > :last-child {display:none!important}
+h2.accordion-header button {
+  font-weight: 500;
+  text-transform: uppercase;
 
+}
+
+.accordion {
+  border: none!important
+}
 
 
 /* Sticky Filters */
