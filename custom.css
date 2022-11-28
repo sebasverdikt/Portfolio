@@ -7,7 +7,37 @@ h2.accordion-header button {
 }
 
 .accordion {
-  border: none!important
+  --bs-accordion-color: none;
+  --bs-accordion-bg: none;
+  --bs-accordion-border-color: none;
+  --bs-accordion-border-width: 0px;
+  --bs-accordion-border-radius:0rem;
+  --bs-accordion-btn-focus-border-color: none;
+  --bs-accordion-btn-focus-box-shadow: 0rem rgba(0, 0, 0, 0);
+  --bs-accordion-body-padding-x: 1.25rem;
+  --bs-accordion-body-padding-y: 1rem;
+  --bs-accordion-active-color: none;
+  --bs-accordion-active-bg: none;
+}
+
+.accordion-button:not(.collapsed)::before {
+  background-image: var(--bs-accordion-btn-active-icon);
+  transform: var(--bs-accordion-btn-icon-transform);
+}
+.accordion-button::before {
+  flex-shrink: 0;
+  width: var(--bs-accordion-btn-icon-width);
+  height: var(--bs-accordion-btn-icon-width);
+  margin-right: 15px;
+  content: "";
+  background-image: var(--bs-accordion-btn-icon);
+  background-repeat: no-repeat;
+  background-size: var(--bs-accordion-btn-icon-width);
+  transition: var(--bs-accordion-btn-icon-transition);
+}
+.accordion-button:not(.collapsed)::after,
+.accordion-button::after {
+  display:none
 }
 
 
