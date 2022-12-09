@@ -49,7 +49,7 @@ h2.accordion-header button {
 
 /* Custom */
 
-p.cv-entry {
+.cv-entry {
   border-left: 1px #00000040 solid;
   padding-left: 45px;
   margin-bottom: 0;
@@ -67,6 +67,10 @@ p.cv-entry {
   left: -5px;
   float: left;
   top: 10px;
+}
+
+.accordion-body .col-2 span {
+  font-size: .9rem;
 }
 
 
