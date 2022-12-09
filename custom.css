@@ -5,6 +5,10 @@ h2.accordion-header button {
   text-transform: uppercase;
 }
 
+.lead {
+  font-weight: 400;
+}
+
 
 /* Custom Bootstrap */ 
 
@@ -46,8 +50,8 @@ h2.accordion-header button {
 /* Custom */
 
 p.cv-entry {
-  border-left: 2px #333 solid;
-  padding-left: 15px
+  border-left: 1px #00000040 solid;
+  padding-left: 45px
 }
 
 
@@ -114,5 +118,6 @@ p.cv-entry {
   'FILL' 0,
   'wght' 300,
   'GRAD' 0,
-  'opsz' 20
+  'opsz' 20;
+  vertical-align: middle;
 }
