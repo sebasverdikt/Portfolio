@@ -64,6 +64,19 @@ p.cv-entry::before {
   background-color: red;
 }
 
+.cairn::before {
+  content: '';
+  background-color: white;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #00000040;
+  border-radius: 100%;
+  position: relative;
+  left: -5px;
+  float: left;
+  top: 10px;
+}
+
 
 /* Sticky Filters */
 
