@@ -1,9 +1,12 @@
-/* Anti Webhost Logo */
+/* Type */
 
 h2.accordion-header button {
   font-weight: 500;
   text-transform: uppercase;
 }
+
+
+/* Custom Bootstrap */ 
 
 .accordion {
   --bs-accordion-color: none;
@@ -37,6 +40,14 @@ h2.accordion-header button {
 .accordion-button:not(.collapsed)::after,
 .accordion-button::after {
   display:none
+}
+
+
+/* Custom */
+
+p.cv-entry {
+  border-left: 2px #333 solid;
+  padding-left: 15px
 }
 
 
