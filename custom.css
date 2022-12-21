@@ -98,6 +98,28 @@ h2.accordion-header button {
   clip-path: none;
 }
 
+.grid-item a img {
+  opacity: 1;
+  transition: opacity .2s;
+}
+.grid-item a:hover img {
+  opacity: 0
+}
+span.inner {
+  position: absolute;
+  padding: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* LightBox */
 .lightbox {
@@ -112,10 +134,73 @@ h2.accordion-header button {
   border: 0;
   box-shadow: 0 0 10px 5px #00000075;
 }
+.lb-outerContainer {
+  border-radius: 0px;
+}
+
+.lb-close {
+  z-index: 11;
+  display: block;
+  position: absolute;
+  right: -24px;
+  top: -6px;
+  zoom: 1.75;
+  color: white;
+  text-decoration: none;
+  filter: brightness(10%);
+  -webkit-transition: filter 0.2s;
+  -moz-transition: filter 0.2s;
+  -o-transition: filter 0.2s;
+  transition: filter 0.2s;
+}
+.lb-close:hover {
+  cursor: pointer;
+  color: white;
+  filter: brightness(70%);
+}
+
+.lb-data .lb-number {
+  padding-bottom: 0em;
+  font-size: 16px;
+  color: #999999;
+  font-weight: 500;
+}
+
+.lb-prev {
+  text-align: left;
+  left: -35px!important;
+  position: absolute;
+  background: none!important;
+  color: white!important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.lb-next {
+  text-align: right;
+  right: -48px!important;
+  position: absolute;
+  background: none!important;
+  color: white!important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: flex-end;
+}
+.lb-prev span,
+.lb-next span {
+  font-size: 48px;
+  padding: 2em;
+  margin: -2em;
+}
 
 .lb-dataContainer {
-  display: none!important;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
+
+
 
 /* Sticky Filters */
 
