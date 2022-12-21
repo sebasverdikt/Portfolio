@@ -230,9 +230,9 @@ span.inner {
 
 /* Packery Grid */
 
-@media screen and (min-width: 768px) {
-  .grid-item {width: 25%;}
-}
+
+.grid-item {width: 50%;}
+
 @media screen and (min-width: 768px) {
   .grid-item {width: 25%;}
 }
@@ -242,6 +242,8 @@ span.inner {
 @media screen and (min-width: 1850px) {
   .grid-item {width: 14.28571428571429%;}
 }
+
+.grid-item--width2 {width: 100%;}
 
 @media screen and (min-width: 768px) {
   .grid-item--width2 {width: 50%;}
