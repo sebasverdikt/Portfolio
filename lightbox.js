@@ -43,13 +43,13 @@
   Lightbox.defaults = {
     albumLabel: '%1 / %2',
     alwaysShowNavOnTouchDevices: false,
-    fadeDuration: 300,
+    fadeDuration: 0,
     fitImagesInViewport: true,
-    imageFadeDuration: 300,
+    imageFadeDuration: 0,
     // maxWidth: 800,
     // maxHeight: 600,
     positionFromTop: 0,
-    resizeDuration: 450,
+    resizeDuration: 0,
     showImageNumberLabel: true,
     wrapAround: true,
     disableScrolling: false,
@@ -265,7 +265,7 @@
     if (this.options.disableScrolling) {
       $('body').addClass('lb-disable-scrolling');
     }
-
+    imageNumber = 0;
     this.changeImage(imageNumber);
   };
 
