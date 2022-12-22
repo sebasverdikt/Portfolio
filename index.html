@@ -15,9 +15,19 @@
   <body>
 
     <!-- Main Menu -->
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light py-0" id="nav-filters">
+      
       <div class="container-fluid ">
-        <a class="navbar-brand" href="#">Sebas Verdikt</a>
+
+        <a class="navbar-brand" href="/">Sebas Verdikt</a>
+        
+        <div class="filters" id="filter-btns">
+          <button type="button" class="btn btn-filters" data-filter=".brand">Branding</button>
+          <button type="button" class="btn btn-filters" data-filter=".graph">Graphics</button>
+          <button type="button" class="btn btn-filters" data-filter=".3">Frontend</button>
+          <button type="button" class="btn btn-filters active" data-filter="*">Everything</button>
+        </div>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,21 +44,9 @@
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
-
-    <!-- Portfolio Filters -->
-    <div class="container-fluid" id="nav-filters">
-      <div class="row gx-0 py-5 px-0">
-        <div class="col-12 text-center p-0">
-          <div class="btn-group btn-group-sm filters" role="group" aria-label="Large button group">
-            <button type="button" class="btn btn-outline-secondary" data-filter=".brand">branding</button>
-            <button type="button" class="btn btn-outline-secondary" data-filter=".graph">graphics</button>
-            <button type="button" class="btn btn-outline-secondary" data-filter=".3">frontend</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Portfolio Content -->
     <section id="portfolio">
@@ -610,11 +608,9 @@
       </div>
     </section>
 
-    <div class="back2top position-fixed bottom-0 end-0">
-      <button onclick="topFunction()" id="back2top">
-        <span class="material-symbols-outlined">arrow_upward</span>
-      </button>
-    </div>
+    <button onclick="topFunction()" id="back2top">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
 
     <!-- JS -->
     <script src="jquery.js"></script>
@@ -623,6 +619,7 @@
     <script src="isotope.pkgd.js"></script>
     <script src="packery-mode.pkgd.js"></script>
     <script src="lightbox.js"></script>
+
     <script>
       var $grid = $('.grid').imagesLoaded( function() {
         $grid.isotope({
@@ -642,14 +639,23 @@
           }
         });
       });
+
       $grid.imagesLoaded().progress( function() {
         $grid.isotope('layout');
       });
-      
-      // store filter for each group
-      var filters = [];
+    </script>
 
-      // change is-checked class on buttons
+    <!-- BASIC filters -->
+    <script>
+      $('.filters').on( 'click', 'button', function() {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+      });
+    </script>
+
+    <!-- COMBINE filters -->
+    <!--script>
+      var filters = [];
       $('.filters').on( 'click', 'button', function( event ) {
         var $target = $( event.currentTarget );
         $target.toggleClass('active');
@@ -660,65 +666,60 @@
         } else {
           removeFilter( filter );
         }
-        // filter isotope
-        // group filters together, inclusive
         $grid.isotope({ filter: filters.join(',') });
-      });
-        
+      });        
       function addFilter( filter ) {
         if ( filters.indexOf( filter ) == -1 ) {
           filters.push( filter );
         }
       }
-
       function removeFilter( filter ) {
         var index = filters.indexOf( filter);
         if ( index != -1 ) {
           filters.splice( index, 1 );
         }
       }
+    </script-->
 
-      // When the user scrolls the page, execute stickyFilters
+    <script>
+      // Add active class to the current button (highlight it)
+      var header = document.getElementById("filter-btns");
+      var btns = header.getElementsByClassName("btn-filters");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        });
+      }
+    </script>
+
+    <script>
       window.onscroll = function() {stickyFilters()};
 
-      // Get the navbar
       var navFilters = document.getElementById("nav-filters");
-      var portfolio = document.getElementById("portfolio");
+      var back2top = document.getElementById("back2top");
 
       // Get the offset position of the navbar
       var sticky = navFilters.offsetTop;
 
       // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
       function stickyFilters() {
-        if (window.pageYOffset > 183) {
+        if (window.pageYOffset > 600) {
           navFilters.classList.add("sticky");
-          portfolio.classList.add("portsticky")
+          back2top.classList.add("b2t-on")
         } else {
           navFilters.classList.remove("sticky");
-          portfolio.classList.remove("portsticky")
+          back2top.classList.remove("b2t-on")
         }
       }
 
-      // Get the button
-      let mybutton = document.getElementById("back2top");
-
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function() {scrollFunction()};
-
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-
-      // When the user clicks on the button, scroll to the top of the document
       function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
       }
     </script>
+
   </body>
 
   <footer>

@@ -1,3 +1,14 @@
+/* * */
+
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
 /* Type */
 
 h2.accordion-header button {
@@ -49,7 +60,7 @@ h2.accordion-header button {
 
 /* Custom */
 
-.back2top button {
+button#back2top {
   display: none;
   border: none;
   border-radius: 100%;
@@ -58,8 +69,14 @@ h2.accordion-header button {
   color: #231f20;
   margin: 0 25px 25px 0;
   background-color: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
-.back2top button span {
+button#back2top.b2t-on {
+  display:block;
+}
+button#back2top span {
   font-size: 48px;
 }
 
@@ -219,27 +236,73 @@ span.inner {
 
 /* Sticky Filters */
 
-#nav-filters {
-  background-color: white;
+.navbar.sticky {
+  height: 3.5rem;
+  position: sticky;
   z-index: 9999;
-  top: -50px;
-}
-
-#nav-filters.sticky {
-  position: fixed;
   top: 0;
-  width: 100%;
-  transition: all .25s linear .25s;
 }
 
-#nav-filters.sticky .py-5 {
-  padding-top: .5rem !important;
-  padding-bottom: .5rem !important;
+
+/* Navs */
+
+.navbar-collapse {
+  flex-grow: 0;
 }
 
-.portsticky {
-  margin-top: 127px;
+button.btn-filters {
+  border: none;
+  color: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0);
+  padding: 22px 22px;
+  margin: -3px;
+  border-radius: 0;
+  font-size: 1.1em;
 }
+
+button.btn-filters:hover {
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.075);
+}
+
+button.btn-filters.active {
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 500;
+}
+
+.navbar {
+  background-color: white!important;
+  height:7.25rem
+}
+
+@media screen and (max-width:767.99px) {
+  .navbar {
+    background-color: white!important;
+    height:auto
+  } 
+  .navbar-toggler {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 44px;
+  }
+  .navbar-brand {
+    margin: 9px 0 0px 19px;
+  }
+  .navbar.sticky .navbar-toggler,
+  .navbar.sticky .navbar-brand {
+    display: none;
+  }
+  .navbar.sticky button.btn-filters {
+    padding: 18px 22px;
+  }
+}
+
+
+
+
+
+
 
 
 
@@ -274,7 +337,7 @@ span.inner {
 }
 
 @media screen and (min-width: 1850px) {
-  .grid-item--height2 {width: 14.28571428571429%; height: 543.7px;}
+  .grid-item--height2 {width: 14.28571428571429%; }
 }
 
 
