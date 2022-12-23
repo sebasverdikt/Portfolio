@@ -19,7 +19,8 @@
       
       <div class="container-fluid ">
 
-        <a class="navbar-brand" href="/">Sebas Verdikt</a>
+        <a class="navbar-brand topped" href="/">Sebas Verdikt</a>
+        <a class="navbar-brand scrolled" href="/">SV</a>
         
         <div class="filters" id="filter-btns">
           <button type="button" class="btn btn-filters" data-filter=".brand">Branding</button>
@@ -34,13 +35,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Portfolio</a>
+              <a class="nav-link" href="/">
+                <span class="topped">Portfolio</span>
+                <span class="material-symbols-outlined scrolled">photo_library</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Me</a>
+              <a class="nav-link" href="about.html">
+                <span class="topped">About Me</span>
+                <span class="material-symbols-outlined scrolled">person</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="contact.html">
+                <span class="topped">Contact</span>
+                <span class="material-symbols-outlined scrolled">call</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -608,6 +618,16 @@
       </div>
     </section>
 
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <span>All content copyright Sebasti&aacute;n Verdikt 2022 ©</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <button onclick="topFunction()" id="back2top">
       <span class="material-symbols-outlined">arrow_upward</span>
     </button>
@@ -707,10 +727,12 @@
       function stickyFilters() {
         if (window.pageYOffset > 600) {
           navFilters.classList.add("sticky");
-          back2top.classList.add("b2t-on")
+          back2top.classList.add("b2t-on");
+          document.body.style.paddingTop = "116px";
         } else {
           navFilters.classList.remove("sticky");
-          back2top.classList.remove("b2t-on")
+          back2top.classList.remove("b2t-on");
+          document.body.style.paddingTop = "0px";
         }
       }
 
@@ -721,15 +743,5 @@
     </script>
 
   </body>
-
-  <footer>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <span>All content copyright Sebasti&aacute;n Verdikt 2022 ©</span>
-        </div>
-      </div>
-    </div>
-  </footer>
 
 </html>

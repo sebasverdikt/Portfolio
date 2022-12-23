@@ -8,6 +8,30 @@ body {
   scrollbar-width: none;
 }
 
+/* Clean Version */
+/*body {
+  padding: 35px
+}
+
+.grid-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  background: white;
+  padding: 12px;
+}*/
+
 
 /* Type */
 
@@ -235,16 +259,36 @@ span.inner {
 
 
 /* Sticky Filters */
-
-.navbar.sticky {
-  height: 3.5rem;
+.navbar {
+  top: -116px;
   position: sticky;
+  -webkit-transition: top 1s ease;
+  transition: top 1s ease;
+}
+.navbar.sticky {
+  height: 60px;
+  position: fixed;
   z-index: 9999;
   top: 0;
+  width: 100%;
 }
+
+.navbar .topped {display: block}
+.navbar .scrolled {display: none}
+.navbar.sticky .topped {display: none}
+.navbar.sticky .scrolled {display: block}
+
 
 
 /* Navs */
+
+footer {
+
+  display: block;
+  width: 100%;
+  background: white;
+  padding: 12px;
+}
 
 .navbar-collapse {
   flex-grow: 0;
@@ -276,6 +320,9 @@ button.btn-filters.active {
 }
 
 @media screen and (max-width:767.99px) {
+  .scrolled {
+    display:none
+  }
   .navbar {
     background-color: white!important;
     height:auto
@@ -289,12 +336,16 @@ button.btn-filters.active {
   .navbar-brand {
     margin: 9px 0 0px 19px;
   }
+  button.btn-filters {
+    padding: 25px 14px;
+    font-size: 1em;
+  }
   .navbar.sticky .navbar-toggler,
   .navbar.sticky .navbar-brand {
     display: none;
   }
   .navbar.sticky button.btn-filters {
-    padding: 18px 22px;
+    padding: 18px 14px;
   }
 }
 
