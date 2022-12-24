@@ -190,6 +190,12 @@ span.inner {
   border: 0;
   box-shadow: 0 0 10px 5px #00000075;
 }
+@media screen and (max-width:767.9px) {
+  .lightbox .lb-image {
+    box-shadow: none;
+  }
+}
+
 .lb-outerContainer {
   border-radius: 0px;
 }
@@ -213,6 +219,14 @@ span.inner {
   cursor: pointer;
   color: white;
   filter: brightness(70%);
+}
+@media screen and (max-width:767.9px) {
+  .lb-close {
+    right: 0;
+    left: 0;
+    bottom: 20px;
+    top: initial;
+  }
 }
 
 .lb-data .lb-number {
