@@ -348,11 +348,19 @@ button.btn-filters.active {
     right: 44px;
   }
   .navbar-brand {
-    margin: 9px 0 0px 19px;
+    margin: 9px 0 0px 0px;
+  }
+  #filter-btns {
+    justify-content: space-between!important;
+    display: flex!important;
+    width: 100%;
   }
   button.btn-filters {
-    padding: 25px 14px;
+    padding: 25px 0px;
     font-size: 1em;
+  }
+  .navbar-toggler {
+    right: 0;
   }
   .navbar.sticky .navbar-toggler,
   .navbar.sticky .navbar-brand {
@@ -363,6 +371,21 @@ button.btn-filters.active {
   }
 }
 
+
+.navbar-toggler {
+  border:none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler.collapsed {
+  transform: rotate(0deg);
+  transition: 0.15s ease-in-out
+}
+.navbar-toggler:not(.collapsed) {
+  transform: rotate(90deg);
+  transition: 0.15s ease-in-out
+}
 
 
 
