@@ -213,7 +213,7 @@ span.inner {
 }
 
 .lb-nav {
-  display: flex;
+  display: flex!important;
   justify-content: space-evenly;
   position: fixed;
   bottom: 0;
@@ -229,6 +229,7 @@ span.inner {
   transition: color .3s;
   background-image:none;
   cursor: pointer;
+  padding: 15px;
 }
 .lb-nav a:hover {
   color:rgba(255, 255, 255, 1);
@@ -240,6 +241,7 @@ span.inner {
   float: none;
   background: none;
   opacity: 1;
+  display: block!important;
 }
 .lb-nav a.lb-next {
   width: auto;
@@ -247,6 +249,7 @@ span.inner {
   float: none;
   background: none;
   opacity: 1;
+  display: block!important;
 }
 .lb-nav a.lb-close span {
   font-size: 32px;
@@ -311,6 +314,7 @@ span.inner {
   z-index: 9999;
   top: 0;
   width: 100%;
+  padding: 0!important;
 }
 
 .navbar .topped {display: block}
