@@ -118,7 +118,7 @@ button#back2top span {
 
 .cv-entry {
   border-left: 1px #00000040 solid;
-  padding-left: 45px;
+  padding-left: 10px;
   margin-bottom: 0;
   padding-bottom: 1.5em;
 }
@@ -136,8 +136,16 @@ button#back2top span {
   top: 10px;
 }
 
-.accordion-body .col-2 span {
+.accordion-body .col-3 span {
   font-size: .9rem;
+}
+
+.accordion-body .col-3 {
+  padding-left: 0;
+}
+.accordion-body .col-9 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
