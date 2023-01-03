@@ -85,23 +85,34 @@ h2.accordion-header button {
 /* Custom */
 
 button#back2top {
-  display: none;
-  border: none;
+  display:block;
+  border: 2px solid #231f20;
   border-radius: 100%;
-  height: 75px;
-  width: 75px;
+  height: 60px;
+  width: 60px;
   color: #231f20;
   margin: 0 25px 25px 0;
+  margin-bottom:-60px;
   background-color: white;
   position: fixed;
   bottom: 0;
   right: 0;
+  z-index: 9999;
+  transition: margin-bottom 1s;
 }
 button#back2top.b2t-on {
-  display:block;
+  margin-bottom: 25px;
+  transition: margin-bottom 1s;
+}
+button#back2top.b2t-on:hover {
+  height: 66px;
+  width: 66px;
+  margin: 0 22px 22px 0;
+  box-shadow: 0 0 10px 0px #231f20;
+  transition: all .3s;
 }
 button#back2top span {
-  font-size: 48px;
+  font-size: 40px;
 }
 
 
@@ -178,13 +189,6 @@ span.inner {
 
 
 /* LightBox */
-.lightbox {
-  position: fixed;
-  top: 50%!important;
-  left: 50%!important;
-  transform: translate(-50%, -50%);
-}
-
 .lightbox .lb-image {
   border-radius: 0;
   border: 0;
@@ -195,41 +199,63 @@ span.inner {
     box-shadow: none;
   }
 }
-
 .lb-outerContainer {
+  background-color: transparent;
+  position: fixed;
+  top: 50%!important;
+  left: 50%!important;
+  transform: translate(-50%, -50%);
+}
+
+#lightbox {
   border-radius: 0px;
+  height: 100vh;
 }
 
-.lb-close {
-  z-index: 11;
-  display: block;
-  position: absolute;
-  right: -24px;
-  top: -6px;
-  zoom: 1.75;
-  color: white;
-  text-decoration: none;
-  filter: brightness(10%);
-  -webkit-transition: filter 0.2s;
-  -moz-transition: filter 0.2s;
-  -o-transition: filter 0.2s;
-  transition: filter 0.2s;
+.lb-nav {
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  top:auto;
+  left: auto;
+  height: auto;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,.8);
 }
-.lb-close:hover {
+.lb-nav a {
+  color:rgba(255, 255, 255, .8);
+  transition: color .3s;
+  background-image:none;
   cursor: pointer;
-  color: white;
-  filter: brightness(70%);
 }
-@media screen and (max-width:767.9px) {
-  .lb-close {
-    right: 0;
-    left: 0;
-    bottom: 20px;
-    top: initial;
-  }
+.lb-nav a:hover {
+  color:rgba(255, 255, 255, 1);
+  transition: color .3s;
+}
+.lb-nav a.lb-prev {
+  width: auto;
+  left: 0;
+  float: none;
+  background: none;
+  opacity: 1;
+}
+.lb-nav a.lb-next {
+  width: auto;
+  right: 0;
+  float: none;
+  background: none;
+  opacity: 1;
+}
+.lb-nav a.lb-close span {
+  font-size: 32px;
+  line-height: .8;
 }
 
-.lb-data .lb-number {
+
+
+/*.lb-data .lb-number {
   padding-bottom: 0em;
   font-size: 16px;
   color: #999999;
@@ -268,7 +294,7 @@ span.inner {
   position: absolute;
   left: 0;
   right: 0;
-}
+}*/
 
 
 
