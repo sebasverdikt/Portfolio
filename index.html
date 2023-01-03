@@ -14,18 +14,20 @@
 
   <body>
 
+    <header>
+      
     <!-- Main Menu -->
-    <nav class="navbar navbar-expand-lg bg-light py-0" id="nav-filters">
+    <nav class="navbar navbar-expand-lg bg-light py-0 py-md-4" id="nav-filters">
       
       <div class="container-fluid px-3">
 
         <a class="navbar-brand topped" href="/">Sebas Verdikt</a>
         <a class="navbar-brand scrolled" href="/">SV</a>
         
-        <div class="filters" id="filter-btns">
+        <div class="filters w-100 w-md-auto d-flex d-md-block justify-content-around justify-content-sm-evenly" id="filter-btns">
           <button type="button" class="btn btn-filters" data-filter=".brand">Branding</button>
           <button type="button" class="btn btn-filters" data-filter=".graph">Graphics</button>
-          <button type="button" class="btn btn-filters" data-filter=".3">Frontend</button>
+          <button type="button" class="btn btn-filters" data-filter=".front">Frontend</button>
           <button type="button" class="btn btn-filters active" data-filter="*">All</button>
         </div>
 
@@ -43,13 +45,13 @@
             <li class="nav-item">
               <a class="nav-link" href="about.html">
                 <span class="topped">About Me</span>
-                <span class="material-symbols-outlined scrolled">person</span>
+                <span class="material-symbols-outlined scrolled">clinical_notes</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">
                 <span class="topped">Contact</span>
-                <span class="material-symbols-outlined scrolled">call</span>
+                <span class="material-symbols-outlined scrolled">mail</span>
               </a>
             </li>
           </ul>
@@ -57,6 +59,8 @@
 
       </div>
     </nav>
+    </header>
+
 
     <!-- Portfolio Content -->
     <section id="portfolio">
