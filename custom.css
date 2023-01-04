@@ -104,7 +104,7 @@ button#back2top.b2t-on {
   margin-bottom: 25px;
   transition: margin-bottom 1s;
 }
-button#back2top.b2t-on:hover {
+button#back2top:hover {
   height: 66px;
   width: 66px;
   margin: 0 22px 22px 0;
@@ -115,12 +115,36 @@ button#back2top span {
   font-size: 40px;
 }
 
+@media screen and (max-width: 575.9px) {
+  button#back2top {
+    margin-bottom: -45px;
+  }
+  button#back2top span {
+    font-size: 25px;
+  }
+  button#back2top.b2t-on {
+    height: 45px;
+    width: 45px;
+    margin: 0 15px 15px 0px;
+  }
+  button#back2top:hover {
+    height: 45px;
+    width: 45px;
+    margin: 0 15px 15px 0px;
+  }
+}
+
 
 .cv-entry {
   border-left: 1px #dee2e6 solid;
-  padding-left: 10px;
+  padding-left: 20px;
   margin-bottom: 0;
   padding-bottom: 1.5em;
+}
+@media screen and (max-width: 575.9px) {
+  .cv-entry {
+    padding-left: 10px;
+  }
 }
 
 .cairn {
@@ -152,9 +176,12 @@ button#back2top span {
 .accordion-body .col-3 {
   padding-left: 0;
 }
-.accordion-body .col-9 {
-  padding-left: 0;
-  padding-right: 0;
+
+@media screen and (max-width: 575.9px) {
+  .accordion-body .col-9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .accordion-header {
