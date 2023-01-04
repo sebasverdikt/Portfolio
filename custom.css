@@ -117,10 +117,14 @@ button#back2top span {
 
 
 .cv-entry {
-  border-left: 1px #00000040 solid;
+  border-left: 1px #dee2e6 solid;
   padding-left: 10px;
   margin-bottom: 0;
   padding-bottom: 1.5em;
+}
+
+.cairn {
+  z-index: -1;
 }
 
 .cairn::before {
@@ -136,6 +140,11 @@ button#back2top span {
   top: 10px;
 }
 
+.list-group-flush {
+  position: relative;
+  z-index: -1;
+}
+
 .accordion-body .col-3 span {
   font-size: .9rem;
 }
@@ -147,6 +156,13 @@ button#back2top span {
   padding-left: 0;
   padding-right: 0;
 }
+
+.accordion-header {
+  position: sticky;
+  top:0;
+  background-color: white;
+}
+
 
 
 .rollover {
