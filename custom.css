@@ -248,14 +248,12 @@ span.inner {
   left: 0;
   float: none;
   background: none;
-  display: block!important;
 }
 .lb-nav a.lb-next {
   width: auto;
   right: 0;
   float: none;
   background: none;
-  display: block!important;
 }
 .lb-nav a.lb-close span {
   font-size: 32px;
