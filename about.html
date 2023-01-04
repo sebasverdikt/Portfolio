@@ -18,10 +18,9 @@
       <!-- Main Menu -->
       <nav class="navbar navbar-expand-lg bg-light py-0 py-md-4" id="nav-filters">
         
-        <div class="container-fluid px-3">
+        <div class="container">
 
           <a class="navbar-brand topped" href="/">Sebas Verdikt</a>
-          <a class="navbar-brand scrolled" href="/">SV</a>
           
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,13 +28,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">
+                <a class="nav-link" href="index.html">
                   <span class="topped">Portfolio</span>
                   <span class="material-symbols-outlined scrolled">photo_library</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contact.html">
+                <a class="nav-link" href="contact.html">
                   <span class="topped">Contact</span>
                   <span class="material-symbols-outlined scrolled">mail</span>
                 </a>
@@ -52,7 +51,7 @@
 
       <!-- About Content -->
       <section id="about-me">
-        <div class="container pt-5 mt-5">
+        <div class="container pt-5">
           <div class="row">
             <div class="col-lg-3 col-xl-4">
               <div class="sticky-top">
@@ -479,25 +478,43 @@
 
     </main>
 
-    <div class="back2top position-fixed bottom-0 end-0">
-      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#fd7e14" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
-        <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
-      </svg>
-    </div>
-
     <footer>
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 text-center">
             <span>All content copyright Sebasti&aacute;n Verdikt 2022 ©</span>
           </div>
         </div>
       </div>
     </footer>
 
+    <button onclick="topFunction()" id="back2top">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
     <!-- JS -->
     <script src="jquery.js"></script>
     <script src="bootstrap.js"></script>
+
+    <script>
+      window.onscroll = function() {stickyFilters()};
+
+      var back2top = document.getElementById("back2top");
+      var sticky = navFilters.offsetTop;
+
+      function stickyFilters() {
+        if (window.pageYOffset > 600) {
+          back2top.classList.add("b2t-on");
+        } else {
+          back2top.classList.remove("b2t-on");
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
     
   </body>
 
