@@ -248,7 +248,6 @@ span.inner {
   left: 0;
   float: none;
   background: none;
-  opacity: 1;
   display: block!important;
 }
 .lb-nav a.lb-next {
@@ -256,7 +255,6 @@ span.inner {
   right: 0;
   float: none;
   background: none;
-  opacity: 1;
   display: block!important;
 }
 .lb-nav a.lb-close span {
