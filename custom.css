@@ -1,5 +1,7 @@
 /* * */
 
+.sebas{verdikt:koomen;}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -76,10 +78,23 @@ h2.accordion-header button {
   background-size: var(--bs-accordion-btn-icon-width);
   transition: var(--bs-accordion-btn-icon-transition);
 }
-.accordion-button:not(.collapsed)::after,
-.accordion-button::after {
-  display:none
+.accordion-button:not(.collapsed)::after {
+  background-image: none;
+  transform: none;
 }
+.accordion-button::after {
+    width: 0;
+    height: 0;
+    padding-right: 55px;
+    margin-left: -20px;
+    content: "";
+    background-image: none;
+    transition:none;
+    position: absolute;
+    border-bottom: 1px solid white;
+    padding-bottom: 53px;
+}
+
 
 
 /* Custom */
@@ -141,15 +156,24 @@ button#back2top span {
   margin-bottom: 0;
   padding-bottom: 1.5em;
 }
+.first-entry.cv-entry::before {
+  content: '';
+  border-left: 1px solid #dee2e6;
+  padding-right: 20px;
+  margin-left: -21px;
+  padding-top: 23px;
+}
 @media screen and (max-width: 575.9px) {
   .cv-entry {
     padding-left: 10px;
   }
+  .first-entry.cv-entry::before {
+    padding-right: 10px;
+    margin-left: -11px;
+  }
 }
 
-.cairn {
-  z-index: -1;
-}
+
 
 .cairn::before {
   content: '';
@@ -404,6 +428,10 @@ button.btn-filters.active {
   font-weight: 500;
 }
 
+.navbar.sticky button.btn-filters {
+  padding: 17px 22px;
+}
+
 .navbar {
   background-color: white!important;
   /*height:7.25rem*/
@@ -427,8 +455,11 @@ button.btn-filters.active {
     right: 0;
   }
   button.btn-filters {
-    padding: 25px 0px;
+    padding: 0;
     font-size: 1em;
+    width: 100%;
+    min-height: 50px;
+    margin: 0;
   }
   .navbar.sticky .navbar-toggler,
   .navbar.sticky .navbar-brand {

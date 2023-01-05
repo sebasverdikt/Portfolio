@@ -21,14 +21,14 @@
       
       <div class="container-fluid px-3">
 
-        <a class="navbar-brand topped" href="/">Sebas Verdikt</a>
+        <a class="navbar-brand topped fs-4" href="/">Sebas Verdikt</a>
         <a class="navbar-brand scrolled" href="/">SV</a>
         
         <div class="filters w-100 w-md-auto d-flex d-md-block justify-content-around justify-content-sm-evenly" id="filter-btns">
           <button type="button" class="btn btn-filters" data-filter=".brand">Branding</button>
-          <button type="button" class="btn btn-filters" data-filter=".graph">Graphics</button>
+          <button type="button" class="btn btn-filters active" data-filter=".graph">Graphics</button>
           <button type="button" class="btn btn-filters" data-filter=".front">Frontend</button>
-          <button type="button" class="btn btn-filters active" data-filter="*">All</button>
+          <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
         </div>
 
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -646,6 +646,7 @@
           sortBy : 'random' ,
           percentPosition: true,
           layoutMode: 'packery',
+          filter: '.graph',
           packery: {
             gutter: 0,
             fitWidth: true
