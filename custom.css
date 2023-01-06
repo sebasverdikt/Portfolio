@@ -212,7 +212,84 @@ button#back2top span {
   position: sticky;
   top:0;
   background-color: white;
+  z-index: 1;
 }
+
+#collapse-clients figcaption {
+  margin-top: -15px;
+}
+@media screen and (max-width: 767.9px) {
+  #collapse-clients figcaption {
+    margin-top: -5px;
+  }
+}
+#collapse-clients figure {
+  text-align: center;
+}
+
+.img-client {
+  width: auto;
+  height: 100px;
+  padding: 1.5em;
+}
+.img-client-w {
+  width: auto;
+  height: 60px;
+  padding: 1em;
+}
+@media screen and (min-width:576px) {
+  .img-client {
+    height: 105px;
+    padding: 1.5em;
+  }
+  .img-client-w {
+    height: 70px;
+    padding: 1.25em;
+  }
+}
+@media screen and (min-width:768px) {
+  .img-client {
+    height: 135px;
+    padding: 2em;
+  }
+  .img-client-w {
+    height: 105px;
+    padding: 2em;
+  }
+}
+@media screen and (min-width:992px) {
+  .img-client {
+    height: 145px;
+    padding: 2.25em;
+  }
+  .img-client-w {
+    height: 105px;
+    padding: 2em;
+  }
+}
+@media screen and (min-width:1200px) {
+  .img-client {
+    height: 150px;
+    padding: 2.5em;
+  }
+  .img-client-w {
+    height: 115px;
+    padding: 2.25em;
+  }
+}
+@media screen and (min-width:1400px) {
+  .img-client {
+    height: 160px;
+    padding: 2.5em;
+  }
+  .img-client-w {
+    height: 130px;
+    padding: 2.5em;
+  }
+}
+
+
+
 
 
 
@@ -235,9 +312,9 @@ button#back2top span {
 .rollover:hover img.image-hover {
   opacity: 1;
 }
-
 .rollover.no-clip img.image-hover {
   clip-path: none;
+  border-radius: 0;
 }
 
 .grid-item.graph img {
@@ -327,48 +404,6 @@ span.inner {
   line-height: .8;
 }
 
-
-
-/*.lb-data .lb-number {
-  padding-bottom: 0em;
-  font-size: 16px;
-  color: #999999;
-  font-weight: 500;
-}
-
-.lb-prev {
-  text-align: left;
-  left: -35px!important;
-  position: absolute;
-  background: none!important;
-  color: white!important;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.lb-next {
-  text-align: right;
-  right: -48px!important;
-  position: absolute;
-  background: none!important;
-  color: white!important;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  justify-content: flex-end;
-}
-.lb-prev span,
-.lb-next span {
-  font-size: 48px;
-  padding: 2em;
-  margin: -2em;
-}
-
-.lb-dataContainer {
-  position: absolute;
-  left: 0;
-  right: 0;
-}*/
 
 
 
@@ -545,6 +580,7 @@ button.btn-filters.active {
 
 
 /* Bootstrap Sizing AddOn by Inxenio */
+
 @media (min-width: 576px) {
 	.w-sm-100 {
 		width:100%!important;
