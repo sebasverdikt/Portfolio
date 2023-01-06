@@ -15,46 +15,45 @@
   <body>
 
     <header>
-
     <!-- Main Menu -->
-    <nav class="navbar navbar-expand-lg bg-light py-0 py-md-4" id="nav-filters">
-      
-      <div class="container-fluid px-3">
-
-        <a class="navbar-brand topped fs-4" href="/">Sebas Verdikt</a>
-        <a class="navbar-brand scrolled" href="/">SV</a>
-        
-        <div class="filters w-100 w-md-auto d-flex d-md-block justify-content-around justify-content-sm-evenly" id="filter-btns">
-          <button type="button" class="btn btn-filters" onclick="brandContainer()" data-filter=".brand">Branding</button>
-          <button type="button" class="btn btn-filters active" onclick="otherContainer()" data-filter=".graph">Graphics</button>
-          <button type="button" class="btn btn-filters" onclick="otherContainer()" data-filter=".front">Frontend</button>
-          <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
+      <nav class="navbar navbar-expand-lg bg-light py-0 py-md-4" id="nav-filters">
+        <div class="container-fluid px-3">
+          <a class="navbar-brand topped fs-4" href="/">Sebas Verdikt</a>
+          <a class="navbar-brand scrolled" href="/">SV</a>
+          <div class="filters w-100 w-md-auto d-flex d-md-block justify-content-around justify-content-sm-evenly" id="filter-btns">
+            <button type="button" class="btn btn-filters" onclick="brandContainer()" data-filter=".brand">Branding</button>
+            <button type="button" class="btn btn-filters active" onclick="otherContainer()" data-filter=".graph">Graphics</button>
+            <button type="button" class="btn btn-filters" onclick="otherContainer()" data-filter=".front">Frontend</button>
+            <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
+          </div>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">
+                  <span class="topped">About Me</span>
+                  <span class="material-symbols-outlined scrolled">clinical_notes</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">
+                  <span class="topped">Contact</span>
+                  <span class="material-symbols-outlined scrolled">mail</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">
-                <span class="topped">About Me</span>
-                <span class="material-symbols-outlined scrolled">clinical_notes</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">
-                <span class="topped">Contact</span>
-                <span class="material-symbols-outlined scrolled">mail</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </nav>
+      </nav>
     </header>
 
+    <div class="preloader">
+      <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
 
     <!-- Portfolio Content -->
     <section id="portfolio">
@@ -629,6 +628,12 @@
     <button onclick="topFunction()" id="back2top">
       <span class="material-symbols-outlined">arrow_upward</span>
     </button>
+
+    <script>
+      window.onload = function(){ 
+        document.querySelector(".preloader").style.display = "none"; 
+      }
+    </script>
 
     <!-- JS -->
     <script src="jquery.js"></script>
