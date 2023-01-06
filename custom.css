@@ -101,7 +101,7 @@ h2.accordion-header button {
 
 button#back2top {
   display:block;
-  border: 2px solid #231f20;
+  border: 1px solid #231f20;
   border-radius: 100%;
   height: 60px;
   width: 60px;
@@ -113,40 +113,30 @@ button#back2top {
   bottom: 0;
   right: 0;
   z-index: 9999;
-  transition: margin-bottom 1s;
+  transition: margin-bottom 1s ease, transform .2s;
+}
+button#back2top span {
+  font-size: 32px;
 }
 button#back2top.b2t-on {
   margin-bottom: 25px;
-  transition: margin-bottom 1s;
 }
-button#back2top:hover {
-  height: 66px;
-  width: 66px;
-  margin: 0 22px 22px 0;
-  box-shadow: 0 0 10px 0px #231f20;
-  transition: all .3s;
+button#back2top.b2t-on:hover {
+  transform: scale(1.1);  
 }
-button#back2top span {
-  font-size: 40px;
-}
-
 @media screen and (max-width: 575.9px) {
   button#back2top {
-    margin-bottom: -45px;
+    height: 40px;
+    width: 40px;  
+    margin: 0 15px 15px 0;
+    margin-bottom:-40px;
   }
   button#back2top span {
-    font-size: 25px;
+    font-size: 24px;
   }
   button#back2top.b2t-on {
-    height: 45px;
-    width: 45px;
-    margin: 0 15px 15px 0px;
-  }
-  button#back2top:hover {
-    height: 45px;
-    width: 45px;
-    margin: 0 15px 15px 0px;
-  }
+    margin-bottom: 15px;
+  }  
 }
 
 
@@ -290,9 +280,6 @@ button#back2top span {
 
 
 
-
-
-
 .rollover {
   position: relative;
   display: block;
@@ -316,6 +303,18 @@ button#back2top span {
   clip-path: none;
   border-radius: 0;
 }
+
+@media screen and (max-width:768px) {
+  #portfolio .rollover img:not(.image-hover) {
+    visibility: hidden;
+  }
+  #portfolio .rollover img.image-hover {
+    opacity: 1;
+  }
+}
+
+
+
 
 .grid-item.graph img {
   opacity: 1;
@@ -402,6 +401,16 @@ span.inner {
 .lb-nav a.lb-close span {
   font-size: 32px;
   line-height: .8;
+}
+@media screen and (max-width:767.9px) {
+  .lb-nav a {
+    padding: 10px;
+  }
+  .lb-nav a.lb-close span,
+  .lb-nav a.lb-prev span,
+  .lb-nav a.lb-next span {
+    font-size: 24px;
+  }
 }
 
 
@@ -532,9 +541,7 @@ button.btn-filters.active {
 
 /* Packery Grid */
 
-
 .grid-item {width: 50%;}
-
 @media screen and (min-width: 768px) {
   .grid-item {width: 25%;}
 }
@@ -546,7 +553,6 @@ button.btn-filters.active {
 }
 
 .grid-item--width2 {width: 100%;}
-
 @media screen and (min-width: 768px) {
   .grid-item--width2 {width: 50%;}
 }
@@ -563,6 +569,17 @@ button.btn-filters.active {
 @media screen and (min-width: 1850px) {
   .grid-item--height2 {width: 14.28571428571429%; }
 }
+
+/*.grid-item-half {width: 33%;}
+@media screen and (min-width: 768px) {
+  .grid-item-half {width: 25%;}
+}
+@media screen and (min-width: 1200px) {
+  .grid-item-half {width: 12.5%;}
+}
+@media screen and (min-width: 1850px) {
+  .grid-item-half {width: 7.14%;}
+}*/
 
 
 
