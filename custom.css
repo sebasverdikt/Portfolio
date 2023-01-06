@@ -293,7 +293,7 @@ button#back2top.b2t-on:hover {
   object-fit: contain;
   opacity: 0;
   border-radius: 100%;
-  clip-path: circle(40%);
+  clip-path: circle(38%);
   transition: opacity .2s;
 }
 .rollover:hover img.image-hover {
@@ -310,6 +310,10 @@ button#back2top.b2t-on:hover {
   }
   #portfolio .rollover img.image-hover {
     opacity: 1;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid white;
   }
 }
 

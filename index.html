@@ -26,8 +26,8 @@
         
         <div class="filters w-100 w-md-auto d-flex d-md-block justify-content-around justify-content-sm-evenly" id="filter-btns">
           <button type="button" class="btn btn-filters" onclick="brandContainer()" data-filter=".brand">Branding</button>
-          <button type="button" class="btn btn-filters active" data-filter=".graph">Graphics</button>
-          <button type="button" class="btn btn-filters" data-filter=".front">Frontend</button>
+          <button type="button" class="btn btn-filters active" onclick="otherContainer()" data-filter=".graph">Graphics</button>
+          <button type="button" class="btn btn-filters" onclick="otherContainer()" data-filter=".front">Frontend</button>
           <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
         </div>
 
@@ -670,7 +670,11 @@
     <script>
       function brandContainer() {
          var element = document.getElementById("portfolio");
-         element.classList.add("container-sm", "px-5");
+         element.classList.add("container-sm", "px-sm-5");
+      }
+      function otherContainer() {
+         var element = document.getElementById("portfolio");
+         element.classList.remove("container-sm", "px-sm-5");
       }
     </script>
 
