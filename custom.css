@@ -170,6 +170,7 @@ button#back2top.b2t-on:hover {
 @media screen and (max-width: 575.9px) {
   .cv-entry {
     padding-left: 10px;
+    padding-right: 10px;
   }
   .first-entry.cv-entry::before {
     padding-right: 10px;
