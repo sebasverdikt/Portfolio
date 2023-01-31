@@ -328,7 +328,9 @@ button#back2top.b2t-on:hover {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    border: 2px solid white;
+    border: 0px solid white;
+    border-radius: 0;
+    clip-path: none;
   }
 }
 
@@ -470,6 +472,11 @@ footer {
 .navbar-collapse {
   flex-grow: 0;
 }
+@media screen and (max-width:992px) {
+  .navbar-collapse {
+    border-top: 1px solid #dee2e6
+  }
+}
 
 button.btn-filters {
   border: none;
@@ -525,7 +532,8 @@ button.btn-filters.active {
     margin: 0;
   }
   .navbar.sticky .navbar-toggler,
-  .navbar.sticky .navbar-brand {
+  .navbar.sticky .navbar-brand,
+  .navbar.sticky .navbar-collapse {
     display: none;
   }
   .navbar.sticky button.btn-filters {
