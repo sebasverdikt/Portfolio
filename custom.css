@@ -531,11 +531,7 @@ button.btn-filters.active {
     min-height: 50px;
     margin: 0;
   }
-  .navbar.sticky .navbar-toggler,
-  .navbar.sticky .navbar-brand,
-  .navbar.sticky .navbar-collapse {
-    display: none;
-  }
+
   .navbar.sticky button.btn-filters {
     padding: 18px 14px;
   }
