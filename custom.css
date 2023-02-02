@@ -498,6 +498,10 @@ button.btn-filters.active {
   font-weight: 500;
 }
 
+.nav-link:hover {
+  
+} 
+
 .navbar.sticky button.btn-filters {
   padding: 17px 22px;
 }
@@ -515,9 +519,7 @@ button.btn-filters.active {
     background-color: white!important;
     height:auto
   } 
-  .navbar-brand {
-    margin: 9px 0 0px 0px;
-  }
+
   .navbar-toggler {
     display: block;
     position: absolute;
@@ -525,7 +527,7 @@ button.btn-filters.active {
     right: 0;
   }
   button.btn-filters {
-    padding: 0;
+    padding: 11px;
     font-size: 1em;
     width: 100%;
     min-height: 50px;
