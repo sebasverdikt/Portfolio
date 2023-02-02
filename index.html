@@ -18,22 +18,30 @@
     <!-- Main Menu -->
       <nav class="navbar navbar-expand-lg bg-light py-0 py-md-4" id="nav-filters">
         <div class="container-fluid px-2 px-sm-3 px-md-5">
-          <div class="">
+          <div class="d-flex order-1 brand">
             <a class="navbar-brand topped fs-4" href="/">Sebas Verdikt</a>
             <a class="navbar-brand scrolled" href="/">SV</a>
           </div>
-          <div class="filters d-flex justify-content-around justify-content-sm-evenly" id="filter-btns">
+          <div class="filters d-flex justify-content-around justify-content-sm-evenly order-3 order-sm-2 w-100 w-sm-auto" id="filter-btns">
             <button type="button" class="btn btn-filters" onclick="brandContainer()" data-filter=".brand">Branding</button>
             <button type="button" class="btn btn-filters active" onclick="otherContainer()" data-filter=".graph">Graphics</button>
             <button type="button" class="btn btn-filters" onclick="otherContainer()" data-filter=".front">Frontend</button>
             <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
           </div>
-          <div class="d-flex flex-row justify-content-evenly">
+          <div class="d-flex flex-row justify-content-evenly order-2 order-sm-3">
             <a class="nav-link" href="about.html">
-              <img src="img/icons/about-48.svg" height="32" class="pe-2 pe-sm-3">
+              <picture class="pe-2 pe-sm-3">
+                <source media="(max-width: 767px)" srcset="img/icons/about-16.svg" height="24" />
+                <source media="(min-width: 768px)" srcset="img/icons/about.svg" height="32" />
+                <img src="img/icons/about.svg" alt="about icon" />
+              </picture>
             </a>
             <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
-              <img src="img/icons/contact-48.svg" height="32">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/icons/contact-16.svg" height="24" />
+                <source media="(min-width: 768px)" srcset="img/icons/contact.svg" height="32" />
+                <img src="img/icons/contact.svg" alt="contact icon" />
+              </picture>
             </a>              
           </div>            
         </div>

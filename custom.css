@@ -78,7 +78,7 @@ h2.accordion-header button {
 }
 
 .accordion-button:not(.collapsed)::before {
-  background-image: var(--bs-accordion-btn-active-icon);
+  background-image: url(img/icons/chevron-up.svg);
   transform: var(--bs-accordion-btn-icon-transform);
 }
 .accordion-button::before {
@@ -87,7 +87,7 @@ h2.accordion-header button {
   height: var(--bs-accordion-btn-icon-width);
   margin-right: 15px;
   content: "";
-  background-image: var(--bs-accordion-btn-icon);
+  background-image: url(img/icons/chevron-down.svg);
   background-repeat: no-repeat;
   background-size: var(--bs-accordion-btn-icon-width);
   transition: var(--bs-accordion-btn-icon-transition);
@@ -177,7 +177,6 @@ button#back2top.b2t-on:hover {
     margin-left: -11px;
   }
 }
-
 
 
 .cairn::before {
@@ -293,6 +292,13 @@ button#back2top.b2t-on:hover {
   }
 }
 
+.progress-bar {
+  background-color: #231f20e6;
+}
+.progress {
+  background-color: #231f2066;
+
+}
 
 
 .rollover {
@@ -458,6 +464,15 @@ span.inner {
 .navbar.sticky .topped {display: none}
 .navbar.sticky .scrolled {display: block}
 
+@media screen and (max-width:767.9px) {
+  .navbar.sticky .brand {
+    display: none!important;
+  }
+  .navbar.sticky .filters {
+      order: 1 !important;
+      width: auto !important;
+  }
+}
 
 
 /* Navs */
@@ -498,8 +513,13 @@ button.btn-filters.active {
   font-weight: 500;
 }
 
-.nav-link:hover {
-  
+.nav-link img {
+  filter: opacity(100%);
+  transition: filter 0.15s ease-in-out;  
+} 
+.nav-link:hover img {
+  filter: opacity(50%);
+  transition: filter 0.15s ease-in-out;  
 } 
 
 .navbar.sticky button.btn-filters {
@@ -636,7 +656,7 @@ svg:hover .em {fill: #E29A33;}
 
 
 
-/* Bootstrap Sizing AddOn by Inxenio */
+/* Bootstrap Sizing AddOn by Me! */
 
 @media (min-width: 576px) {
 	.w-sm-100 {
