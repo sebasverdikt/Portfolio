@@ -17,20 +17,20 @@
     <header>
     <!-- Main Menu -->
       <nav class="navbar navbar-expand-lg bg-light py-0 py-md-4" id="nav-filters">
-        <div class="container-fluid px-2 px-sm-3 px-md-5">
-          <div class="d-flex order-1 brand">
+        <div class="container-fluid px-2 px-sm-3 px-md-4 px-lg-5">
+          <div class="brand d-flex py-2 order-1">
             <a class="navbar-brand topped fs-4" href="/">Sebas Verdikt</a>
             <a class="navbar-brand scrolled" href="/">SV</a>
           </div>
-          <div class="filters d-flex justify-content-around justify-content-sm-evenly order-3 order-sm-2 w-100 w-sm-auto" id="filter-btns">
+          <div class="filters d-flex justify-content-around justify-content-sm-evenly order-3 order-sm-2 w-100 w-sm-auto border-top" id="filter-btns">
             <button type="button" class="btn btn-filters" onclick="brandContainer()" data-filter=".brand">Branding</button>
             <button type="button" class="btn btn-filters !--active--" onclick="otherContainer()" data-filter=".graph">Graphics</button>
             <button type="button" class="btn btn-filters" onclick="otherContainer()" data-filter=".front">Frontend</button>
             <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
           </div>
-          <div class="d-flex flex-row justify-content-evenly order-2 order-sm-3">
+          <div class="infocom d-flex flex-row justify-content-evenly order-2 order-sm-3">
             <a class="nav-link" href="/about">
-              <picture class="pe-2 pe-sm-3">
+              <picture class="pe-3 pe-sm-4">
                 <source media="(max-width: 767px)" srcset="img/icons/about-16.svg" height="24" />
                 <source media="(min-width: 768px)" srcset="img/icons/about.svg" height="32" />
                 <img src="img/icons/about.svg" alt="about icon" />
@@ -606,7 +606,7 @@
                 <img class="img-fluid" src="./img/grafs/graf-map.jpg" loading="lazy">
                 <span class="inner" style="background-color:#974218;">
                   <span class="info">
-                    <h2>OpenStreetMaps</h2>
+                    <h2>Open Street Maps</h2>
                     <p>Promoci&oacute;n de Colectivo</p>
                   </span>
                 </span>
@@ -731,12 +731,11 @@
       </div>
     </section>
 
-    <footer class="p-0">
-      <div class="container-fluid px-0 border-top">
+    <footer class="p-0 border-top">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-12 mb-2 mt-4 text-center"">
-            <div><strong>END OF THE PAGE!</strong></div>
-            <p xmlns:cc="http://creativecommons.org/ns#">All work</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></p>
+          <div class="col-12 mb-2 mt-4 px-0 text-center"">
+            <p xmlns:cc="http://creativecommons.org/ns#"><small>All work is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></small></p>
           </div>
         </div>
       </div>
@@ -744,17 +743,17 @@
 
     <div id="contactModal" class="modal fade" aria-modal="true" role="dialog">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content w-auto mx-auto rounded-0 p-5">
+        <div class="modal-content w-auto mx-auto rounded-0 p-2 p-sm-3 p-md-5">
           <div class="modal-header border-0 p-0 mx-auto">
             <h5 class="modal-title text-center">¡Hablemos!</h5>
           </div>
-          <div class="text-center my-5">
-            <a href="https://telegram.me/sebasverdikt" target="_blank" class="text-decoration-none p-4">
+          <div class="text-center my-3 my-sm-4 my-md-5">
+            <a href="https://telegram.me/sebasverdikt" target="_blank" class="text-decoration-none p-2 p-sm-3 p-md-4">
               <svg x="0px" y="0px" viewBox="0 0 512 512">
                 <path class="tg" d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M385.8,150.9 c-4.4,45.9-23.3,157.4-32.9,208.9c-4.1,21.8-12.1,29.1-19.9,29.8c-16.9,1.6-29.7-11.2-46-21.9c-25.6-16.8-40-27.2-64.8-43.6 c-28.7-18.9-10.1-29.3,6.3-46.3c4.3-4.4,78.6-72.1,80.1-78.2c0.2-0.8,0.4-3.6-1.4-5.1s-4.2-1-6-0.6c-2.6,0.6-43.4,27.6-122.6,81 c-11.6,8-22.1,11.8-31.5,11.6c-10.4-0.2-30.3-5.9-45.2-10.7c-18.2-5.9-32.7-9-31.4-19.1c0.7-5.2,7.9-10.6,21.6-16.1 c84.7-36.9,141.2-61.2,169.5-73c80.7-33.6,97.5-39.4,108.4-39.6c2.4,0,7.8,0.6,11.3,3.4c2.3,2,3.8,4.8,4.1,7.9 C385.9,143.3,386.1,147.1,385.8,150.9z"></path>
               </svg>
             </a>
-            <a href="https://wa.me/+346%317%3215967" target="_blank" class="text-decoration-none p-4">
+            <a href="https://wa.me/+346%317%3215967" target="_blank" class="text-decoration-none p-2 p-sm-3 p-md-4">
               <svg x="0px" y="0px" viewBox="0 0 512 512">
                 <g><g>
                   <path class="wa" d="M256,135c-66,0-119.7,53.7-119.8,119.7c0,22.6,6.4,44.7,18.3,63.7l2.8,4.5l-12.1,44.1l45.3-11.9l4.4,2.6 c18.3,10.9,39.4,16.7,60.9,16.7h0.1c65.9,0,121.1-53.7,121.1-119.7c0-32-13.8-62-36.4-84.7C317.9,147.5,288,135,256,135z M326.4,306.1c-3,8.4-17.3,16.1-24.3,17.1c-11.4,1.7-20.3,0.8-43.1-9c-36.1-15.6-59.7-52-61.5-54.3c-1.8-2.4-14.7-19.5-14.7-37.2 s9.3-26.4,12.6-30.1c3.3-3.6,7.2-4.5,9.6-4.5c2.4,0,4.8,0,6.9,0.1c2.2,0.1,5.2-0.8,8.1,6.2c3,7.2,10.2,24.9,11.1,26.7 c0.9,1.8,1.5,3.9,0.3,6.3c-6.9,13.8-14.3,13.3-10.5,19.6c13.9,23.9,27.8,32.2,49,42.8c3.6,1.8,5.7,1.5,7.8-0.9 c2.1-2.4,9-10.5,11.4-14.1c2.4-3.6,4.8-3,8.1-1.8c3.3,1.2,21,9.9,24.6,11.7c3.6,1.8,6,2.7,6.9,4.2 C329.4,290.5,329.4,297.8,326.4,306.1z"></path>
@@ -762,19 +761,19 @@
                 </g></g>
               </svg>
             </a>
-            <a href="https://www.linkedin.com/in/sebasverdikt/" target="_blank" class="text-decoration-none p-4">
+            <a href="https://www.linkedin.com/in/sebasverdikt/" target="_blank" class="text-decoration-none p-2 p-sm-3 p-md-4">
               <svg x="0px" y="0px" viewBox="0 0 512 512">
                 <path class="li" d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M178.6,395.4L178.6,395.4 h-60.4V201.2h60.4V395.4z M148.4,174.6c-19.3,0-35-15.7-35-35c0-19.3,15.6-35,35-35c19.3,0,35,15.7,35,35 C183.3,159,167.7,174.6,148.4,174.6z M404.6,395.4h-60.3v-94.5c0-22.5-0.5-51.5-31.3-51.5c-31.4,0-36.2,24.5-36.2,49.9v96.1h-60.3 V201.2h57.9v26.5h0.8c8.1-15.3,27.8-31.3,57.1-31.3c61,0,72.4,40.2,72.4,92.6V395.4z"></path>
               </svg>
             </a>
           </div>
           <div class="text-center mb-3">
-            <a href="mailto:sv%65r%64%69k%74@%67mail%2E%63o%6D" target="_blank" class="text-decoration-none p-4">
+            <a href="mailto:sv%65r%64%69k%74@%67mail%2E%63o%6D" target="_blank" class="text-decoration-none p-2 p-sm-3 p-md-4">
               <svg x="0px" y="0px" viewBox="0 0 512 512">
                 <path class="em" d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M417.5,336.8 c0,22.3-18.1,40.4-40.4,40.4H134.9c-22.3,0-40.4-18.1-40.4-40.4V205.5l137.3,103c14.4,10.8,34.1,10.8,48.5,0l137.3-103V336.8z M405.4,189.4l-137.3,103c-7.2,5.4-17,5.4-24.2,0l-137.3-103c-7.6-5.7-12.1-14.7-12.1-24.2c0-16.7,13.6-30.3,30.3-30.3h262.4 c16.7,0,30.3,13.6,30.3,30.3C417.5,174.7,413,183.6,405.4,189.4z"></path>
               </svg>
             </a>
-            <a href="tel:0034617215967" class="text-decoration-none p-4">
+            <a href="tel:0034617215967" class="text-decoration-none p-2 p-sm-3 p-md-4">
               <svg x="0px" y="0px" viewBox="0 0 512 512">
                 <path class="tp" d="M256,512c141.4,0,256-114.6,256-256S397.4,0,256,0S0,114.6,0,256S114.6,512,256,512z M186.7,128.7 c9.7-2.6,19.9,2.3,23.7,11.6l20,48c3.4,8.2,1,17.6-5.8,23.2L200,231.7c16.6,35.2,45.1,63.7,80.3,80.3l20.2-24.7 c5.6-6.8,15-9.2,23.2-5.8l48,20c9.3,3.9,14.2,14,11.6,23.7l-12,44C368.9,378,361,384,352,384c-123.7,0-224-100.3-224-224 c0-9,6-16.9,14.7-19.3L186.7,128.7z"></path>
               </svg>
@@ -785,7 +784,7 @@
     </div>
 
     <button onclick="topFunction()" id="back2top">
-      <span class="material-symbols-outlined">arrow_upward</span>
+      <img src="img/icons/back2top.svg" alt="back2top icon" />
     </button>
 
     <script>
