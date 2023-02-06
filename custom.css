@@ -343,11 +343,15 @@ button#back2top.b2t-on:hover {
 
 
 
-.grid-item.graph img {
+.grid-item.graph img,
+.grid-item.brand img,
+.grid-item.front img {
   opacity: 1;
   transition: opacity .2s;
 }
-.grid-item.graph:hover img {
+.grid-item.graph:hover img,
+.grid-item.brand:hover img,
+.grid-item.front:hover img {
   opacity: 0
 }
 span.inner {
@@ -591,6 +595,7 @@ svg:hover .tg {fill:#28A8E9;}
 svg:hover .wa {fill: #0CC243;}
 svg:hover .li {fill:#0A66C2;}
 svg:hover .em {fill: #E29A33;}
+svg:hover .tp {fill: #E29A33;}
 
 .obfuscate {
   unicode-bidi: bidi-override;
