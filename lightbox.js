@@ -48,7 +48,7 @@
     imageFadeDuration: 0,
     // maxWidth: 800,
     // maxHeight: 600,
-    positionFromTop: 0,
+    positionFromTop: 50,
     resizeDuration: 0,
     showImageNumberLabel: true,
     wrapAround: true,
@@ -111,7 +111,8 @@
     // on the page below.
     //
     // Github issue: https://github.com/lokesh/lightbox2/issues/663
-    $('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-loader"><div class="d-flex justify-content-center"><div class="spinner-border text-dark" role="status"><span class="visually-hidden">Loading...</span></div></div></div></div></div><div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href=""><span class="material-symbols-outlined">arrow_back_ios</span></a><a class="lb-close"><span class="material-symbols-outlined user-select-none">close</span></a><a class="lb-next" aria-label="Next image" href=""><span class="material-symbols-outlined">arrow_forward_ios</span></a></div></div>').appendTo($('body'));
+    $('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""/><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href="" ></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href="" ></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div>').appendTo($('body'));
+
 
     // Cache jQuery objects
     this.$lightbox       = $('#lightbox');
