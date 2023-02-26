@@ -372,10 +372,26 @@ span.inner {
 
 /* Flickity */
 
-.carousel-cell {
-  width: 100%;
+
+
+
+.carousel { 
   height: 95vh;
 }
+
+.carousel-cell {
+  width: 100%;
+  text-align: center;
+  max-height: 95vh;
+}
+.carousel-cell img {
+  object-fit: contain;
+}
+
+.flickity-page-dots {
+}
+
+
 
 
 
