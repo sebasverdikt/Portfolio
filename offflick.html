@@ -8,44 +8,52 @@
     <title>Sebas Verdikt | Home</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="flickity.css">
+    <link rel="stylesheet" href="fullscreen.css">
     <link rel="stylesheet" href="custom.css">
 </head>
 
 <body>
 
 
-            <!--a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
               Link with href
             </a>
-            <div class="offcanvas  text-bg-dark w-100 offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"-->
-                <div class="carousel">
-                      <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="./img/grafs/graf-16hzA-1-tall.jpg">
-                      </div>
-                      <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="./img/grafs/graf-16hzA-2-tall.jpg">
-                      </div>
-                      <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="./img/grafs/graf-16hzA-3-tall.jpg">
-                      </div>
-                      <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="./img/logos/logo-p.jpg" loading="lazy">
-                      </div>
-
+            <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <div class="carousel is-fullscreen" style="background-color: blue;">
+                <div class="carousel-cell">
+                  <img class="carousel-cell-image" data-flickity-lazyload="./img/grafs/graf-16hzA-1-tall.jpg" />
                 </div>
-            <!--/div-->
+                <div class="carousel-cell">
+                  <img class="carousel-cell-image" data-flickity-lazyload="./img/grafs/graf-16hzA-2-tall.jpg" />
+                </div>
+                <div class="carousel-cell">
+                  <img class="carousel-cell-image" data-flickity-lazyload="./img/grafs/graf-16hzA-3-tall.jpg" />
+                </div>
+                <div class="carousel-cell">
+                  <img class="carousel-cell-image" data-flickity-lazyload="./img/logos/logo-p.jpg" />
+                </div>
+              </div>
+            </div>
 
             <script src="jquery.js"></script>
             <script src="bootstrap.js"></script>
             <script src="flickity.pkgd.js"></script>
+            <script src="fullscreen.js"></script>
             <script>
                 $('.carousel').flickity({
                     // options
-                    contain: true,
-                    cellAlign: 'center',
-                    setGallerySize: false                
+                    //contain: true,
+                    //cellAlign: 'center',
+                    //setGallerySize: false,     
+                    fullscreen: true,
+                    lazyLoad: 1,
+                    prevNextButtons: false,
+                    wrapAround: true
+           
                 });
             </script>
+            
 
         </body>
 </html>

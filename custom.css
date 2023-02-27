@@ -370,25 +370,36 @@ span.inner {
 }
 
 
-/* Flickity */
 
+/* Offcanvas */
 
-
-
-.carousel { 
-  height: 95vh;
+.btn-close {
+  z-index: 9;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
+
+
+/* Flickity */
 
 .carousel-cell {
   width: 100%;
-  text-align: center;
-  max-height: 95vh;
+  height: 200px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.carousel-cell img {
-  object-fit: contain;
+.carousel.is-fullscreen .carousel-cell {
+  height: 100%;
 }
-
-.flickity-page-dots {
+.carousel-cell-image {
+  display: block;
+  max-height: 100%;
+}
+.carousel.is-fullscreen .carousel-cell-image {
+  max-width: 100%;
 }
 
 

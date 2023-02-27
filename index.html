@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sebas Verdikt | Home</title>
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="lightbox.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="flickity.css" />
+    <link rel="stylesheet" href="fullscreen.css" />
     <link rel="stylesheet" href="custom.css">
 
   </head>
@@ -61,8 +61,7 @@
         <div class="row p-0 gx-0">
           <div class="grid">
             <div class="grid-item grid-item-half brand">
-              <div class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-1l-bn.jpg" loading="lazy"-->
+              <div class="">
                 <img class="img-fluid image-hover" src="./img/logos/logo-1l.jpg" loading="lazy">
                 <span class="inner" style="background-color:#282c38;">
                   <span class="info">
@@ -70,8 +69,15 @@
                     <p>Bufete de Abogados</p>
                   </span>
                 </span>
-                <a href="./img/logos/logo-1l-big.jpg" data-lightbox="logo-1l-xl" class="d-xl-block d-none stretched-link"></a>
-                <a href="./img/logos/logo-1l-big-tall.jpg" data-lightbox="logo-1l-xs" class="d-xl-none d-block stretched-link"></a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offLawyers" role="button" aria-controls="offLawyers"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offLawyers" aria-labelledby="offLawyers">
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color: blue;">
+                    <div class="carousel-cell">
+                      <img class="carousel-cell-image" data-flickity-lazyload="./img/logos/logo-1l-big.jpg">
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="grid-item grid-item-half brand">
@@ -963,8 +969,8 @@
     <script src="imagesloaded.pkgd.js"></script>
     <script src="isotope.pkgd.js"></script>
     <script src="packery-mode.pkgd.js"></script>
-    <script src="lightbox.js"></script>
-    <script src="swiped-events.js"></script>
+    <script src="flickity.pkgd.js"></script>
+    <script src="fullscreen.js"></script>
 
     <script>
       var $grid = $('.grid').imagesLoaded( function() {
@@ -1012,34 +1018,6 @@
         $grid.isotope({ filter: filterValue });
       });
     </script>
-
-    <!-- COMBINE filters -->
-    <!--script>
-      var filters = [];
-      $('.filters').on( 'click', 'button', function( event ) {
-        var $target = $( event.currentTarget );
-        $target.toggleClass('active');
-        var isChecked = $target.hasClass('active');
-        var filter = $target.attr('data-filter');
-        if ( isChecked ) {
-          addFilter( filter );
-        } else {
-          removeFilter( filter );
-        }
-        $grid.isotope({ filter: filters.join(',') });
-      });        
-      function addFilter( filter ) {
-        if ( filters.indexOf( filter ) == -1 ) {
-          filters.push( filter );
-        }
-      }
-      function removeFilter( filter ) {
-        var index = filters.indexOf( filter);
-        if ( index != -1 ) {
-          filters.splice( index, 1 );
-        }
-      }
-    </script-->
 
     <script>
       // Add active class to the current button (highlight it)
@@ -1089,9 +1067,15 @@
       });
     </script>
 
-
-
-  
+    <script>
+        $('.carousel').flickity({
+            // options    
+            fullscreen: true,
+            lazyLoad: 1,
+            prevNextButtons: false,
+            wrapAround: true
+        });
+    </script>  
 
   </body>
 
