@@ -134,7 +134,7 @@ button#back2top {
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 9998;
   transition: margin-bottom 1s ease, transform .2s;
 }
 button#back2top img {
@@ -378,6 +378,17 @@ span.inner {
   position: fixed;
   right: 0;
   top: 0;
+  padding: 2em;
+    width: 2em;
+    height: 2em;
+}
+
+.offcanvas img {
+  opacity: 1!important;
+}
+
+.offcanvas {
+  z-index: 9999;
 }
 
 
@@ -401,7 +412,6 @@ span.inner {
 .carousel.is-fullscreen .carousel-cell-image {
   max-width: 100%;
 }
-
 
 
 
