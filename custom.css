@@ -5,8 +5,8 @@
   top: 100px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 100px);
-  background: rgb(255 255 255 / 90%);
+  height: 100vh;
+  background: #fff;
   z-index: 9999;
   text-align: center;
   display: flex;
