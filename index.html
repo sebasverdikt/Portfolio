@@ -5,7 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sebas Verdikt | Home</title>
+    <meta data-rh="true" name="theme-color" content="#ffffff"/>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Sebas Verdikt | Portfolio</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="flickity.css" />
     <link rel="stylesheet" href="fullscreen.css" />
@@ -202,8 +204,6 @@
                 </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <a href="./img/logos/logo-inx-big.jpg" data-lightbox="logo-inx" class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-inx-bn.jpg" loading="lazy"-->
                 <img class="img-fluid image-hover" src="./img/logos/logo-inx.jpg" loading="lazy">
                 <span class="inner" style="background-color:#28b571;">
                   <span class="info">
@@ -211,11 +211,17 @@
                     <p>Consultor&iacute;a de Internet</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offInx" role="button" aria-controls="offInx"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offInx" aria-labelledby="offInx">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#28b571">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-inx-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <span class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-mdf-bn.jpg" loading="lazy"-->
                 <img class="img-fluid image-hover" src="./img/logos/logo-mdf.jpg" loading="lazy">
                 <span class="inner" style="background-color:#362217;">
                   <span class="info">
@@ -223,37 +229,64 @@
                     <p>Carpinter&iacute;a Sostenible</p>
                   </span>
                 </span>
-              </span>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offMDF" role="button" aria-controls="offMDF"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offMDF" aria-labelledby="offMDF">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#362217">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-mdf.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <span class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-mds-bn.jpg" loading="lazy"-->
-                <img class="img-fluid image-hover" src="./img/logos/logo-mds.jpg" loading="lazy">
-                <span class="inner" style="background-color:#576bb0;">
-                  <span class="info">
-                    <h2>Moixos de Selva</h2>
-                    <p>Colonia Felina Controlada</p>
-                  </span>
+              <img class="img-fluid image-hover" src="./img/logos/logo-mds.jpg" loading="lazy">
+              <span class="inner" style="background-color:#576bb0;">
+                <span class="info">
+                  <h2>Moixos de Selva</h2>
+                  <p>Colonia Felina Controlada</p>
                 </span>
               </span>
-            </div>
-            <div class="grid-item grid-item-half brand">
-              <div class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-p-bn.jpg" loading="lazy"-->
-                <img class="img-fluid image-hover" src="./img/logos/logo-p.jpg" loading="lazy">
-                <span class="inner" style="background-color:#01756c;">
-                  <span class="info">
-                    <h2>POIMA</h2>
-                    <p>Cocinas Industriales</p>
-                  </span>
-                </span>
-                <a href="./img/logos/logo-p-big.jpg" data-lightbox="logo-p-xl" class="d-xl-block d-none stretched-link"></a>
-                <a href="./img/logos/logo-p-big-tall.jpg" data-lightbox="logo-p-xs" class="d-xl-none d-block stretched-link"></a>
+              <a class="stretched-link" data-bs-toggle="offcanvas" href="#offMDS" role="button" aria-controls="offMDS"></a>
+              <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offMDS" aria-labelledby="offMDS">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="carousel is-fullscreen" style="background-color:#576bb0">
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-mds.jpg" class="carousel-cell-image">
+                  </div>
+                </div>
               </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <div class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-pp-bn.jpg" loading="lazy"-->
+              <img class="img-fluid image-hover" src="./img/logos/logo-p.jpg" loading="lazy">
+              <span class="inner" style="background-color:#005560;">
+                <span class="info">
+                  <h2>POIMA</h2>
+                  <p>Cocinas Industriales</p>
+                </span>
+              </span>
+              <a class="stretched-link" data-bs-toggle="offcanvas" href="#offPoima" role="button" aria-controls="offPoima"></a>
+              <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offPoima" aria-labelledby="offPoima">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="carousel is-fullscreen d-xl-block d-none" style="background-color:#005560">
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-p.png" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-p-big.jpg" class="carousel-cell-image">
+                  </div>
+                </div>
+                <div class="carousel is-fullscreen d-xl-none d-block" style="background-color:#005560">
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-p-tall.png" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-p-big-tall.jpg" class="carousel-cell-image">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item grid-item-half brand">
                 <img class="img-fluid image-hover" src="./img/logos/logo-pp.jpg" loading="lazy">
                 <span class="inner" style="background-color:#fad546;">
                   <span class="info">
@@ -261,13 +294,22 @@
                     <p>Equipaci&oacute;n Deportiva</p>
                   </span>
                 </span>
-                <a href="./img/logos/logo-pp-big.jpg" data-lightbox="logo-pp-xl" class="d-xl-block d-none stretched-link"></a>
-                <a href="./img/logos/logo-pp-big-tall.jpg" data-lightbox="logo-pp-xs" class="d-xl-none d-block stretched-link"></a>
-              </div>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offPP" role="button" aria-controls="offPP"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offPP" aria-labelledby="offPP">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen d-xl-block d-none" style="background-color:#fad546">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-pp-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                  <div class="carousel is-fullscreen d-block d-xl-none" style="background-color:#fad546">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-pp-big-tall.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <span class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-sv-bn.jpg" loading="lazy"-->
                 <img class="img-fluid image-hover" src="./img/logos/logo-sv.jpg" loading="lazy">
                 <span class="inner" style="background-color:#f7941d;">
                   <span class="info">
@@ -275,11 +317,17 @@
                     <p>Producci&oacute;n Musical</p>
                   </span>
                 </span>
-              </span>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offsv" role="button" aria-controls="offsv"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offsv" aria-labelledby="offsv">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#f7941d">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-sv.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <span class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-st-bn.jpg" loading="lazy"-->
                 <img class="img-fluid image-hover" src="./img/logos/logo-st.jpg" loading="lazy">
                 <span class="inner" style="background-color:#0090c5;">
                   <span class="info">
@@ -287,11 +335,17 @@
                     <p>Marca de Ropa</p>
                   </span>
                 </span>
-              </span>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offst" role="button" aria-controls="offst"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offst" aria-labelledby="offst">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#0090c5">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-st.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <span class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-tca-bn.jpg" loading="lazy"-->
                 <img class="img-fluid image-hover" src="./img/logos/logo-tca.jpg" loading="lazy">
                 <span class="inner" style="background-color:#bf1e2e;">
                   <span class="info">
@@ -299,28 +353,65 @@
                     <p>Contraincendios</p>
                   </span>
                 </span>
-              </span>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offTCA" role="button" aria-controls="offTCA"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offTCA" aria-labelledby="offTCA">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#bf1e2e">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-tca.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item grid-item-half brand">
-              <div class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-tp-bn.jpg" loading="lazy"-->
-                <img class="img-fluid image-hover" src="./img/logos/logo-tp.jpg" loading="lazy">
-                <span class="inner" style="background-color:#01607e;">
-                  <span class="info">
-                    <h2>Tooth Proof</h2>
-                    <p>Cl&iacute;nica Dental</p>
-                  </span>
+              <img class="img-fluid image-hover" src="./img/logos/logo-tp.jpg" loading="lazy">
+              <span class="inner" style="background-color:#01607e;">
+                <span class="info">
+                  <h2>Tooth Proof</h2>
+                  <p>Cl&iacute;nica Dental</p>
                 </span>
-                <a href="./img/logos/logo-tp-big-1.jpg" data-lightbox="logo-tp-xl" class="d-xl-block d-none stretched-link"></a>
-                <a href="./img/logos/logo-tp-big-tall.jpg" data-lightbox="logo-tp-xs" class="d-xl-none d-block stretched-link"></a>
+              </span>
+              <a class="stretched-link" data-bs-toggle="offcanvas" href="#offTP" role="button" aria-controls="offTP"></a>
+              <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offTP" aria-labelledby="offTP">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="carousel is-fullscreen d-xl-block d-none" style="background-color:#01607e">
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-1.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-3a.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-3b.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-3c.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-4.jpg" class="carousel-cell-image">
+                  </div>
+                </div>
+                <div class="carousel is-fullscreen d-block d-xl-none" style="background-color:#01607e">
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-tall.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-3a.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-3b.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-3c.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/logos/logo-tp-big-4.jpg" class="carousel-cell-image">
+                  </div>
+                </div>
               </div>
-              <a href="./img/logos/logo-tp-big-4.jpg" data-lightbox="logo-tp-xl" class="d-none"><img class="img-fluid" src="./img/logos/logo-tp-big-4.jpg"  ></a>
-              <a href="./img/logos/logo-tp-big-3a.jpg" data-lightbox="logo-tp-xl" class="d-none"><img class="img-fluid" src="./img/logos/logo-tp-big-3a.jpg"  ></a>
-              <a href="./img/logos/logo-tp-big-3c.jpg" data-lightbox="logo-tp-xl" class="d-none"><img class="img-fluid" src="./img/logos/logo-tp-big-3c.jpg"  ></a>
             </div>
             <div class="grid-item grid-item-half brand">
-              <a href="./img/logos/logo-imr-big.jpg" data-lightbox="logo-imr" class="!--rollover--">
-                <!--img class="img-fluid" src="./img/logos/logo-imr-bn.jpg" loading="lazy"-->
+              
                 <img class="img-fluid image-hover" src="./img/logos/logo-imr.jpg" loading="lazy">
                 <span class="inner" style="background-color:#61c7b1;">
                   <span class="info">
@@ -328,7 +419,15 @@
                     <p>Medicina Regenerativa</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offIMR" role="button" aria-controls="offIMR"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offIMR" aria-labelledby="offIMR">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#61c7b1">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/logos/logo-imr-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
 
             <!-- GRAPHS -->
@@ -340,11 +439,24 @@
                   <p>Serie de Carteles de Eventos</p>
                 </span>
               </span>
-              <a href="./img/grafs/graf-16hzA-big.jpg" data-lightbox="graf-16a-xl" class="d-lg-block d-none stretched-link"></a>
-              <a href="./img/grafs/graf-16hzA-1-tall.jpg" data-lightbox="graf-16a-xs" class="d-lg-none d-block stretched-link"></a>
-              <a href="./img/grafs/graf-16hzA-2-tall.jpg" data-lightbox="graf-16a-xs" class="d-lg-none d-block stretched-link"></a>
-              <a href="./img/grafs/graf-16hzA-3-tall.jpg" data-lightbox="graf-16a-xs" class="d-lg-none d-block stretched-link"></a>
-              <a href="./img/grafs/graf-16hzA-4-tall.jpg" data-lightbox="graf-16a-xs" class="d-lg-none d-block stretched-link"></a>
+              <a class="stretched-link" data-bs-toggle="offcanvas" href="#off16" role="button" aria-controls="off16"></a>
+              <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="off16" aria-labelledby="off16">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="carousel is-fullscreen" style="background-color:#950504">
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzA-1-tall.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzA-2-tall.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzA-3-tall.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzA-4-tall.jpg" class="carousel-cell-image">
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="grid-item graph grid-item--height2">
               <img class="img-fluid" src="./img/grafs/graf-16hzB.jpg" loading="lazy">
@@ -354,14 +466,26 @@
                   <p>Serie de Carteles de Eventos</p>
                 </span>
               </span>
-              <a href="./img/grafs/graf-16hzB-big.jpg" data-lightbox="graf-16b-xl" class="d-lg-block d-none stretched-link"></a>
-              <a href="./img/grafs/graf-16hzB-1-tall.jpg" data-lightbox="graf-16b-xs" class="d-lg-none d-block stretched-link"></a>
-              <a href="./img/grafs/graf-16hzB-2-tall.jpg" data-lightbox="graf-16b-xs" class="d-lg-none d-block stretched-link"></a>
-              <a href="./img/grafs/graf-16hzB-3-tall.jpg" data-lightbox="graf-16b-xs" class="d-lg-none d-block stretched-link"></a>
-              <a href="./img/grafs/graf-16hzB-4-tall.jpg" data-lightbox="graf-16b-xs" class="d-lg-none d-block stretched-link"></a>
+              <a class="stretched-link" data-bs-toggle="offcanvas" href="#off16b" role="button" aria-controls="off16b"></a>
+              <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="off16b" aria-labelledby="off16b">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="carousel is-fullscreen" style="background-color:#670940">
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzB-1-tall.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzB-2-tall.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzB-3-tall.jpg" class="carousel-cell-image">
+                  </div>
+                  <div class="carousel-cell">
+                    <img data-flickity-lazyload="./img/grafs/graf-16hzB-4-tall.jpg" class="carousel-cell-image">
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-42-big.jpg" data-lightbox="graf-42">
                 <img class="img-fluid" src="./img/grafs/graf-42.jpg" loading="lazy">
                 <span class="inner" style="background-color:#f62d00;">
                   <span class="info">
@@ -369,10 +493,17 @@
                     <p>Cartel de Evento</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#off42" role="button" aria-controls="off42"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="off42" aria-labelledby="off42">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#f62d00">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-42-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-adoracio-big.jpg" data-lightbox="graf-adoracio">
                 <img class="img-fluid" src="./img/grafs/graf-adoracio.jpg" loading="lazy">
                 <span class="inner" style="background-color:#501770;">
                   <span class="info">
@@ -380,10 +511,17 @@
                     <p>Cartel de Obra de Teatro</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#adoracioff" role="button" aria-controls="adoracioff"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="adoracioff" aria-labelledby="adoracioff">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#501770">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-adoracio-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-ag.jpg" data-lightbox="graf-ag">
                 <img class="img-fluid" src="./img/grafs/graf-ag.jpg" loading="lazy">
                 <span class="inner" style="background-color:#191919;">
                   <span class="info">
@@ -391,10 +529,17 @@
                     <p>Ilustraci&oacute;n</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offAG" role="button" aria-controls="offAG"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offAG" aria-labelledby="offAG">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#191919">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-ag.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-agc-big.jpg" data-lightbox="graf-agc">
                 <img class="img-fluid" src="./img/grafs/graf-agc.jpg" loading="lazy">
                 <span class="inner" style="background-color:#b49a05;">
                   <span class="info">
@@ -402,10 +547,17 @@
                     <p>Horario</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offAGc" role="button" aria-controls="offAGc"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offAGc" aria-labelledby="offAGc">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#b49a05">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-agc-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-antshirt-big.jpg" data-lightbox="graf-ant-shirt">
                 <img class="img-fluid" src="./img/grafs/graf-antshirt.jpg" loading="lazy">
                 <span class="inner" style="background-color:#f1393a;">
                   <span class="info">
@@ -413,11 +565,20 @@
                     <p>Merchandising</p>
                   </span>
                 </span>
-              </a>
-              <a href="./img/grafs/graf-antshirt-big-2.jpg" data-lightbox="graf-ant-shirt"></a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offAnt" role="button" aria-controls="offAnt"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offAnt" aria-labelledby="offAnt">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#f1393a">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-antshirt-big.jpg" class="carousel-cell-image">
+                    </div>
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-antshirt-big-2.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-astra.jpg" data-lightbox="graf-astra">
                 <img class="img-fluid" src="./img/grafs/graf-astra.jpg" loading="lazy">
                 <span class="inner" style="background-color:#151517;">
                   <span class="info">
@@ -425,10 +586,17 @@
                     <p>Insignia</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offAstra" role="button" aria-controls="offAstra"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offAstra" aria-labelledby="offAstra">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#151517">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-astra.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-bpx-big.jpg" data-lightbox="graf-bpx">
                 <img class="img-fluid" src="./img/grafs/graf-bpx.jpg" loading="lazy">
                 <span class="inner" style="background-color:#3e2626;">
                   <span class="info">
@@ -436,10 +604,17 @@
                     <p>P&oacute;ster de Gira</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offBPX" role="button" aria-controls="offBPX"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offBPX" aria-labelledby="offBPX">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#3e2626">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-bpx-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph grid-item--width2">
-              <a href="./img/grafs/graf-cam-1-big.jpg" data-lightbox="graf-cam-1">
                 <img class="img-fluid" src="./img/grafs/graf-cam-1.jpg" loading="lazy">
                 <span class="inner" style="background-color:#0d1424;">
                   <span class="info">
@@ -447,10 +622,17 @@
                     <p>P&oacute;ster para Festival de Cine</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offCam" role="button" aria-controls="offCam"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offCam" aria-labelledby="offCam">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#0d1424">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-cam-1-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-cam-2-big.jpg" data-lightbox="graf-cam-2">
                 <img class="img-fluid" src="./img/grafs/graf-cam-2.jpg" loading="lazy">
                 <span class="inner" style="background-color:#242021;">
                   <span class="info">
@@ -458,10 +640,17 @@
                     <p>P&oacute;ster para Festival de Cine</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offCam2" role="button" aria-controls="offCam2"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offCam2" aria-labelledby="offCam2">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#242021">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-cam-2-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
-              <a href="./img/grafs/graf-cam-3-big.jpg" data-lightbox="graf-cam-3">
                 <img class="img-fluid" src="./img/grafs/graf-cam-3.jpg" loading="lazy">
                 <span class="inner" style="background-color:#02b2ca;">
                   <span class="info">
@@ -469,7 +658,15 @@
                     <p>P&oacute;ster para Festival de Cine</p>
                   </span>
                 </span>
-              </a>
+                <a class="stretched-link" data-bs-toggle="offcanvas" href="#offCam3" role="button" aria-controls="offCam3"></a>
+                <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offCam3" aria-labelledby="offCam3">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div class="carousel is-fullscreen" style="background-color:#02b2ca">
+                    <div class="carousel-cell">
+                      <img data-flickity-lazyload="./img/grafs/graf-cam-3-big.jpg" class="carousel-cell-image">
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="grid-item graph">
               <img class="img-fluid" src="./img/grafs/graf-can.jpg" loading="lazy">
