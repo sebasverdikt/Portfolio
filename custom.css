@@ -478,6 +478,16 @@ footer {
   background: white;
   padding: 12px;
 }
+footer img {
+  height:22px!important;
+  margin:0 3px;
+  margin-top:.5em;
+}
+
+.wrapper {
+  min-height: calc(100vh - 71px);
+}
+
 
 .navbar-collapse {
   flex-grow: 0;

@@ -53,16 +53,18 @@
             </script>
 
             <script>
-              $('.carousel-cell-image').on('click', function() {    
-                $('.offcanvas').offcanvas('hide');
-              });
-            </script>
-            <script>
-              var $carousel = $('.carousel').flickity();  
-        
-              $('.carousel-cell').on( 'click', function() {
-                $carousel.flickity('next');
-              });
+
+                $('.carousel-cell').click(function() {   
+                  $('.offcanvas').offcanvas('hide');
+                });
+          
+                $('.carousel-cell-image').click(function( event ) {
+                  event.stopPropagation();
+                  $('.carousel').flickity('next');
+                });
+
+                
+
             </script>
             
             
