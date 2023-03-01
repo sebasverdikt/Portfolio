@@ -389,6 +389,11 @@ span.inner {
   max-width: 100%;
 }
 
+.flickity-page-dots .dot {
+  background: #fff;
+}
+
+
 
 /* Sticky Filters */
 .navbar {
