@@ -20,7 +20,7 @@
             </a>
             <div class="offcanvas w-100 offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
               <button type="button" class="btn-close stretched-link" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              <div class="carousel is-fullscreen" style="background-color: blue;">
+              <div class="carousel " style="background-color: blue;">
                 <div class="carousel-cell">
                   <img class="carousel-cell-image" data-flickity-lazyload="./img/grafs/graf-16hzA-1-tall.jpg" />
                 </div>
@@ -46,19 +46,26 @@
                     //contain: true,
                     //cellAlign: 'center',
                     //setGallerySize: false,     
-                    fullscreen: true,
                     lazyLoad: 1,
                     prevNextButtons: false,
                     wrapAround: true,
-                });
-                
+                });                
+            </script>
+
+            <script>
+              $('.carousel-cell-image').on('click', function() {    
+                $('.offcanvas').offcanvas('hide');
+              });
             </script>
             <script>
-              var $carousel = $('.carousel').flickity();              
-              $carousel.on( 'click', function() {
-                  $carousel.flickity('next');
-                });
+              var $carousel = $('.carousel').flickity();  
+        
+              $('.carousel-cell').on( 'click', function() {
+                $carousel.flickity('next');
+              });
             </script>
+            
+            
             
 
         </body>

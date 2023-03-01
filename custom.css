@@ -379,8 +379,15 @@ span.inner {
   right: 0;
   top: 0;
   padding: 2em;
-    width: 2em;
-    height: 2em;
+  width: 2em;
+  height: 2em;
+}
+.omni-close {
+  z-index: 10;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
 }
 
 .offcanvas img {
@@ -396,7 +403,6 @@ span.inner {
 
 .carousel-cell {
   width: 100%;
-  height: 200px;
   margin-right: 10px;
   display: flex;
   align-items: center;
@@ -408,6 +414,7 @@ span.inner {
 .carousel-cell-image {
   display: block;
   max-height: 100%;
+  z-index: 10;
 }
 .carousel.is-fullscreen .carousel-cell-image {
   max-width: 100%;
@@ -578,8 +585,10 @@ button.btn-filters.active {
 svg:hover .tg {fill:#28A8E9;}
 svg:hover .wa {fill: #0CC243;}
 svg:hover .li {fill:#0A66C2;}
-svg:hover .em {fill: #E29A33;}
-svg:hover .tp {fill: #E29A33;}
+a.em:hover svg {fill: #E29A33!important;}
+a.tp:hover svg {fill: #E29A33!important;}
+a.em:hover span {color: #E29A33!important;}
+a.tp:hover span {color: #E29A33!important;}
 
 .obfuscate {
   unicode-bidi: bidi-override;
