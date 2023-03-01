@@ -1,5 +1,3 @@
-/* * */
-
 .preloader {
   position: fixed;
   top: 100px;
@@ -13,7 +11,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 body::-webkit-scrollbar {
   display: none;
@@ -118,7 +115,6 @@ h2.accordion-header button {
     border-bottom: 1px solid white;
     padding-bottom: 53px;
 }
-
 
 
 /* Custom */
@@ -283,7 +279,6 @@ button#back2top.b2t-on:hover {
 }
 .progress {
   background-color: #231f2066;
-
 }
 
 
@@ -327,8 +322,6 @@ button#back2top.b2t-on:hover {
 }
 
 
-
-
 .grid-item.graph img,
 .grid-item.brand img,
 .grid-item.front img {
@@ -356,20 +349,6 @@ span.inner {
 }
 
 
-/* LightBox */
-
-.lightbox .lb-image {
-  border-radius: 0;
-  border: none;
-}
-
-.lb-nav {
-  position: fixed;
-  width: 100vw;
-}
-
-
-
 /* Offcanvas */
 
 .btn-close {
@@ -381,18 +360,9 @@ span.inner {
   width: 2em;
   height: 2em;
 }
-.omni-close {
-  z-index: 10;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: transparent;
-}
-
 .offcanvas img {
   opacity: 1!important;
 }
-
 .offcanvas {
   z-index: 9999;
 }
@@ -418,12 +388,6 @@ span.inner {
 .carousel.is-fullscreen .carousel-cell-image {
   max-width: 100%;
 }
-
-
-
-
-
-
 
 
 /* Sticky Filters */
@@ -532,7 +496,6 @@ button.btn-filters.active {
 
 .navbar {
   background-color: white!important;
-  /*height:7.25rem*/
 }
 
 @media screen and (max-width:767.99px) {
@@ -562,8 +525,6 @@ button.btn-filters.active {
     padding: 18px 14px;
   }
 }
-
-
 
 
 .navbar-toggler {
@@ -605,7 +566,6 @@ a.tp:hover span {color: #E29A33!important;}
 }
 
 
-
 /* Packery Grid */
 
 .grid-item {width: 50%;}
@@ -635,30 +595,6 @@ a.tp:hover span {color: #E29A33!important;}
 
 @media screen and (min-width: 1850px) {
   .grid-item--height2 {width: 14.28571428571429%; }
-}
-
-/*.grid-item-half {width: 33%;}
-@media screen and (min-width: 768px) {
-  .grid-item-half {width: 25%;}
-}
-@media screen and (min-width: 1200px) {
-  .grid-item-half {width: 12.5%;}
-}
-@media screen and (min-width: 1850px) {
-  .grid-item-half {width: 7.14%;}
-}*/
-
-
-
-/* CDNs */
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
-  'opsz' 20;
-  vertical-align: middle;
 }
 
 
