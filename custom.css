@@ -56,14 +56,13 @@ h2.accordion-header button {
   font-weight: 400;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1199.9px) {
   #about-me .lead {
     font-size: 1rem;
+    font-weight: 500;
   }
-}
-@media (min-width:768px) and (max-width:1199.9px) {
-  #about-me .lead {
-    font-size: 1rem;
+  #about-me .bio .lead {
+    font-weight: 400;
   }
 }
 
@@ -168,6 +167,14 @@ button#back2top.b2t-on:hover {
   padding-right: 20px;
   margin-left: -21px;
   padding-top: 23px;
+}
+div.first-entry {
+  margin-top: -23px;
+}
+@media screen and (max-width: 1199.9px) {
+  .cv-entry {
+    padding-top: 2px;
+  }
 }
 @media screen and (max-width: 575.9px) {
   .cv-entry {
