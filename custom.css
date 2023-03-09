@@ -56,14 +56,13 @@ h2.accordion-header button {
   font-weight: 400;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1199.9px) {
   #about-me .lead {
     font-size: 1rem;
+    font-weight: 500;
   }
-}
-@media (min-width:768px) and (max-width:1199.9px) {
-  #about-me .lead {
-    font-size: 1rem;
+  #about-me .bio .lead {
+    font-weight: 400;
   }
 }
 
@@ -169,6 +168,14 @@ button#back2top.b2t-on:hover {
   margin-left: -21px;
   padding-top: 23px;
 }
+div.first-entry {
+  margin-top: -23px;
+}
+@media screen and (max-width: 1199.9px) {
+  .cv-entry {
+    padding-top: 2px;
+  }
+}
 @media screen and (max-width: 575.9px) {
   .cv-entry {
     padding-left: 10px;
@@ -191,6 +198,21 @@ button#back2top.b2t-on:hover {
   left: -5px;
   float: left;
   top: 10px;
+}
+
+.link-icon {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 640 512' style='enable-background:new 0 0 640 512;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%230D6EFD;%7D%0A%3C/style%3E%3Cpath class='st0' d='M144,304c-52.9,0-96-43.1-96-96s43.1-96,96-96h160c52.9,0,96,43.1,96,96s-43.1,96-96,96h-32 c0,19.2,8.6,36.3,22.1,48h9.9c79.4,0,144-64.6,144-144S383.4,64,304,64H144C64.6,64,0,128.6,0,208s64.6,144,144,144h23.5 c-4.4-15.4-7.5-31.3-7.5-48H144z M496,160h-23.5c4.4,15.4,7.5,31.3,7.5,48h16c52.9,0,96,43.1,96,96s-43.1,96-96,96H336 c-52.9,0-96-43.1-96-96s43.1-96,96-96h32c0-19.2-8.6-36.3-22.1-48H336c-79.4,0-144,64.6-144,144s64.6,144,144,144h160 c79.4,0,144-64.6,144-144S575.4,160,496,160z'/%3E%3C/svg%3E%0A");
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  opacity:.75;
+  margin-left: 4px;
+}
+.link-icon:hover {
+  opacity: 1;
 }
 
 .list-group-flush {

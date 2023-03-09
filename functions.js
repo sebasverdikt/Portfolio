@@ -9,18 +9,10 @@ var $grid = $(".grid").imagesLoaded(function() {
         packery: {
             gutter: 0,
             fitWidth: !0
-        },
-        getSortData: {
-            sortBy: "random",
-            name: function(a) {
-                return $(a).text()
-            }
         }
     })
 });
-$grid.imagesLoaded().progress(function() {
-    $grid.isotope("layout")
-});
+
 
 function brandContainer() {
     document.getElementById("portfolio").classList.add("container-sm", "px-0")
@@ -68,6 +60,17 @@ $(".carousel-cell-image").click(function(a) {
     a.stopPropagation();
     $(".carousel").flickity("next")
 });
+
+$(document).keydown(function (e) {
+    if (e.keyCode == 37) {
+        $('.offcanvas.show .btn-prev').click()
+        return false;
+    }
+    if (e.keyCode == 39) {
+        $('.offcanvas.show .btn-next').click()
+    } 
+});
+
 window.onload = function() {
     document.querySelector(".preloader").style.display = "none"
 };
