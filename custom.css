@@ -507,6 +507,12 @@ span.inner {
   align-items: center;
   justify-content: center;
 }
+.offmodal .modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 
 /* Flickity */
