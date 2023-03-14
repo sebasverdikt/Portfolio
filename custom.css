@@ -721,9 +721,9 @@ a.tp:hover span {color: #E29A33!important;}
 }
 
 
-/* Packery Grid */
+/* Packery Full */
 
-.grid-item {width: 50%;}
+/*.grid-item {width: 50%;}
 @media screen and (min-width: 768px) {
   .grid-item {width: 25%;}
 }
@@ -733,7 +733,6 @@ a.tp:hover span {color: #E29A33!important;}
 @media screen and (min-width: 1850px) {
   .grid-item {width: 14.28571428571429%;}
 }
-
 .grid-item--width2 {width: 100%;}
 @media screen and (min-width: 768px) {
   .grid-item--width2 {width: 50%;}
@@ -747,9 +746,79 @@ a.tp:hover span {color: #E29A33!important;}
 @media screen and (min-width: 1850px) {
   .grid-item--width2 {width: 28.57142857142858%;}
 }
-
+.grid-item--width3 {width: 150%;}
+@media screen and (min-width: 768px) {
+  .grid-item--width3 {width: 75%;}
+}
+@media screen and (min-width: 960px) {
+  .grid-item--width3 {width: 75%;}
+}
+@media screen and (min-width: 1200px) {
+  .grid-item--width3 {width: 60%;}
+}
+@media screen and (min-width: 1850px) {
+  .grid-item--width3 {width: 42.85714285714287%;}
+}
 @media screen and (min-width: 1850px) {
   .grid-item--height2 {width: 14.28571428571429%; }
+}
+*/
+
+/* Packery Light */
+
+.grid-item {width: 50%; border: 10px solid white}
+@media screen and (min-width: 576px) {
+  .grid-item {width: 50%; border: 10px solid white}
+}
+@media screen and (min-width: 768px) {
+  .grid-item {width: 50%;}
+}
+@media screen and (min-width: 992px) {
+  .grid-item {width: 25%;}
+}
+@media screen and (min-width: 1400px) {
+  .grid-item {width: 25%;}
+}
+
+.grid-item.grid-item-half {width: 50%;}
+@media screen and (min-width: 768px) {
+  .grid-item.grid-item-half {width: 25%;}
+}
+@media screen and (min-width: 992px) {
+  .grid-item.grid-item-half {width: 25%;}
+}
+@media screen and (min-width: 1400px) {
+  .grid-item.grid-item-half {width: 12.5%;}
+}
+
+.grid-item.grid-item--width3 {width: 100%;}
+@media screen and (min-width: 768px) {
+  .grid-item.grid-item--width3 {width: 75%;}
+}
+@media screen and (min-width: 992px) {
+  .grid-item.grid-item--width3 {width: 50%;}
+}
+@media screen and (min-width: 1400px) {
+  .grid-item.grid-item--width3 {width: 37.5%;}
+}
+
+.grid-item.grid-item--height2 {height: 500px; overflow: hidden;}
+.grid-item.grid-item--height2 img {max-width:104.3%;}
+@media screen and (min-width: 768px) {
+  .grid-item.grid-item--height2 {height: 360px; overflow: hidden; width: 25%;}
+  .grid-item.grid-item--height2 img {max-width:106.1%;}
+}
+@media screen and (min-width: 992px) {
+  .grid-item.grid-item--height2 {height: 480px; overflow: hidden; width: 25%;}
+  .grid-item.grid-item--height2 img {max-width:104.3%;}
+}
+@media screen and (min-width: 1200px) {
+  .grid-item.grid-item--height2 {height: 570px; overflow: hidden; width: 25%;}
+  .grid-item.grid-item--height2 img {max-width:103.5%;}
+}
+@media screen and (min-width: 1400px) {
+  .grid-item.grid-item--height2 {height: 660px; overflow: hidden;}
+  .grid-item.grid-item--height2 img {max-width: 103%;}
 }
 
 
