@@ -790,6 +790,19 @@ a.tp:hover span {color: #E29A33!important;}
 @media screen and (min-width: 1400px) {
   .grid-item.grid-item-half {width: 12.5%;}
 }
+.brands .grid-item.grid-item-half {width: 50%;}
+@media screen and (min-width: 576px) {
+  .brands .grid-item.grid-item-half {width: 33.3333333333%;}
+}
+@media screen and (min-width: 768px) {
+  .brands .grid-item.grid-item-half {width: 25%;}
+}
+@media screen and (min-width: 992px) {
+  .brands .grid-item.grid-item-half {width: 16.66666666666%;}
+}
+@media screen and (min-width: 1400px) {
+  .brands .grid-item.grid-item-half {width: 16.66666666666%;}
+}
 
 .grid-item.grid-item--width3 {width: 100%;}
 @media screen and (min-width: 768px) {

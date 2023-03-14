@@ -15,11 +15,11 @@ var $grid = $(".grid").imagesLoaded(function() {
 
 
 function brandContainer() {
-    document.getElementById("portfolio").classList.add("container-sm", "px-0")
+    document.getElementById("portfolio").classList.add("brands")
 }
 
 function otherContainer() {
-    document.getElementById("portfolio").classList.remove("container-sm", "px-0")
+    document.getElementById("portfolio").classList.remove("brands")
 }
 $(".filters").on("click", "button", function() {
     var a = $(this).attr("data-filter");
