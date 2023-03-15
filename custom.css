@@ -815,7 +815,7 @@ a.tp:hover span {color: #E29A33!important;}
   .grid-item.grid-item--width3 {width: 37.5%;}
 }
 
-.grid-item.grid-item--height2 {height: 500px; overflow: hidden;}
+.grid-item.grid-item--height2 {height: 484px; overflow: hidden;}
 .grid-item.grid-item--height2 img {max-width:104.3%;}
 @media screen and (min-width: 768px) {
   .grid-item.grid-item--height2 {height: 360px; overflow: hidden; width: 25%;}
