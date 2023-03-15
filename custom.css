@@ -817,6 +817,10 @@ a.tp:hover span {color: #E29A33!important;}
 
 .grid-item.grid-item--height2 {height: 484px; overflow: hidden;}
 .grid-item.grid-item--height2 img {max-width:104.3%;}
+@media screen and (min-width: 576px) {
+  .grid-item.grid-item--height2 {height: 540px; overflow: hidden; width: 50%;}
+  .grid-item.grid-item--height2 img {max-width:106.1%;}
+}
 @media screen and (min-width: 768px) {
   .grid-item.grid-item--height2 {height: 360px; overflow: hidden; width: 25%;}
   .grid-item.grid-item--height2 img {max-width:106.1%;}
