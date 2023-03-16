@@ -1,9 +1,9 @@
 var $grid = $(".grid").isotope({
-        itemSelector: ".grid-item",
+        itemSelector: ".grid-photo",
         sortBy: "random",
         percentPosition: true,
         layoutMode: "packery",
-        filter: ".brand, .graph",
+        filter: "*",
         packery: {
             gutter: 0
         }
@@ -13,13 +13,7 @@ $grid.imagesLoaded().progress( function() {
     $grid.isotope('layout');
   });  
 
-function brandContainer() {
-    document.getElementById("portfolio").classList.add("brands")
-}
 
-function otherContainer() {
-    document.getElementById("portfolio").classList.remove("brands")
-}
 
 $(".filters").on("click", "button", function() {
     var a = $(this).attr("data-filter");
