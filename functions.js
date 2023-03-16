@@ -1,5 +1,4 @@
-var $grid = $(".grid").imagesLoaded(function() {
-    $grid.isotope({
+var $grid = $(".grid").isotope({
         itemSelector: ".grid-item",
         sortBy: "random",
         percentPosition: true,
@@ -8,9 +7,11 @@ var $grid = $(".grid").imagesLoaded(function() {
         packery: {
             gutter: 0
         }
-    })
 });
 
+$grid.imagesLoaded().progress( function() {
+    $grid.isotope('layout');
+  });  
 
 function brandContainer() {
     document.getElementById("portfolio").classList.add("brands")
@@ -76,6 +77,7 @@ $(document).keydown(function (e) {
     } 
 });
 
-window.onload = function() {
+window.onload = function () {
     document.querySelector(".preloader").style.display = "none"
 };
+
