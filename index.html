@@ -27,9 +27,9 @@
               <a class="navbar-brand scrolled ps-4 ps-sm-0" href="/">SV</a>
             </div>
             <div class="filters d-flex justify-content-around justify-content-sm-evenly order-3 order-sm-2 w-100 w-sm-auto border-top" id="filter-btns">
-              <button type="button" class="btn btn-filters" onclick="brandContainer()" data-filter=".brand">Branding</button>
-              <button type="button" class="btn btn-filters" onclick="otherContainer()" data-filter=".graph">Graphics</button>
-              <button type="button" class="btn btn-filters" onclick="otherContainer()" data-filter=".front">Frontend</button>
+              <button type="button" class="btn btn-filters btn-brand" data-filter=".brand">Branding</button>
+              <button type="button" class="btn btn-filters btn-graph" data-filter=".graph">Graphics</button>
+              <button type="button" class="btn btn-filters btn-front" data-filter=".front">Frontend</button>
               <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
             </div>
             <div class="infocom d-flex flex-row justify-content-evenly order-2 order-sm-3">
@@ -90,7 +90,8 @@
                     </div>
                     <button type="button" class="btn-off btn-clos tooltip" data-bs-dismiss="offcanvas" aria-label="Close"><span class="tooltiptext tt-d">Close project</span></button>
                     <button type="button" class="btn-off btn-next tooltip" data-bs-toggle="offcanvas" href="#offAtomic"><span class="tooltiptext">Next project</span></button>                   
-                    <button type="button" class="btn-off btn-prev tooltip" data-bs-toggle="offcanvas" href="#offIres"><span class="tooltiptext">Previous project</span></button>
+                    <button type="button" class="btn-off btn-prev tooltip brand-off" data-bs-toggle="offcanvas" href="#offIres"><span class="tooltiptext">Previous project</span></button>
+                    <button type="button" class="btn-off btn-prev tooltip brand-on" data-bs-toggle="offcanvas" href="#offIMR"><span class="tooltiptext">Previous project</span></button>
                     <div class="carousel is-fullscreen" style="background-color: #282c38;">
                       <div class="carousel-cell">
                         <img class="carousel-cell-image d-none d-lg-block" data-flickity-lazyload="https://ik.imagekit.io/verdicdn/logos/logo-1l-big.jpg">
@@ -605,7 +606,8 @@
                   <a class="stretched-link" data-bs-toggle="offcanvas" href="#offIMR" role="button" aria-controls="offIMR"></a>
                   <div class="offcanvas w-100 offcanvas-start dark-btns" data-bs-backdrop="false" tabindex="-1" id="offIMR" aria-labelledby="offIMR">
                     <button type="button" class="btn-off btn-clos tooltip" data-bs-dismiss="offcanvas" aria-label="Close"><span class="tooltiptext tt-d">Close project</span></button>
-                    <button type="button" class="btn-off btn-next tooltip" data-bs-toggle="offcanvas" href="#off16"><span class="tooltiptext">Next project</span></button>                   
+                    <button type="button" class="btn-off btn-next tooltip brand-on" data-bs-toggle="offcanvas" href="#offLawyers"><span class="tooltiptext">Next project</span></button>       
+                    <button type="button" class="btn-off btn-next tooltip brand-off" data-bs-toggle="offcanvas" href="#off16"><span class="tooltiptext">Next project</span></button>              
                     <button type="button" class="btn-off btn-prev tooltip" data-bs-toggle="offcanvas" href="#offTP"><span class="tooltiptext">Previous project</span></button>
                     <div class="carousel is-fullscreen" style="background-color:#fff">
                       <div class="carousel-cell">
@@ -1759,7 +1761,7 @@
                 
                 <!-- SITES -->
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-ck.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-ck.jpg" loading="lazy">
                   <span class="inner" style="background-color:#eecf02;">
                     <span class="info">
                       <h2>CityKey</h2>
@@ -1791,7 +1793,7 @@
                   </div>
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-cs.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-cs.jpg" loading="lazy">
                   <span class="inner" style="background-color:#dd5136;">
                     <span class="info">
                       <h2>Censalud</h2>
@@ -1814,7 +1816,7 @@
                   </div>
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-cc.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-cc.jpg" loading="lazy">
                   <span class="inner" style="background-color:#5ca8b0;">
                     <span class="info">
                       <h2>Cultura Club</h2>
@@ -1840,7 +1842,7 @@
                   </div>
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-er.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-er.jpg" loading="lazy">
                   <span class="inner" style="background-color:#29b6ca;">
                     <span class="info">
                       <h2>Ermotel</h2>
@@ -1860,7 +1862,7 @@
                   </div>
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-inx.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-inx.jpg" loading="lazy">
                   <span class="inner" style="background-color:#28aa62; background-image: linear-gradient(45deg, #28aa62, #23adcf);">
                     <span class="info">
                       <h2>Inxenio</h2>
@@ -1886,7 +1888,7 @@
                   </div>
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-lp.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-lp.jpg" loading="lazy">
                   <span class="inner" style="background-color:#221e1f;">
                     <span class="info">
                       <h2>La Principal</h2>
@@ -1915,7 +1917,7 @@
                   </div>
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-nb.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-nb.jpg" loading="lazy">
                   <span class="inner" style="background-color:#57b4df;">
                     <span class="info">
                       <h2>Nubool</h2>
@@ -1935,7 +1937,7 @@
                   </div>             
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-qe.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-qe.jpg" loading="lazy">
                   <span class="inner" style="background-color:#ed3302;">
                     <span class="info">
                       <h2>QuanEnduros</h2>
@@ -1958,7 +1960,7 @@
                   </div>    
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-sc.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-sc.jpg" loading="lazy">
                   <span class="inner" style="background-color:#131313;">
                     <span class="info">
                       <h2><small>Assoc.</small><br>Santa Catalina</h2>
@@ -1978,7 +1980,7 @@
                   </div>   
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-sp.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-sp.jpg" loading="lazy">
                   <span class="inner" style="background-color:#4399ca;">
                     <span class="info">
                       <h2>SkyPort</h2>
@@ -2001,7 +2003,7 @@
                   </div>   
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-tp.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-tp.jpg" loading="lazy">
                   <span class="inner" style="background-color:#00607e;">
                     <span class="info">
                       <h2>ToothProof</h2>
@@ -2021,7 +2023,7 @@
                   </div> 
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-va.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-va.jpg" loading="lazy">
                   <span class="inner" style="background-color:#be9965;">
                     <span class="info">
                       <h2>Visit Al·landalus</h2>
@@ -2047,7 +2049,7 @@
                   </div> 
                 </div>
                 <div class="grid-item front grid-item--width1">
-                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-368,h-368/site-wa.jpg" loading="lazy">
+                  <img class="img-fluid" src="https://ik.imagekit.io/verdicdn/sites/tr:w-274,h-274/site-wa.jpg" loading="lazy">
                   <span class="inner" style="background-color:#be1767;">
                     <span class="info">
                       <h2>WeAre</h2>

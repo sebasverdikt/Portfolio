@@ -13,14 +13,6 @@ $grid.imagesLoaded().progress( function() {
     $grid.isotope('layout');
   });  
 
-function brandContainer() {
-    document.getElementById("portfolio").classList.add("brands")
-}
-
-function otherContainer() {
-    document.getElementById("portfolio").classList.remove("brands")
-}
-
 $(".filters").on("click", "button", function() {
     var a = $(this).attr("data-filter");
     $grid.isotope({
@@ -30,6 +22,16 @@ $(".filters").on("click", "button", function() {
 
 $('.btn-filters').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
+});
+
+$(".btn-brand").click(function() { 
+    $("#portfolio").removeClass().addClass("brands");
+});
+$(".btn-graph").click(function() { 
+    $("#portfolio").removeClass().addClass("graphs");
+});
+$(".btn-front").click(function() { 
+    $("#portfolio").removeClass().addClass("sites");
 });
 
 window.onscroll = function() {
@@ -50,10 +52,10 @@ function topFunction() {
 }
 
 $(".carousel").flickity({
-    fullscreen: !0,
-    lazyLoad: 1,
-    prevNextButtons: !1,
-    wrapAround: !0
+    fullscreen: true,
+    lazyLoad: true,
+    prevNextButtons: false,
+    wrapAround: true
 });
 
 $(".carousel-cell").click(function() {
