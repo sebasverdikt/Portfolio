@@ -328,6 +328,12 @@ div.first-entry {
 .grid-item.front:hover img {
   opacity: 0
 }
+.grid-item .inner .info {
+  display: none;
+}
+.grid-item:hover .inner .info {
+  display: block;
+}
 span.inner {
   position: absolute;
   padding: 25px;
@@ -752,7 +758,7 @@ a.tp:hover span {color: #E29A33!important;}
 
 /* Packery Light */
 
-.grid-item {border: 5px solid white}
+.grid-item {border: 5px solid white; aspect-ratio: 1 / 1;}
 @media screen and (min-width: 576px) {
   .grid-item {border: 10px solid white}
 }

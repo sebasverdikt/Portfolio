@@ -75,7 +75,7 @@ $(document).keydown(function (e) {
     } 
 });
 
-window.onload = function () {
-    document.querySelector(".preloader").style.display = "none"
-};
+$( document ).ready(function() {
+    $(".preloader").css("display", "none");
+});
 
