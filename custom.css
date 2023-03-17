@@ -979,6 +979,8 @@ a.tp:hover span {color: #E29A33!important;}
 .preloader {
   position: fixed;
   top: 100px;
+  bottom:0;
+  right: 0;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -988,4 +990,9 @@ a.tp:hover span {color: #E29A33!important;}
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .preloader {
+    top: 58px;
+  }
 }
