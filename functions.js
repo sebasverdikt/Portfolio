@@ -3,27 +3,24 @@ var $grid = $(".grid").isotope({
         sortBy: "random",
         percentPosition: true,
         layoutMode: "packery",
-        filter: ".brand, .graph",
+        filter: ".brand, .graph, .front",
         packery: {
             gutter: 0
         }
 });
-
 $grid.imagesLoaded().progress( function() {
     $grid.isotope('layout');
-  });  
-
+});  
 $(".filters").on("click", "button", function() {
-    var a = $(this).attr("data-filter");
+    var filterProjects = $(this).attr("data-filter");
     $grid.isotope({
-        filter: a
+        filter: filterProjects
     })
 });
 
 $('.btn-filters').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
 });
-
 $(".btn-brand").click(function() { 
     $("#portfolio").removeClass().addClass("brands");
 });
@@ -32,7 +29,9 @@ $(".btn-graph").click(function() {
 });
 $(".btn-front").click(function() { 
     $("#portfolio").removeClass().addClass("sites");
+    $(".grid-item.front").removeClass("weightless");
 });
+
 
 window.onscroll = function() {
     stickyFilters()
@@ -54,16 +53,17 @@ function topFunction() {
 $(".carousel").flickity({
     fullscreen: true,
     lazyLoad: true,
+    imagesLoaded: true,
     prevNextButtons: false,
-    wrapAround: true
+    wrapAround: true,
 });
 
 $(".carousel-cell").click(function() {
     $(".offcanvas").offcanvas("hide")
 });
 
-$(".carousel-cell-image").click(function(a) {
-    a.stopPropagation();
+$(".carousel-cell-image").click(function(stopProp) {
+    stopProp.stopPropagation();
     $(".carousel").flickity("next")
 });
 
@@ -76,6 +76,8 @@ $(document).keydown(function (e) {
         $('.offcanvas.show .btn-next').click()
     } 
 });
+
+
 
 $( document ).ready(function() {
     $(".preloader").css("display", "none");
