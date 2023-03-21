@@ -3,7 +3,7 @@ var $grid = $(".grid").isotope({
         sortBy: "random",
         percentPosition: true,
         layoutMode: "packery",
-        filter: ".brand, .graph, .front",
+        //filter: ".brand, .graph, .front",
         packery: {
             gutter: 0
         }
@@ -11,25 +11,37 @@ var $grid = $(".grid").isotope({
 $grid.imagesLoaded().progress( function() {
     $grid.isotope('layout');
 });  
-$(".filters").on("click", "button", function() {
-    var filterProjects = $(this).attr("data-filter");
-    $grid.isotope({
-        filter: filterProjects
-    })
-});
+//$(".filters").on("click", "button", function() {
+//    var filterProjects = $(this).attr("data-filter");
+//    $grid.isotope({
+//        filter: filterProjects
+//    })
+//});
 
 $('.btn-filters').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
 });
 $(".btn-brand").click(function() { 
     $("#portfolio").removeClass().addClass("brands");
+    $(".grid-item.brand").removeClass("weightless");
+    $(".grid-item.graph").addClass("weightless");
+    $(".grid-item.front").addClass("weightless");
 });
 $(".btn-graph").click(function() { 
     $("#portfolio").removeClass().addClass("graphs");
+    $(".grid-item.brand").addClass("weightless");
+    $(".grid-item.graph").removeClass("weightless");
+    $(".grid-item.front").addClass("weightless");
+
 });
 $(".btn-front").click(function() { 
     $("#portfolio").removeClass().addClass("sites");
+    $(".grid-item.brand").addClass("weightless");
+    $(".grid-item.graph").addClass("weightless");
     $(".grid-item.front").removeClass("weightless");
+});
+$(".filters").on("click", "button", function() {
+    $grid.isotope('layout');
 });
 
 

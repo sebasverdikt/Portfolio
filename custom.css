@@ -793,6 +793,15 @@ a.tp:hover span {color: #E29A33!important;}
 
 /* Packery Light */
 
+.weightless.grid-item {
+  max-width: 0;
+  max-height: 0;
+  border: 0;
+}
+.weightless.grid-item span {
+padding:0
+}
+
 .grid-item {border: 5px solid white; aspect-ratio: 1 / 1;}
 @media screen and (min-width: 576px) {
   .grid-item {border: 10px solid white}
@@ -906,16 +915,10 @@ a.tp:hover span {color: #E29A33!important;}
   .sites .grid-item {width: 20%;}
 }
 
-.weightless.grid-item.front {
-    max-width: 0;
-    max-height: 0;
-    border: 0;
+.circled {
+  border-radius: 100%;
+  overflow: hidden;
 }
-.weightless.grid-item.front span {
-  padding:0
-}
-
-
 
 /* Photos */
 
