@@ -11,12 +11,7 @@ var $grid = $(".grid").isotope({
 $grid.imagesLoaded().progress( function() {
     $grid.isotope('layout');
 });  
-//$(".filters").on("click", "button", function() {
-//    var filterProjects = $(this).attr("data-filter");
-//    $grid.isotope({
-//        filter: filterProjects
-//    })
-//});
+
 
 $('.btn-filters').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
@@ -55,29 +50,52 @@ var navFilters = document.getElementById("nav-filters"),
 
 function stickyFilters() {
     600 < window.pageYOffset ? (navFilters.classList.add("sticky"), back2top.classList.add("b2t-on"), document.body.style.paddingTop = "116px") : (navFilters.classList.remove("sticky"), back2top.classList.remove("b2t-on"), document.body.style.paddingTop = "0px")
-}
+};
 
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0
-}
+};
 
-$(".carousel").flickity({
-    fullscreen: true,
-    lazyLoad: true,
-    imagesLoaded: true,
-    prevNextButtons: false,
-    wrapAround: true,
-});
 
-$(".carousel-cell").click(function() {
-    $(".offcanvas").offcanvas("hide")
-});
-
-$(".carousel-cell-image").click(function(stopProp) {
+$('.flick').on( 'click', function() {
+    $(this).siblings('.offcanvas').children('.carousel').flickity({
+        fullscreen: true,
+        lazyLoad: true,
+        imagesLoaded: true,
+        prevNextButtons: false,
+        wrapAround: true
+    })
+}); 
+$('.btn-next').on( 'click', function() {
+    $(this).parents('.grid-item').next().find('.carousel').flickity({
+        fullscreen: true,
+        lazyLoad: true,
+        imagesLoaded: true,
+        prevNextButtons: false,
+        wrapAround: true
+    })
+}); 
+$('.btn-prev').on( 'click', function() {
+    $(this).parents('.grid-item').prev().find('.carousel').flickity({
+        fullscreen: true,
+        lazyLoad: true,
+        imagesLoaded: true,
+        prevNextButtons: false,
+        wrapAround: true
+    })
+}); 
+$(".carousel-cell-image").on( 'click', function(stopProp) {
     stopProp.stopPropagation();
-    $(".carousel").flickity("next")
+    $(this).parents(".carousel").flickity("next")
 });
+$('.carousel-cell').on( 'click', function() {
+    $(".offcanvas.show").offcanvas("hide");
+});
+
+
+
+
 
 $(document).keydown(function (e) {
     if (e.keyCode == 37) {
