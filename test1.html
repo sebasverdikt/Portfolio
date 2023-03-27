@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="es"><!--data-bs-theme="dark"-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta data-rh="true" name="theme-color" content="#ffffff"/>
+    <meta name="description" content="Sebas Verdikt's online portfolio and curricullum">
+    <title>Sebas Verdikt | Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.min.css" />
+    <link rel="stylesheet" href="custom.css">
+  </head>
+
+  <body>
+ 
+      <header>
+      <!-- Main Menu -->
+        <nav class="position-absolute" style="    z-index: 9999999999999999;">
+          <button type="button" class="btn-off btn-clos tooltip" data-bs-dismiss="offcanvas" aria-label="Close"><span class="tooltiptext tt-d">Close project</span></button>
+          <button type="button" class="btn-off btn-next tooltip" data-bs-toggle="offcanvas" ><span class="tooltiptext">Next project</span></button>                   
+          <button type="button" class="btn-off btn-prev tooltip" data-bs-toggle="offcanvas" ><span class="tooltiptext">Previous project</span></button>
+        </nav>
+      </header>
+
+
+        <!-- Portfolio Content -->
+        <section id="portfolio">
+          <div class="container px-0">
+            <div class="row gx-0 mx-1 mx-sm-0">
+                <div class="col-3">
+                  <a class="-link " data-bs-toggle="offcanvas" href="#1" role="button" aria-controls="1">                  <span class="d-block h-25 w-25" style="height:250px!important;background-color:red;"></span>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a class="-link " data-bs-toggle="offcanvas" href="#2" role="button" aria-controls="2">                  <span class="d-block h-25 w-25" style="height:250px!important;background-color:green;"></span>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a class="-link " data-bs-toggle="offcanvas" href="#3" role="button" aria-controls="3">                  <span class="d-block h-25 w-25" style="height:250px!important;background-color:blue;"></span>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a class="-link " data-bs-toggle="offcanvas" href="#4" role="button" aria-controls="4">                  <span class="d-block h-25 w-25" style="height:250px!important;background-color:black;"></span>
+                  </a>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+            <div class="offcanvas w-100 h-100 offcanvas-bottom"  tabindex="-1" id="1" aria-labelledby="1" style="background-color: red;"></div>
+            <div class="offcanvas w-100 h-100 offcanvas-bottom"  tabindex="-1" id="2" aria-labelledby="2" style="background-color: green;"></div>
+            <div class="offcanvas w-100 h-100 offcanvas-bottom"  tabindex="-1" id="3" aria-labelledby="3" style="background-color: blue;"></div>
+            <div class="offcanvas w-100 h-100 offcanvas-bottom"  tabindex="-1" id="4" aria-labelledby="4" style="background-color: black;"></div>
+        </section>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+
+const offcanvasList = document.querySelectorAll('.offcanvas');
+const prevButton = document.querySelector('.btn-prev');
+const nextButton = document.querySelector('.btn-next');
+const closeButton = document.querySelector('.btn-clos');
+let activeOffcanvasIndex = 0;
+
+function showOffcanvas(offcanvasIndex) {
+  offcanvasList.forEach(offcanvas => offcanvas.classList.remove('show'));
+  offcanvasList[offcanvasIndex].classList.add('show');
+  activeOffcanvasIndex = offcanvasIndex;
+}
+
+prevButton.addEventListener('click', () => {
+  activeOffcanvasIndex = (activeOffcanvasIndex - 1 + offcanvasList.length) % offcanvasList.length;
+  showOffcanvas(activeOffcanvasIndex);
+});
+
+nextButton.addEventListener('click', () => {
+  activeOffcanvasIndex = (activeOffcanvasIndex + 1) % offcanvasList.length;
+  showOffcanvas(activeOffcanvasIndex);
+});
+
+closeButton.addEventListener('click', () => {
+  offcanvasList.forEach(offcanvas => offcanvas.classList.remove('show'));
+});
+
+
+    </script>
+
+  </body>
+
+</html>

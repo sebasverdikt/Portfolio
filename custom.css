@@ -355,10 +355,10 @@ span.inner {
   align-items: center;
   justify-content: center;
 }
-.sites .grid-item span.inner {
+.fronts .grid-item span.inner {
   z-index: 0;
 }
-.sites .grid-item img {
+.fronts .grid-item img {
   position: relative;
   z-index: 1;
 }
@@ -425,7 +425,6 @@ span.inner {
 
 
 
-
 /* Offcanvas */
 
 .offcanvas img {
@@ -433,6 +432,26 @@ span.inner {
 }
 .offcanvas {
   z-index: 9999;
+  border: 0;
+}
+.offcanvas-end.hiding {
+  transform: translateX(-100%);
+}
+
+.off-btns {
+  position: absolute;
+  z-index: 10000;
+}
+.off-btns .btn-off {
+  visibility: hidden;
+  transform: translateX(100%);
+  opacity:0;
+}
+.off-btns.on-btns .btn-off {
+  transform: none;
+  opacity:.6;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  visibility: visible;
 }
 .btn-off {
   z-index: 9;
@@ -446,7 +465,7 @@ span.inner {
   opacity: .6;
 }
 .btn-off:hover {
-  opacity: .9;
+  opacity: .9!important;
 }
 .dark-btns .btn-off,
 .dark-btns .dot {
@@ -656,11 +675,11 @@ button.btn-filters.active {
   background-color: red;
   border-radius: 33px;  
 }
-@media screen and (max-width:992px) {
+/*@media screen and (max-width:992px) {
 #about-me .nav-link img {
   
   }
-}
+}*/
 
 .navbar.sticky button.btn-filters {
   padding: 17px 22px;
@@ -897,22 +916,22 @@ padding:0
 .brands .brand-off {display: none;}
 
 
-/* Sites section ON */
+/* Front section ON */
 
-#portfolio.sites {
+#portfolio.fronts {
   background-color: #dee2e6;
   box-shadow: 0px 0px 0px 10px #dee2e6;
 }
 
-.sites .grid-item {width: 50%; border-color: transparent;}
+.fronts .grid-item {width: 50%; border-color: transparent;}
 @media screen and (min-width: 768px) {
-  .sites .grid-item {width: 33.33%;}
+  .fronts .grid-item {width: 33.33%;}
 }
 @media screen and (min-width: 992px) {
-  .sites .grid-item {width: 25%;}
+  .sitfrontses .grid-item {width: 25%;}
 }
 @media screen and (min-width: 1200px) {
-  .sites .grid-item {width: 20%;}
+  .fronts .grid-item {width: 20%;}
 }
 
 .circled {
