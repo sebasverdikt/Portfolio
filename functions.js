@@ -27,7 +27,6 @@ $(".btn-graph").click(function() {
     $(".grid-item.brand").addClass("weightless");
     $(".grid-item.graph").removeClass("weightless");
     $(".grid-item.front").addClass("weightless");
-
 });
 $(".btn-front").click(function() { 
     $("#portfolio").removeClass().addClass("sites");
@@ -40,22 +39,30 @@ $(".filters").on("click", "button", function() {
 });
 
 
+/*--------------------------*/
+
 window.onscroll = function() {
     stickyFilters()
 };
 
-var navFilters = document.getElementById("nav-filters"),
-    back2top = document.getElementById("back2top"),
-    sticky = navFilters.offsetTop;
+const navFilters = document.getElementById("nav-filters");
+const back2top = document.getElementById("back2top");
+const sticky = navFilters.offsetTop;
 
 function stickyFilters() {
-    600 < window.pageYOffset ? (navFilters.classList.add("sticky"), back2top.classList.add("b2t-on"), document.body.style.paddingTop = "116px") : (navFilters.classList.remove("sticky"), back2top.classList.remove("b2t-on"), document.body.style.paddingTop = "0px")
+    600 < window.pageYOffset ? 
+    (navFilters.classList.add("sticky"), back2top.classList.add("b2t-on"), document.body.style.paddingTop = "116px") : 
+    (navFilters.classList.remove("sticky"), back2top.classList.remove("b2t-on"), document.body.style.paddingTop = "0px")
 };
 
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0
-};
+$(window).on('beforeunload', function(){
+    $(window).scrollTop(0);
+  });
+$('#back2top').on('click', function(){
+    $(window).scrollTop(0);
+});
+
+/*--------------------------*/
 
 
 $('.flick').on( 'click', function() {
@@ -94,6 +101,7 @@ $('.carousel-cell').on( 'click', function() {
 });
 
 
+/*--------------------------*/
 
 
 
@@ -107,6 +115,7 @@ $(document).keydown(function (e) {
     } 
 });
 
+/*--------------------------*/
 
 
 $( document ).ready(function() {
