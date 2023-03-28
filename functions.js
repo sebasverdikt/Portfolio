@@ -1,29 +1,55 @@
-const $grid = $(".grid").isotope({
-        itemSelector: ".grid-item",
-        sortBy: "random",
-        percentPosition: true,
-        layoutMode: "packery",
-        //filter: ".brand, .graph, .front",
-        packery: {
-            gutter: 0
-        }
+const grid = document.querySelector('.grid');
+const gridItems = document.querySelectorAll('.grid-item');
+
+const iso = new Isotope(grid, {
+  itemSelector: '.grid-item',
+  sortBy: 'random',
+  percentPosition: true,
+  layoutMode: 'packery',
+  packery: {
+    gutter: 0
+  }
 });
-$grid.imagesLoaded().progress(() => {
-    $grid.isotope('layout');
+
+imagesLoaded(grid).on('progress', () => {
+  iso.layout();
+});
+
+const filterButtons = document.querySelectorAll('.filters button');
+
+for (let i = 0; i < filterButtons.length; i++) {
+  filterButtons[i].addEventListener('click', function() {
+    const filterValue = this.getAttribute('data-filter');
+    iso.arrange({
+      filter: filterValue
+    });
+    document.querySelector('#portfolio').className = filterValue.substring(1) + 's';
+    gridItems.forEach((item) => {
+      item.classList.add('weightless');
+    });
+    const filteredItems = document.querySelectorAll(`.grid-item${filterValue}`);
+    filteredItems.forEach((item) => {
+      item.classList.remove('weightless');
+    });
+    iso.arrange();
+    this.classList.add('active');
+    const siblings = getSiblings(this);
+    siblings.forEach((sibling) => {
+      sibling.classList.remove('active');
+    });
   });
+}
 
-$('.btn-filters').click(function() {
-    $(this).addClass('active').siblings().removeClass('active');
-});
-
-$(".filters").on("click", "button", function() {
-    const filterValue = $(this).data('filter');
-    $grid.isotope({ filter: filterValue });
-    $("#portfolio").removeClass().addClass(filterValue.substring(1) + 's');
-    $(".grid-item").addClass('weightless');
-    $(`.grid-item${filterValue}`).removeClass('weightless');
-    $grid.isotope('arrange');
-});
+function getSiblings(elem) {
+  const siblings = [];
+  let sibling = elem.parentNode.firstChild;
+  for (; sibling; sibling = sibling.nextSibling) {
+    if (sibling.nodeType === 1 && sibling !== elem) {
+      siblings.push(sibling);
+    }
+  }
+  return siblings;
+}
 
 
 /*--------------------------*/
@@ -37,103 +63,135 @@ const sticky = navFilters.offsetTop;
 
 function stickyFilters() {
     if (window.pageYOffset > 600) {
-      navFilters.classList.add('sticky');
-      back2top.classList.add('b2t-on');
-      document.body.style.paddingTop = '116px';
+        navFilters.classList.add('sticky');
+        back2top.classList.add('b2t-on');
+        document.body.style.paddingTop = '116px';
     } else {
-      navFilters.classList.remove('sticky');
-      back2top.classList.remove('b2t-on');
-      document.body.style.paddingTop = '0px';
+        navFilters.classList.remove('sticky');
+        back2top.classList.remove('b2t-on');
+        document.body.style.paddingTop = '0px';
     }
-  }
+}
 
-$('#back2top').on('click', function(){
-    $(window).scrollTop(0);
+back2top.addEventListener('click', function() {
+    window.scrollTo(0, 0);
 });
 
 
 /*--------------------------*/
 
-$('.offcanvas').first().addClass('first-off');
-$('.offcanvas').last().addClass('last-off');
 
-$('.btn-next').on('click', () => { 
-    if ($('.offcanvas.show').hasClass('last-off')) {
-        $('.offcanvas.show').offcanvas('hide');
-        $('.first-off').offcanvas('show');
-    }
-    else {
-        $('.offcanvas.show').offcanvas('hide').nextAll('.offcanvas').first().offcanvas('show');
-    }
+const nextBtn = document.querySelector('.btn-next');
+const prevBtn = document.querySelector('.btn-prev');
+const closBtn = document.querySelector('.btn-clos');
+const infoBtn = document.querySelector('.btn-info');
+
+let currentOffcanvasIndex = 0; // initialize the current index to 0
+
+function hasChildModal(currentOffcanvasIndex) {
+    const currentOffcanvas = offcanvasList[currentOffcanvasIndex];
+    const modalElement = currentOffcanvas._element.querySelector('.modal');
+    return modalElement && modalElement.parentElement == currentOffcanvas._element;
+}
+
+nextBtn.addEventListener('click', () => {
+    offcanvasList[currentOffcanvasIndex].hide();
+    const nextOffcanvasIndex = (currentOffcanvasIndex + 1) % offcanvasList.length;
+    offcanvasList[nextOffcanvasIndex].show();
+    currentOffcanvasIndex = nextOffcanvasIndex;
+    infoBtn.style.display = hasChildModal(currentOffcanvasIndex) ? 'block' : 'none';
 });
 
-$('.btn-prev').on('click', () => {
-    if ($('.offcanvas.show').hasClass('first-off')) {
-        $('.offcanvas.show').offcanvas('hide');
-        $('.last-off').offcanvas('show')
-    }
-    else {
-        $('.offcanvas.show').offcanvas('hide').prevAll('.offcanvas').first().offcanvas('show');
-    }
+prevBtn.addEventListener('click', () => {
+    offcanvasList[currentOffcanvasIndex].hide();
+    const prevOffcanvasIndex = (currentOffcanvasIndex - 1 + offcanvasList.length) % offcanvasList.length;
+    offcanvasList[prevOffcanvasIndex].show();
+    currentOffcanvasIndex = prevOffcanvasIndex;
+    infoBtn.style.display = hasChildModal(currentOffcanvasIndex) ? 'block' : 'none';
 });
 
-$('.btn-clos').on('click', () => {
-    $('.offcanvas.show').offcanvas('hide');
-    $('.off-btns').removeClass('on-btns');
+closBtn.addEventListener('click', () => {
+    offcanvasList.forEach(offcanvas => offcanvas.hide());
+    document.querySelector('.off-btns').classList.remove('on-btns');
 });
 
-$('.offcanvas').on('show.bs.offcanvas', function () {
-    var $offcanvas = $(this);
-    var $carousel = $(this).find('.carousel').flickity({
+infoBtn.addEventListener('click', () => {
+    const currentOffcanvas = offcanvasList[currentOffcanvasIndex];
+    const modalElement = currentOffcanvas._element.querySelector('.modal');
+    const modal = new bootstrap.Modal(modalElement, {backdrop:false});
+    modal.show();
+    modalElement.addEventListener('click', (event) => {
+        modal.hide();
+    });
+});
+
+
+/*--------------------------*/
+
+
+const offcanvasElementList = document.querySelectorAll('.offcanvas');
+const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}));
+
+offcanvasList.forEach(function(offcanvas, index) {
+  offcanvas._element.addEventListener('show.bs.offcanvas', function(event) {
+    var offcanvasElement = event.currentTarget;
+    var carouselElement = offcanvasElement.querySelector('.carousel');
+    var flkty = new Flickity(carouselElement, {
       fullscreen: true,
       lazyLoad: 1,
       imagesLoaded: true,
       prevNextButtons: false,
       wrapAround: true
     });
-    if ($offcanvas.hasClass('btns-dark')) {
-        $('.off-btns').addClass('dark-btns');
-      } else {
-        $('.off-btns').removeClass('dark-btns');
+    document.querySelector('.off-btns').classList.add('on-btns');
+    if (offcanvasElement.classList.contains('btns-dark')) {
+        document.querySelector('.off-btns').classList.add('dark-btns');
       }
+    else {
+        document.querySelector('.off-btns').classList.remove('dark-btns');
+      }
+    var carouselCellImages = carouselElement.querySelectorAll('.carousel-cell-image');
+    carouselCellImages.forEach(function(carouselCellImage) {
+      carouselCellImage.addEventListener('click', function(event) {
+        event.stopPropagation(); // prevent the event from bubbling up to the .carousel-cell element
+        var flkty = new Flickity(carouselElement);
+        flkty.next();
+      });
+    });
+    currentOffcanvasIndex = index; // set the current index based on the shown offcanvas
+    infoBtn.style.display = hasChildModal(index) ? 'block' : 'none';
+  });
 });
 
-$('.flick').on('click', function() {
-    $('.off-btns').addClass('on-btns')
-})
+document.querySelectorAll('.carousel-cell').forEach(function(cell) {
+    cell.addEventListener('click', function() {
+      offcanvasList.forEach(function(offcanvas) {
+        offcanvas.hide();
+      });
+      document.querySelector('.off-btns').classList.remove('on-btns');
+    });
+  });
 
-$('.btn-info').on('click', function(){
-    $('.offcanvas.show').children('.modal').modal('show');
-})
-
-$(".carousel-cell-image").on( 'click', function(stopProp) {
-    stopProp.stopPropagation();
-    $(this).parents(".carousel").flickity("next")
-});
-$('.carousel-cell').on( 'click', function() {
-    $('.offcanvas.show').offcanvas('hide');
-    $('.off-btns').removeClass('on-btns');
-});
- 
 
 /*--------------------------*/
 
 
-$(document).keydown(function (e) {
-    if (e.keyCode == 37) {
-        $('.btn-prev').click()
-        return false;
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        document.querySelector('.btn-prev').click();
+        event.preventDefault();
     }
-    if (e.keyCode == 39) {
-        $('.btn-next').click()
-    } 
+    if (event.key === 'ArrowRight') {
+        document.querySelector('.btn-next').click();
+        event.preventDefault();
+    }
 });
 
 
 /*--------------------------*/
 
 
-$( document ).ready(function() {
-    $(".preloader").css("display", "none");
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.preloader').style.display = 'none';
 });
 

@@ -23,7 +23,71 @@ Flickity.setJQuery( $ );
 
 jQueryBridget( 'flickity', Flickity, $ );
 
+/* --------------------------------------- */
 
+
+$('.offcustom').first().addClass('first-off');
+$('.offcustom').last().addClass('last-off');
+
+$('.btn-next').on('click', () => { 
+    if ($('.offcustom.show').hasClass('last-off')) {
+        $('.offcustom.show').offcanvas('hide');
+        $('.first-off').offcanvas('show');
+    }
+    else {
+        $('.offcustom.show').offcanvas('hide').nextAll('.offcustom').first().offcanvas('show');
+    }
+});
+
+$('.btn-prev').on('click', () => {
+    if ($('.offcustom.show').hasClass('first-off')) {
+        $('.offcustom.show').offcanvas('hide');
+        $('.last-off').offcanvas('show')
+    }
+    else {
+        $('.offcustom.show').offcanvas('hide').prevAll('.offcustom').first().offcanvas('show');
+    }
+});
+
+$('.btn-clos').on('click', () => {
+    $('.offcustom.show').offcanvas('hide');
+    $('.off-btns').removeClass('on-btns');
+});
+
+$('.offcustom').on('show.bs.offcanvas', function () {
+    var $offcanvas = $(this);
+    var $carousel = $(this).find('.carousel').flickity({
+      fullscreen: true,
+      lazyLoad: 1,
+      imagesLoaded: true,
+      prevNextButtons: false,
+      wrapAround: true
+    });
+    if ($offcanvas.hasClass('btns-dark')) {
+        $('.off-btns').addClass('dark-btns');
+      } else {
+        $('.off-btns').removeClass('dark-btns');
+      }
+});
+
+$('.flick').on('click', function() {
+    $('.off-btns').addClass('on-btns')
+})
+
+$('.btn-info').on('click', function(){
+    $('.offcustom.show').children('.modal').modal('show');
+})
+
+$(".carousel-cell-image").on( 'click', function(stopProp) {
+    stopProp.stopPropagation();
+    $(this).parents(".carousel").flickity("next")
+});
+$('.carousel-cell').on( 'click', function() {
+    $('.offcustom.show').offcanvas('hide');
+    $('.off-btns').removeClass('on-btns');
+});
+
+/* --------------------------------------- */
 
 /* var clickImgNext = document.querySelector('.carousel-cell-image');
     clickImgNext.addEventListener( 'click', function() {
