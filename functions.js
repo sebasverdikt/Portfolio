@@ -102,6 +102,10 @@ $('.flick').on('click', function() {
     $('.off-btns').addClass('on-btns')
 })
 
+$('.btn-info').on('click', function(){
+    $('.offcanvas.show').children('.modal').modal('show');
+})
+
 $(".carousel-cell-image").on( 'click', function(stopProp) {
     stopProp.stopPropagation();
     $(this).parents(".carousel").flickity("next")
@@ -117,11 +121,11 @@ $('.carousel-cell').on( 'click', function() {
 
 $(document).keydown(function (e) {
     if (e.keyCode == 37) {
-        $('.offcanvas.show .btn-prev').click()
+        $('.btn-prev').click()
         return false;
     }
     if (e.keyCode == 39) {
-        $('.offcanvas.show .btn-next').click()
+        $('.btn-next').click()
     } 
 });
 
