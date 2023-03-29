@@ -80,6 +80,7 @@ back2top.addEventListener('click', function() {
 
 /*--------------------------*/
 
+
 const offcanvasElementList = document.querySelectorAll('.offcanvas');
 const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}));
 
@@ -128,8 +129,12 @@ infoBtn.addEventListener('click', () => {
 });
 
 
+/*--------------------------*/
 
-
+function handleClick(event) {
+  event.stopPropagation();
+  flkty.next();
+}
 
 offcanvasList.forEach(function(offcanvas, index) {
   offcanvas._element.addEventListener('show.bs.offcanvas', function(event) {
@@ -151,13 +156,17 @@ offcanvasList.forEach(function(offcanvas, index) {
       }
     var carouselCellImages = carouselElement.querySelectorAll('.carousel-cell-image');
     carouselCellImages.forEach(function(carouselCellImage) {
-      carouselCellImage.addEventListener('click', function(event) {
-        event.stopPropagation(); 
-        flkty.next();
-      });
+      carouselCellImage.addEventListener('click', handleClick);
     });
     currentOffcanvasIndex = index; 
     infoBtn.style.display = hasChildModal(index) ? 'block' : 'none';
+    var previousOffcanvasIndex = (index - 1 + offcanvasList.length) % offcanvasList.length;
+    var previousOffcanvasElement = offcanvasList[previousOffcanvasIndex]._element;
+    var previousCarouselElement = previousOffcanvasElement.querySelector('.carousel');
+    var previousCarouselCellImages = previousCarouselElement.querySelectorAll('.carousel-cell-image');
+    previousCarouselCellImages.forEach(function(previousCarouselCellImage) {
+      previousCarouselCellImage.removeEventListener('click', handleClick);
+    });
   });
 });
 
