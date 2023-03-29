@@ -80,13 +80,15 @@ back2top.addEventListener('click', function() {
 
 /*--------------------------*/
 
+const offcanvasElementList = document.querySelectorAll('.offcanvas');
+const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}));
 
 const nextBtn = document.querySelector('.btn-next');
 const prevBtn = document.querySelector('.btn-prev');
 const closBtn = document.querySelector('.btn-clos');
 const infoBtn = document.querySelector('.btn-info');
 
-let currentOffcanvasIndex = 0; // initialize the current index to 0
+let currentOffcanvasIndex = 0; 
 
 function hasChildModal(currentOffcanvasIndex) {
     const currentOffcanvas = offcanvasList[currentOffcanvasIndex];
@@ -126,11 +128,8 @@ infoBtn.addEventListener('click', () => {
 });
 
 
-/*--------------------------*/
 
 
-const offcanvasElementList = document.querySelectorAll('.offcanvas');
-const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}));
 
 offcanvasList.forEach(function(offcanvas, index) {
   offcanvas._element.addEventListener('show.bs.offcanvas', function(event) {
@@ -153,12 +152,11 @@ offcanvasList.forEach(function(offcanvas, index) {
     var carouselCellImages = carouselElement.querySelectorAll('.carousel-cell-image');
     carouselCellImages.forEach(function(carouselCellImage) {
       carouselCellImage.addEventListener('click', function(event) {
-        event.stopPropagation(); // prevent the event from bubbling up to the .carousel-cell element
-        var flkty = new Flickity(carouselElement);
+        event.stopPropagation(); 
         flkty.next();
       });
     });
-    currentOffcanvasIndex = index; // set the current index based on the shown offcanvas
+    currentOffcanvasIndex = index; 
     infoBtn.style.display = hasChildModal(index) ? 'block' : 'none';
   });
 });

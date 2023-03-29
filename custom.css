@@ -4,6 +4,7 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  min-height: calc(100vh - 71px);
 }
 
 /* Dark mode 
@@ -468,7 +469,7 @@ span.inner {
   opacity: .9!important;
 }
 .dark-btns .btn-off,
-.dark-btns .dot {
+.btns-dark .dot {
   filter:invert(1)
 }
 .btn-clos {
@@ -637,11 +638,6 @@ footer img {
   margin:0 3px;
   margin-top:.5em;
 }
-
-.wrapper {
-  min-height: calc(100vh - 71px);
-}
-
 
 .navbar-collapse {
   flex-grow: 0;
