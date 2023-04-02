@@ -131,8 +131,14 @@ infoBtn.addEventListener('click', () => {
 
 /*--------------------------*/
 
+
 function handleClick(event) {
   event.stopPropagation();
+  var offcanvasElement = event.currentTarget.closest('.offcanvas');
+  var offcanvasIndex = offcanvasList.findIndex(function(offcanvas) {
+    return offcanvas._element === offcanvasElement;
+  });
+  var flkty = offcanvasList[offcanvasIndex]._flkty;
   flkty.next();
 }
 
@@ -201,4 +207,8 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.preloader').style.display = 'none';
 });
+
+
+document.cookie = "SameSite=Strict; Domain=.imagekit.io";
+
 
