@@ -132,15 +132,7 @@ infoBtn.addEventListener('click', () => {
 /*--------------------------*/
 
 
-function handleClick(event) {
-  event.stopPropagation();
-  var offcanvasElement = event.currentTarget.closest('.offcanvas');
-  var offcanvasIndex = offcanvasList.findIndex(function(offcanvas) {
-    return offcanvas._element === offcanvasElement;
-  });
-  var flkty = offcanvasList[offcanvasIndex]._flkty;
-  flkty.next();
-}
+
 
 offcanvasList.forEach(function(offcanvas, index) {
   offcanvas._element.addEventListener('show.bs.offcanvas', function(event) {
@@ -162,17 +154,13 @@ offcanvasList.forEach(function(offcanvas, index) {
       }
     var carouselCellImages = carouselElement.querySelectorAll('.carousel-cell-image');
     carouselCellImages.forEach(function(carouselCellImage) {
-      carouselCellImage.addEventListener('click', handleClick);
+      carouselCellImage.addEventListener('click', function(event) {
+        event.stopPropagation(); 
+        flkty.next();
+      });
     });
     currentOffcanvasIndex = index; 
     infoBtn.style.display = hasChildModal(index) ? 'block' : 'none';
-    var previousOffcanvasIndex = (index - 1 + offcanvasList.length) % offcanvasList.length;
-    var previousOffcanvasElement = offcanvasList[previousOffcanvasIndex]._element;
-    var previousCarouselElement = previousOffcanvasElement.querySelector('.carousel');
-    var previousCarouselCellImages = previousCarouselElement.querySelectorAll('.carousel-cell-image');
-    previousCarouselCellImages.forEach(function(previousCarouselCellImage) {
-      previousCarouselCellImage.removeEventListener('click', handleClick);
-    });
   });
 });
 
