@@ -1,5 +1,5 @@
-const grid = document.querySelector('.grid');
-const gridItems = document.querySelectorAll('.grid-item');
+const grid = document.querySelector('.grid')
+const gridItems = document.querySelectorAll('.grid-item')
 
 const iso = new Isotope(grid, {
   itemSelector: '.grid-item',
@@ -9,11 +9,12 @@ const iso = new Isotope(grid, {
   packery: {
     gutter: 0
   }
-});
+})
 
 imagesLoaded(grid).on('progress', () => {
-  iso.layout();
-});
+  iso.layout()
+})
+
 
 const filterButtons = document.querySelectorAll('.filters button');
 
@@ -52,7 +53,7 @@ function getSiblings(elem) {
 }
 
 
-/*--------------------------*/
+/* ------------------------------ */
 
 
 window.addEventListener('scroll', stickyFilters);
@@ -78,118 +79,125 @@ back2top.addEventListener('click', function() {
 });
 
 
-/*--------------------------*/
-
-const offcanvasElementList = document.querySelectorAll('.offcanvas');
-const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}));
-
-const nextBtn = document.querySelector('.btn-next');
-const prevBtn = document.querySelector('.btn-prev');
-const closBtn = document.querySelector('.btn-clos');
-const infoBtn = document.querySelector('.btn-info');
-
-let currentOffcanvasIndex = 0; 
-
-function hasChildModal(currentOffcanvasIndex) {
-    const currentOffcanvas = offcanvasList[currentOffcanvasIndex];
-    const modalElement = currentOffcanvas._element.querySelector('.modal');
-    return modalElement && modalElement.parentElement == currentOffcanvas._element;
-}
-
-nextBtn.addEventListener('click', () => {
-    offcanvasList[currentOffcanvasIndex].hide();
-    const nextOffcanvasIndex = (currentOffcanvasIndex + 1) % offcanvasList.length;
-    offcanvasList[nextOffcanvasIndex].show();
-    currentOffcanvasIndex = nextOffcanvasIndex;
-    infoBtn.style.display = hasChildModal(currentOffcanvasIndex) ? 'block' : 'none';
-});
-
-prevBtn.addEventListener('click', () => {
-    offcanvasList[currentOffcanvasIndex].hide();
-    const prevOffcanvasIndex = (currentOffcanvasIndex - 1 + offcanvasList.length) % offcanvasList.length;
-    offcanvasList[prevOffcanvasIndex].show();
-    currentOffcanvasIndex = prevOffcanvasIndex;
-    infoBtn.style.display = hasChildModal(currentOffcanvasIndex) ? 'block' : 'none';
-});
-
-closBtn.addEventListener('click', () => {
-    offcanvasList.forEach(offcanvas => offcanvas.hide());
-    document.querySelector('.off-btns').classList.remove('on-btns');
-});
-
-infoBtn.addEventListener('click', () => {
-    const currentOffcanvas = offcanvasList[currentOffcanvasIndex];
-    const modalElement = currentOffcanvas._element.querySelector('.modal');
-    const modal = new bootstrap.Modal(modalElement, {backdrop:false});
-    modal.show();
-    modalElement.addEventListener('click', (event) => {
-        modal.hide();
-    });
-});
+/* ------------------------------ */
 
 
+const offcanvasElementList = document.querySelectorAll('.offcanvas')
+const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}))
 
+const offBtns = document.querySelector('.off-btns')
+const closBtn = offBtns.querySelector('.btn-clos')
+const nextBtn = offBtns.querySelector('.btn-next')
+const prevBtn = offBtns.querySelector('.btn-prev')
+const infoBtn = offBtns.querySelector('.btn-info')
 
+let activeOffcanvasId;
 
-offcanvasList.forEach(function(offcanvas, index) {
-  offcanvas._element.addEventListener('show.bs.offcanvas', function(event) {
-    var offcanvasElement = event.currentTarget;
-    var carouselElement = offcanvasElement.querySelector('.carousel');
-    var flkty = new Flickity(carouselElement, {
-      fullscreen: true,
-      lazyLoad: 1,
-      imagesLoaded: true,
-      prevNextButtons: false,
-      wrapAround: true
-    });
-    document.querySelector('.off-btns').classList.add('on-btns');
-    if (offcanvasElement.classList.contains('btns-dark')) {
-        document.querySelector('.off-btns').classList.add('dark-btns');
-      }
-    else {
-        document.querySelector('.off-btns').classList.remove('dark-btns');
-      }
-    var carouselCellImages = carouselElement.querySelectorAll('.carousel-cell-image');
-    carouselCellImages.forEach(function(carouselCellImage) {
-      carouselCellImage.addEventListener('click', function(event) {
-        event.stopPropagation(); 
-        flkty.next();
-      });
-    });
-    currentOffcanvasIndex = index; 
-    infoBtn.style.display = hasChildModal(index) ? 'block' : 'none';
-  });
-});
+document.addEventListener('show.bs.offcanvas', function (event) {  
+  const offcanvasId = event.target.id
+  activeOffcanvasId = offcanvasId  
+  offBtns.classList.add('on-btns')
+  const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
+  if (oncanvas.classList.contains('btns-dark')) {
+    offBtns.classList.add('dark-btns')
+  } else {
+    offBtns.classList.remove('dark-btns')
+  }
+  if (!oncanvas.querySelector('.modal')) {
+    infoBtn.style.display = "none"
+  } else {
+    infoBtn.style.display = ""
+  }
+})
 
-document.querySelectorAll('.carousel-cell').forEach(function(cell) {
-    cell.addEventListener('click', function() {
-      offcanvasList.forEach(function(offcanvas) {
-        offcanvas.hide();
-      });
-      document.querySelector('.off-btns').classList.remove('on-btns');
-    });
-  });
+document.addEventListener('shown.bs.offcanvas', function () {
+  const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
+  const shownCarousel = oncanvas.querySelector('.carousel')
+  if (!shownCarousel.classList.contains('flickity-enabled')) {
+    var flkty = new Flickity(shownCarousel,{
+        fullscreen: true,
+        lazyLoad: true,
+        imagesLoaded: true,
+        prevNextButtons: false,
+        wrapAround: true
+    })
+    const cellImages = shownCarousel.querySelectorAll('.carousel-cell-image')
+    cellImages.forEach((cellImage) => {
+      cellImage.addEventListener('click', function (event) {
+        event.stopPropagation()
+        flkty.next()
+      })
+    })
+    const cellBGs = shownCarousel.querySelectorAll('.carousel-cell')
+    cellBGs.forEach((cellBG) => {
+      cellBG.addEventListener('click', function () {
+        const activeOffcanvas = bootstrap.Offcanvas.getInstance(oncanvas)
+        activeOffcanvas.hide()
+      })
+    })
+  }
+})
 
+offBtns.addEventListener('click', (event) => {
+  const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
+  const activeOffcanvas = bootstrap.Offcanvas.getInstance(oncanvas)
+  const currentIndex = offcanvasList.findIndex(offcanvas => offcanvas._element.id === activeOffcanvasId)
+    if (event.target === closBtn) {
+    activeOffcanvas.hide()
+  } else if (event.target === nextBtn) {    
+    const nextIndex = (currentIndex + 1) % offcanvasList.length
+    const nextOffcanvas = offcanvasList[nextIndex]
+    activeOffcanvas.hide()
+    nextOffcanvas.show()
+    activeOffcanvasId = nextOffcanvas._element.id
+  } else if (event.target === prevBtn) {
+    const prevIndex = (currentIndex - 1) % offcanvasList.length
+    const prevOffcanvas = offcanvasList[prevIndex]
+    activeOffcanvas.hide()
+    prevOffcanvas.show()
+    activeOffcanvasId = prevOffcanvas._element.id
+  } else if (event.target === infoBtn) {
+    var offModal = new bootstrap.Modal(oncanvas.querySelector('.modal'))
+    offModal.show()    
+  }
+})
 
-/*--------------------------*/
+document.addEventListener('click', function (event) {
+  const modal = event.target.closest('.modal')
+  if (modal && modal.classList.contains('show')) {
+    const offModal = bootstrap.Modal.getInstance(modal)
+    offModal.hide()
+  }
+})
+
+document.addEventListener('hide.bs.offcanvas', function () {
+  offBtns.classList.remove('on-btns')
+})
 
 
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'ArrowLeft') {
-        document.querySelector('.btn-prev').click();
-        event.preventDefault();
-    }
-    if (event.key === 'ArrowRight') {
-        document.querySelector('.btn-next').click();
-        event.preventDefault();
-    }
+  if (event.key === 'ArrowLeft') {
+      document.querySelector('.btn-prev').click();
+      event.preventDefault();
+  }
+  if (event.key === 'ArrowRight') {
+      document.querySelector('.btn-next').click();
+      event.preventDefault();
+  }
 });
 
 
 /*--------------------------*/
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.preloader').style.display = 'none';
+  document.querySelector('.preloader').style.display = 'none';
 });
 
+
+
+
+/* ------------------------------------- */
+
+document.cookie = "SameSite=Strict; Domain=.imagekit.io";

@@ -433,10 +433,15 @@ span.inner {
 }
 .offcanvas {
   z-index: 9999;
-  border: 0;
+  border: 0!important;
 }
 .offcanvas-end.hiding {
   transform: translateX(-100%);
+}
+
+.offcustom {
+  height: 100%;
+  width: 100%!important;
 }
 
 .off-btns {
@@ -445,13 +450,13 @@ span.inner {
 }
 .off-btns .btn-off {
   visibility: hidden;
-  transform: translateX(100%);
   opacity:0;
+  transition: opacity 0.15s ease-in-out;
 }
 .off-btns.on-btns .btn-off {
   transform: none;
   opacity:.6;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
   visibility: visible;
 }
 .btn-off {
@@ -1105,4 +1110,9 @@ padding:0
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
 }
