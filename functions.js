@@ -110,7 +110,7 @@ document.addEventListener('show.bs.offcanvas', function (event) {
   }
 })
 
-document.addEventListener('shown.bs.offcanvas', function () {
+document.addEventListener('show.bs.offcanvas', function () {
   const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
   const shownCarousel = oncanvas.querySelector('.carousel')
   if (!shownCarousel.classList.contains('flickity-enabled')) {
