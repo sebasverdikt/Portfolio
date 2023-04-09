@@ -54,15 +54,15 @@ cc.run({
     languages: {
         'en': {
             consent_modal: {
-                title: cookie + questionmark,
+                title: '<img src="img/icons/cookie.svg">',
                 description: '',
                 
                 secondary_btn: {
-                    text: '🤮',
+                    text: '<img src="img/icons/disapprove.svg">',
                     role: 'accept_necessary'        // 'settings' or 'accept_necessary'
                 },
                 primary_btn: {
-                    text: '😋',
+                    text: '<img src="img/icons/approve.svg">',
                     role: 'accept_all'              // 'accept_selected' or 'accept_all'
                 },
             },
