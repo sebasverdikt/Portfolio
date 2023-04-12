@@ -85,6 +85,8 @@ back2top.addEventListener('click', function() {
 const offcanvasElementList = document.querySelectorAll('.offcanvas')
 const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}))
 
+const { Offcanvas, Modal } = bootstrap;
+
 const offBtns = document.querySelector('.off-btns')
 const closBtn = offBtns.querySelector('.btn-clos')
 const nextBtn = offBtns.querySelector('.btn-next')
@@ -92,6 +94,22 @@ const prevBtn = offBtns.querySelector('.btn-prev')
 const infoBtn = offBtns.querySelector('.btn-info')
 
 let activeOffcanvasId;
+
+
+const flickLinks = document.querySelectorAll('.flick');
+
+flickLinks.forEach((flickLink) => {
+    flickLink.addEventListener('click', function() {
+        //event.preventDefault();
+        const target = document.querySelector(this.getAttribute('data-bs-target'));
+        const activeOffcanvas = Offcanvas.getInstance(target);
+        target.classList.add('offcanvas-end');
+        setTimeout(() => {
+            activeOffcanvas.show();
+        }, 100);
+    });
+});
+
 
 document.addEventListener('show.bs.offcanvas', function (event) {  
   const offcanvasId = event.target.id
@@ -108,10 +126,12 @@ document.addEventListener('show.bs.offcanvas', function (event) {
   } else {
     infoBtn.style.display = ""
   }
-})
 
+<<<<<<< Updated upstream
 document.addEventListener('shown.bs.offcanvas', function () {
   const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
+=======
+>>>>>>> Stashed changes
   const shownCarousel = oncanvas.querySelector('.carousel')
   if (!shownCarousel.classList.contains('flickity-enabled')) {
     var flkty = new Flickity(shownCarousel,{
@@ -121,54 +141,73 @@ document.addEventListener('shown.bs.offcanvas', function () {
         prevNextButtons: false,
         wrapAround: true
     })
+
     const cellImages = shownCarousel.querySelectorAll('.carousel-cell-image')
     cellImages.forEach((cellImage) => {
+      cellImage.addEventListener('load', function () {
+        const loadingDiv = this.parentNode.querySelector('.spinner-border')
+        loadingDiv.style.display = 'none'
+      })
       cellImage.addEventListener('click', function (event) {
         event.stopPropagation()
         flkty.next()
       })
     })
+
     const cellBGs = shownCarousel.querySelectorAll('.carousel-cell')
-    cellBGs.forEach((cellBG) => {
+    const loadingDivs = []
+    cellBGs.forEach((cellBG, index) => {
       cellBG.addEventListener('click', function () {
-        const activeOffcanvas = bootstrap.Offcanvas.getInstance(oncanvas)
-        activeOffcanvas.hide()
+        const activeOffcanvas = Offcanvas.getInstance(oncanvas)
+        activeOffcanvas.hide();
       })
-    })
+
+      const loadingDiv = document.createElement('div')
+      loadingDiv.classList = 'spinner-border position-absolute'
+      cellBG.appendChild(loadingDiv)
+      loadingDivs[index] = loadingDiv
+    })    
   }
 })
 
+
 offBtns.addEventListener('click', (event) => {
   const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
-  const activeOffcanvas = bootstrap.Offcanvas.getInstance(oncanvas)
+  const activeOffcanvas = Offcanvas.getInstance(oncanvas)
   const currentIndex = offcanvasList.findIndex(offcanvas => offcanvas._element.id === activeOffcanvasId)
-    if (event.target === closBtn) {
-    activeOffcanvas.hide()
-  } else if (event.target === nextBtn) {    
-    const nextIndex = (currentIndex + 1) % offcanvasList.length
-    const nextOffcanvas = offcanvasList[nextIndex]
-    activeOffcanvas.hide()
-    nextOffcanvas.show()
-    activeOffcanvasId = nextOffcanvas._element.id
-  } else if (event.target === prevBtn) {
-    const prevIndex = (currentIndex - 1) % offcanvasList.length
-    const prevOffcanvas = offcanvasList[prevIndex]
-    activeOffcanvas.hide()
-    prevOffcanvas.show()
-    activeOffcanvasId = prevOffcanvas._element.id
-  } else if (event.target === infoBtn) {
-    var offModal = new bootstrap.Modal(oncanvas.querySelector('.modal'))
-    offModal.show()    
-  }
+  switch (event.target) {
+    case closBtn:
+      activeOffcanvas.hide()
+      break
+    case nextBtn:    
+      const nextIndex = (currentIndex + 1) % offcanvasList.length
+      const nextOffcanvas = offcanvasList[nextIndex]
+      activeOffcanvas.hide()
+      nextOffcanvas.show()
+      activeOffcanvasId = nextOffcanvas._element.id
+      break
+    case prevBtn:
+      const prevIndex = (currentIndex - 1) % offcanvasList.length
+      const prevOffcanvas = offcanvasList[prevIndex]
+      activeOffcanvas.hide()
+      prevOffcanvas.show()
+      activeOffcanvasId = prevOffcanvas._element.id
+      break
+    case infoBtn:
+      var offModal = new Modal(oncanvas.querySelector('.modal'))
+      offModal.show()    
+    }
 })
+
 
 document.addEventListener('click', function (event) {
   const modal = event.target.closest('.modal')
   if (modal && modal.classList.contains('show')) {
-    const offModal = bootstrap.Modal.getInstance(modal)
+    const offModal = Modal.getInstance(modal)
     offModal.hide()
   }
 })
+
 
 document.addEventListener('hide.bs.offcanvas', function () {
   offBtns.classList.remove('on-btns')
@@ -190,14 +229,12 @@ document.addEventListener('keydown', function(event) {
 /*--------------------------*/
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.preloader').style.display = 'none';
 });
 
 
-
-
 /* ------------------------------------- */
+
 
 document.cookie = "SameSite=Strict; Domain=.imagekit.io";

@@ -1,0 +1,240 @@
+
+<!doctype html>
+<html lang="es">
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="stylesheet" href="app.min.css" />
+        <link rel="stylesheet" href="custom.css">
+    </head>
+
+    <body>
+
+        <section id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                    <a class="flick" data-bs-toggle="offcanvas" data-bs-target="#off1" role="button">
+                        <div style="background-color:#282c38; height: 100px;"></div>
+                    </a>
+                    </div>
+                    <div class="col">
+                    <a class="flick" data-bs-toggle="offcanvas" data-bs-target="#off2" role="button">
+                        <div style="background-color:#268f49; height: 100px;"></div>
+                    </a>
+                    </div>
+                    <div class="col">
+                    <a class="flick" data-bs-toggle="offcanvas" data-bs-target="#off3" role="button">
+                        <div style="background-color:#e65ea8; height: 100px;"></div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-details">
+
+            <div class="off-btns">
+                <button type="button" class="btn-off btn-clos tooltip" aria-label="Close"><span class="tooltiptext tt-d">Close project</span></button>
+                <button type="button" class="btn-off btn-next tooltip" aria-label="Next"><span class="tooltiptext">Next project</span></button>                   
+                <button type="button" class="btn-off btn-prev tooltip" aria-label="Previous"><span class="tooltiptext">Previous project</span></button>
+            </div>
+
+            <div class="offcanvas offcustom offcanvas-top" id="off1" style="background-color:#282c38;">
+                <div class="carousel is-fullscreen">
+                    <div class="carousel-cell">
+                        <img data-flickity-lazyload="https://ik.imagekit.io/verdicdn/sites/tr:h-1080/site-veci-big-1.jpg" class="carousel-cell-image">
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas offcustom offcanvas-top" id="off2" style="background-color:#268f49;">
+                <div class="carousel is-fullscreen">
+                    <div class="carousel-cell">
+                        <img data-flickity-lazyload="https://ik.imagekit.io/verdicdn/sites/tr:h-1080/site-veci-big-2.jpg" class="carousel-cell-image">
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas offcustom offcanvas-top" id="off3" style="background-color:#e65ea8;">
+                <div class="carousel is-fullscreen">
+                    <div class="carousel-cell">
+                        <img data-flickity-lazyload="https://ik.imagekit.io/verdicdn/sites/tr:h-1080/site-veci-big-3.jpg" class="carousel-cell-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="app.min.js"></script>  
+    <script>
+
+
+
+
+        const offcanvasElementList = document.querySelectorAll('.offcanvas')
+        const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {
+            backdrop: false
+        }))
+
+        const {Offcanvas, Modal} = bootstrap;
+
+        const offBtns = document.querySelector('.off-btns')
+        const closBtn = offBtns.querySelector('.btn-clos')
+        const nextBtn = offBtns.querySelector('.btn-next')
+        const prevBtn = offBtns.querySelector('.btn-prev')
+        
+        let activeOffcanvasId;
+
+        
+        
+        /*flickLinks.forEach((flickLink) => {
+            flickLink.addEventListener('click', function(event) {
+                const target = this.getAttribute('data-bs-target');
+                const activeOffcanvas = Offcanvas.getInstance(target);
+                activeOffcanvas._element.classList.add('offcanvas-top');
+            });
+
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'class' && mutation.target.classList.contains('offcanvas-top')) {
+                    const activeOffcanvas = Offcanvas.getInstance('#' + mutation.target.id);
+                    activeOffcanvas.show();
+                }
+                });
+            });
+
+            observer.observe(document.body, { subtree: true, attributes: true });
+        }); */
+
+
+            
+
+
+        document.addEventListener('show.bs.offcanvas', function(event) {
+            
+            const offcanvasId = event.target.id
+            activeOffcanvasId = offcanvasId
+            offBtns.classList.add('on-btns')
+            const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
+            if (oncanvas.classList.contains('btns-dark')) {
+                offBtns.classList.add('dark-btns')
+            } else {
+                offBtns.classList.remove('dark-btns')
+            }
+
+            const shownCarousel = oncanvas.querySelector('.carousel')
+            if (!shownCarousel.classList.contains('flickity-enabled')) {
+                var flkty = new Flickity(shownCarousel, {
+                    fullscreen: true,
+                    lazyLoad: true,
+                    imagesLoaded: true,
+                    prevNextButtons: false,
+                    wrapAround: true
+                })
+
+                const cellImages = shownCarousel.querySelectorAll('.carousel-cell-image')
+                cellImages.forEach((cellImage) => {
+                    cellImage.addEventListener('load', function() {
+                        const loadingDiv = this.parentNode.querySelector('.spinner-border')
+                        loadingDiv.style.display = 'none'
+                    })
+                    cellImage.addEventListener('click', function(event) {
+                        event.stopPropagation()
+                        flkty.next()
+                    })
+                })
+
+                const cellBGs = shownCarousel.querySelectorAll('.carousel-cell')
+                const loadingDivs = []
+                cellBGs.forEach((cellBG, index) => {
+                    cellBG.addEventListener('click', function() {
+                        const activeOffcanvas = Offcanvas.getInstance(oncanvas)
+                        activeOffcanvas.hide();
+                    })
+
+                    const loadingDiv = document.createElement('div')
+                    loadingDiv.classList = 'spinner-border position-absolute'
+                    cellBG.appendChild(loadingDiv)
+                    loadingDivs[index] = loadingDiv
+                })
+            }
+        
+        })
+
+        const flickLinks = document.querySelectorAll('.flick');
+        const offcanvasClasses = ['offcanvas-start', 'offcanvas-end', 'offcanvas-bottom', 'offcanvas-top'];
+
+        flickLinks.forEach((flickLink) => {
+            flickLink.addEventListener('click', function(event) {
+                offcanvasElementList.forEach(offcanvas => {
+                    offcanvas.classList.remove(...offcanvasClasses);
+                });
+            });
+        });
+
+        function eraseClasses(event) {
+            offcanvasElementList.forEach(offcanvas => {
+                offcanvasClasses.forEach((className) => {
+                    offcanvas.classList.remove(className)
+                })
+            })
+        }
+        function resetInitialClass(event) {
+            offcanvasElementList.forEach(offcanvas => {
+                offcanvas.classList.add('offcanvas-top')
+            })
+        }
+        
+        offcanvasElementList.forEach(offcanvas => {
+            offcanvas.addEventListener('shown.bs.offcanvas', eraseClasses);
+            offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+                eraseClasses(event);
+                resetInitialClass(event);
+            });
+        });
+
+        offBtns.addEventListener('click', (event) => {
+            const oncanvas = document.querySelector(`#${activeOffcanvasId}`)
+            const activeOffcanvas = Offcanvas.getInstance(oncanvas)
+            const currentIndex = offcanvasList.findIndex(offcanvas => offcanvas._element.id === activeOffcanvasId)
+            switch (event.target) {
+                case closBtn:
+                    oncanvas.classList.add('offcanvas-bottom');
+                    activeOffcanvas.hide()
+                    break
+                case nextBtn:
+                    const nextIndex = (currentIndex + 1) % offcanvasList.length
+                    const nextOffcanvas = offcanvasList[nextIndex]
+                    offcanvasClasses.forEach((className) => {
+                        activeOffcanvas._element.classList.remove(className)
+                    })
+                    activeOffcanvas._element.classList.add('offcanvas-start')
+                    nextOffcanvas._element.classList.add('offcanvas-end')
+                    activeOffcanvas.hide()
+                    nextOffcanvas.show()
+                    activeOffcanvasId = nextOffcanvas._element.id
+                    break
+                /*case prevBtn:
+                    const prevIndex = (currentIndex - 1) % offcanvasList.length
+                    const prevOffcanvas = offcanvasList[prevIndex]
+                    activeOffcanvas.hide()
+                    prevOffcanvas.show()
+                    activeOffcanvasId = prevOffcanvas._element.id */
+            }      
+        })
+
+       
+
+        document.addEventListener('hide.bs.offcanvas', function() {
+            offBtns.classList.remove('on-btns')
+        })
+        /* document.addEventListener('hidden.bs.offcanvas', function() {
+            offcanvasElementList.forEach(offcanvas => {
+                offcanvas.classList.remove('offcanvas-bottom', 'offcanvas-end', 'offcanvas-start', 'offcanvas-top')
+            })
+        }) */
+
+
+    </script>
+    </body>
+
+</html>
