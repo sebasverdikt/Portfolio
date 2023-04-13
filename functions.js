@@ -123,18 +123,29 @@ document.addEventListener('show.bs.offcanvas', function () {
     })
     const cellImages = shownCarousel.querySelectorAll('.carousel-cell-image')
     cellImages.forEach((cellImage) => {
+      cellImage.addEventListener('load', function () {
+        const loadingDiv = this.parentNode.querySelector('.spinner-border')
+        loadingDiv.style.display = 'none'
+      })
       cellImage.addEventListener('click', function (event) {
         event.stopPropagation()
         flkty.next()
       })
     })
+
     const cellBGs = shownCarousel.querySelectorAll('.carousel-cell')
-    cellBGs.forEach((cellBG) => {
+    const loadingDivs = []
+    cellBGs.forEach((cellBG, index) => {
       cellBG.addEventListener('click', function () {
-        const activeOffcanvas = bootstrap.Offcanvas.getInstance(oncanvas)
-        activeOffcanvas.hide()
+        const activeOffcanvas = Offcanvas.getInstance(oncanvas)
+        activeOffcanvas.hide();
       })
-    })
+
+      const loadingDiv = document.createElement('div')
+      loadingDiv.classList = 'spinner-border position-absolute'
+      cellBG.appendChild(loadingDiv)
+      loadingDivs[index] = loadingDiv
+    })    
   }
 })
 
