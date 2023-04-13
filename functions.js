@@ -84,6 +84,7 @@ back2top.addEventListener('click', function() {
 
 const offcanvasElementList = document.querySelectorAll('.offcanvas')
 const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl, {backdrop:false}))
+const { Offcanvas, Modal } = bootstrap;
 
 const offBtns = document.querySelector('.off-btns')
 const closBtn = offBtns.querySelector('.btn-clos')
