@@ -70,7 +70,6 @@
 
         const offSlides = document.querySelectorAll('.offslide')
 
-
         const offBtns = document.querySelector('.off-btns')
         const closBtn = offBtns.querySelector('.btn-clos')
         const nextBtn = offBtns.querySelector('.btn-next')
@@ -83,13 +82,19 @@
                 const slideId = this.getAttribute('data-sbs-target');
                 const activeSlide = document.querySelector(slideId);
                 const bgColor = window.getComputedStyle(this.querySelector('div')).backgroundColor;
-                activeSlide.classList.add('slide-top', 'active');
+                activeSlide.classList.add('active');
                 activeSlide.style.backgroundColor = bgColor;
+                activeSlide.style.transform = 'translateY(-100%)';
+                activeSlide.style.visibility = 'visible';
+                setTimeout(() => {
+                    activeSlide.style.transition = 'transform .5s ease-out';
+                    activeSlide.style.transform = 'translateY(0%)';
+                }, 10);
                 offBtns.classList.add('on-btns')
             });
         });
 
-        offSlides.forEach((offSlide) => {
+        /* offSlides.forEach((offSlide) => {
             const observer = new MutationObserver((mutations) => {
                 mutations.forEach((mutation) => {
                 if (mutation.attributeName === 'class') {
@@ -105,18 +110,19 @@
                 });
             });
             observer.observe(offSlide, { attributes: true });
-        });
+        }); */
 
 
         offBtns.addEventListener('click', (event) => {
             const activeSlide = document.querySelector('.active');
-            const activeSlideClasses = activeSlide.classList;
+            //const activeSlideClasses = activeSlide.classList;
             switch (event.target) {
                 case closBtn:
                 activeSlide.style.transform = 'translateY(-100%)';
                 activeSlide.style.transition = 'transform .5s ease-in';
-                const classesToRemove = [...activeSlideClasses].filter(className => className !== 'offslide');
-                activeSlideClasses.remove(...classesToRemove);
+                //const classesToRemove = [...activeSlideClasses].filter(className => className !== 'offslide');
+                //activeSlideClasses.remove(...classesToRemove);
+                activeSlide.classList.remove('active');
                 setTimeout(() => {
                     activeSlide.style.visibility = 'hidden';
                 }, 500);
