@@ -1112,17 +1112,40 @@ padding:0
   align-items: center;
 }
 
-<<<<<<< Updated upstream
 .spinner-border {
   width: 3rem;
   height: 3rem;
 }
-=======
 
 
-/* Cookies */ #cc--main #cm { width: fit-content!important; border: 1px solid #dee2e6;border-radius:50px 50px 0 0!important; background-color: white!important; left:0!important; padding: 1.1em!important; bottom:0!important } .cc_div .c-bn { font-size: 1.1em!important; } #c-inr-i {padding: .5em 0; } #c-bns button {     padding: 0.5em;; background: none!important; border: none; margin: 0!important; } #c-bns button img {height:32px} #c-bns button#c-p-bn {display:block; order:2; margin-left: 0px!important} #c-bns button#c-s-bn {display:block; order:1;} #c-p-bn img:hover {border: 2px solid green; border-radius: 50%;} #c-s-bn img:hover {border: 2px solid red;border-radius: 50%;} #c-ttl { text-align: center; } #c-ttl img {height:32px} @media screen and (max-width: 688px){#c-bns button#c-p-bn {margin-left:0!important;margin-top:10px!important} } #s-cnt {display:none} .show--consent #cc--main {bottom: 0; left: 0; transform: translateY(110px); transition: transform ease-out .25s; } .show--consent #cc--main:hover {transform: translateY(0); transition: transform ease-out .25s;} #cc--main {bottom: 0; left: 0;transform: translateY(190px); transition: transform ease-out .25s; } .show--consent .cc_div #cm { transition: visibility .25s linear; visibility: visible!important; } .cc_div #cm { transition: visibility .25s linear; visibility: hidden!important; }
+.offslide {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left:0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  visibility: hidden;
+}
 
+/*.offslide.slide-start {
+  visibility: visible;
+  transition: transform .25s ease-out;
+}
+.offslide.slide-end {
+  visibility: visible;
+  transition: transform .25s ease-out;
+}
+.offslide.slide-top {
+  visibility: visible;
+  transition: transform .25s ease-out;
+}
+.offslide.slide-bottom {
+  visibility: visible;
+  transition: transform .25s ease-out;
+}*/
 
-
-
->>>>>>> Stashed changes
