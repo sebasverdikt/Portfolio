@@ -134,3 +134,23 @@ $('.flick').on( 'click', function() {
         })
     }
 }); 
+
+
+
+        /* offSlides.forEach((offSlide) => {
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    if (offSlide.classList.contains('slide-top')) {
+                            offSlide.style.transform = 'translateY(-100%)';
+                            offSlide.style.visibility = 'visible';
+                            setTimeout(() => {
+                                offSlide.style.transition = 'transform .5s ease-out';
+                                offSlide.style.transform = 'translateY(0%)';
+                            }, 10);
+                        }
+                    }
+                });
+            });
+            observer.observe(offSlide, { attributes: true });
+        }); */
