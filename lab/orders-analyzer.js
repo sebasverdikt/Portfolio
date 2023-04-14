@@ -1,4 +1,4 @@
-import orders from './orders.json';
+import orders from './orders.js';
 
 const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const count = {};
