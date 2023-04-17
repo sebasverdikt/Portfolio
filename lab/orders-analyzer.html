@@ -3,12 +3,13 @@
   <head>
     <title>OrdersAnalyzer</title>
     <style>
-      body{padding:.05vh .05vw} ul{display:flex;justify-content:space-between;} li{list-style:none;display:flex;flex-direction:column;}
+      body{padding:.5%} ul{display:flex;justify-content:space-between;padding-inline-start:0;} li{list-style:none;display:flex;flex-direction:column;} button{margin:5em auto;display:block;}
     </style>
   </head>
   <body>
     <div id="orders-analyzed"></div>
     <button id="button">See RAW JSON data</button>
+    <hr>
     <pre id="orders-data" style="display: none;"></pre>
     <script>
       const analyzedResults = document.getElementById("orders-data")
