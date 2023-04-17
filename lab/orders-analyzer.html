@@ -16,9 +16,12 @@
     </style>
   </head>
   <body>
-    <pre id="orders-data"></pre>
     <div id="orders-analyzed"></div>
+    <button id="button">See RAW JSON data</button>
+    <pre id="orders-data" style="display: none;"></pre>
     <script>
+      const analyzedResults = document.getElementById("orders-data")
+      const hideShow = document.getElementById('button')
       const jsonData = {
         "orders": [
           {
@@ -63,8 +66,12 @@
           }
         ]
       }
-      document.getElementById("orders-data").textContent = JSON.stringify(jsonData, null, 2);
+      
+      analyzedResults.textContent = JSON.stringify(jsonData, null, 2);
+      hideShow.addEventListener('click', function (e) {
+        analyzedResults.style.display('block')
+      })
     </script>
-    <script type="module" src="orders-analyzer.js"></script>    
+    <script type="module" src="orders-analyzer.js"></script>   
   </body>
 </html>
