@@ -68,8 +68,8 @@
       }
       
       analyzedResults.textContent = JSON.stringify(jsonData, null, 2);
-      hideShow.addEventListener('click', function (e) {
-        analyzedResults.style.display('block')
+      hideShow.addEventListener('click', function () {
+        analyzedResults.style.display = 'block'
       })
     </script>
     <script type="module" src="orders-analyzer.js"></script>   
