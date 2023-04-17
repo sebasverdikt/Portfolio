@@ -16,7 +16,8 @@
     </style>
   </head>
   <body>
-    <pre id="json-data"></pre>
+    <pre id="orders-data"></pre>
+    <div id="orders-analyzed"></div>
     <script>
       const jsonData = {
         "orders": [
@@ -62,7 +63,7 @@
           }
         ]
       }
-      document.getElementById("json-data").textContent = JSON.stringify(jsonData, null, 2);
+      document.getElementById("orders-data").textContent = JSON.stringify(jsonData, null, 2);
     </script>
     <script type="module" src="orders-analyzer.js"></script>    
   </body>

@@ -41,6 +41,7 @@ fetch('https://sebasverdikt.com/lab/orders.json')
       list.appendChild(listItem);
     });
 
-    document.body.appendChild(list);
+    const ordersResults = document.getElementById('orders-analyzed')
+    ordersResults.appendChild(list);
   })
   .catch(error => console.error(error));
