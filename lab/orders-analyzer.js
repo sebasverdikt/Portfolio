@@ -33,7 +33,7 @@ fetch('https://sebasverdikt.com/lab/orders.json')
     weekdays.forEach(weekday => {
       const listItem = document.createElement('li');
       listItem.innerHTML = `
-        <h3>${weekday}:</h3>
+        <h4>${weekday}</h4>
         <span>count: <strong>${count[weekday]}</strong></span>
         <span>total: <strong>${total[weekday]}</strong></span>
         <span>avg:   <strong>${avg[weekday]}</strong></span>
