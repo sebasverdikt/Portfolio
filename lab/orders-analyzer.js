@@ -34,9 +34,9 @@ fetch('https://sebasverdikt.com/lab/orders.json')
       const listItem = document.createElement('li');
       listItem.innerHTML = `
         <h3>${weekday}:</h3>
-        <span>count: ${count[weekday]}</span>
-        <span>total: ${total[weekday]}</span>
-        <span>avg: ${avg[weekday]}</span>
+        count: <strong>${count[weekday]}</strong>
+        total: <strong>${total[weekday]}</strong>
+        avg: <strong>${avg[weekday]}</strong>
       `;
       list.appendChild(listItem);
     });
