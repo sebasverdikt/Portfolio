@@ -27,7 +27,7 @@
 
     <header>
     <!-- Main Menu -->
-      <nav class="navbar navbar-expand-lg bg-light mx-2 mx-sm-0 py-0 py-md-4 border-bottom mb-2" id="nav-filters">
+      <nav class="navbar navbar-expand-lg bg-light mx-2 mx-sm-0 py-0 py-md-4 mb-2" id="nav-filters">
         <div class="container p-0 px-sm-2">
           <div class="logo d-flex py-2 order-1">
             <a class="navbar-brand topped fs-4 ps-1 ps-sm-0 me-0" href="/">Sebas Verdikt</a>
@@ -40,7 +40,7 @@
             <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
           </div>
           <div class="infocom d-flex flex-row justify-content-evenly order-2 order-sm-3 pe-1 pe-sm-0">
-            <a class="nav-link" href="/info">
+            <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#infoModal">
               <picture class="pe-3 pe-sm-4">
                 <source media="(max-width: 767px)" srcset="img/icons/about-16.svg" height="24" />
                 <source media="(min-width: 768px)" srcset="img/icons/about.svg" height="32" />
@@ -1961,7 +1961,7 @@
 
     </main>
 
-    <footer class="p-0 border-top">
+    <footer class="p-0">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 my-2 px-0 text-center">
@@ -1980,7 +1980,7 @@
 
     <div id="contactModal" class="modal fade" aria-modal="true" role="dialog">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content w-auto mx-auto rounded-0 p-2 p-sm-3 p-md-5">
+        <div class="modal-content w-auto mx-auto border border-0 rounded-0 p-2 p-sm-3 p-md-5">
           <div class="text-center mb-3">
             <a href="mailto:sv%65r%64%69k%74@%67mail%2E%63o%6D" target="_blank" class="text-decoration-none em">
               <svg x="0px" y="0px" viewBox="-128 -128 768 768">
@@ -2019,6 +2019,38 @@
                 <path class="tg" d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M385.8,150.9 c-4.4,45.9-23.3,157.4-32.9,208.9c-4.1,21.8-12.1,29.1-19.9,29.8c-16.9,1.6-29.7-11.2-46-21.9c-25.6-16.8-40-27.2-64.8-43.6 c-28.7-18.9-10.1-29.3,6.3-46.3c4.3-4.4,78.6-72.1,80.1-78.2c0.2-0.8,0.4-3.6-1.4-5.1s-4.2-1-6-0.6c-2.6,0.6-43.4,27.6-122.6,81 c-11.6,8-22.1,11.8-31.5,11.6c-10.4-0.2-30.3-5.9-45.2-10.7c-18.2-5.9-32.7-9-31.4-19.1c0.7-5.2,7.9-10.6,21.6-16.1 c84.7-36.9,141.2-61.2,169.5-73c80.7-33.6,97.5-39.4,108.4-39.6c2.4,0,7.8,0.6,11.3,3.4c2.3,2,3.8,4.8,4.1,7.9 C385.9,143.3,386.1,147.1,385.8,150.9z"></path>
               </svg>
             </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="infoModal" class="modal modal-lg fade" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content w-auto mx-auto border border-0 rounded-0">
+          <div class="container">
+            <div class="row ">
+              <div class="col-5 pt-4 ps-0">
+                <img src="img/self.jpg" class="img-fluid">
+              </div>
+              <div class="col-7 py-4 pe-4">
+                <h4>Hi!</h4>
+                <p>I'm Sebas. I enjoy making eye candy and ear sores.<br><small>That doesn't really pay the bills though, so i got pretty good at making complex information more digestible and easier to understand, which seems to be something people will hire me for.</small></p>
+                <p>Here's some other stuff i do:</p>
+                <ul>
+                  <li><a href="photo.html" target="_self">Take pics of things.</a></li>
+                  <li><a href="https://www.beacons.ai/fastfoodsociety" target="_blank">Scream in a punk band.</a></li>
+                  <li><a href="https://github.com/sebasverdikt" target="_blank">Play with code.</a></li>
+                </ul>
+                <h5>Say hello!</h5>
+                <a type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="img/icons/contact-16.svg" height="24" />
+                    <source media="(min-width: 768px)" srcset="img/icons/contact.svg" height="32" />
+                    <img src="img/icons/contact.svg" alt="contact icon" />
+                  </picture>
+                </a>     
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -544,14 +544,14 @@ span.inner {
 
 .modal-backdrop.fade.show {
   background-color:  #fff;
-  opacity:1;
+  opacity:.9;
   animation-name: backdrop;
   animation-duration: .3s;
   animation-timing-function: ease-in-out;
 }
 @keyframes backdrop {
   0%   {opacity:0;}
-  100% {opacity:1!important;}
+  100% {opacity:.9!important;}
 }
 .modal-backdrop.fade {
   opacity: 0;
