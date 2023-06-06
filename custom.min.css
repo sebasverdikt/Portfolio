@@ -8,3 +8,37 @@
 #infoModal a:hover {
     text-decoration:underline!important;
 }
+
+a.navbar-brand.scrolled img {
+    filter: saturate(0);
+}
+a:hover.navbar-brand.scrolled img {
+    filter: saturate(1);
+}
+
+.grid-photo {width: 50%;}
+@media screen and (min-width: 576px) {
+  .grid-photo {border: 5px solid white}
+}
+@media screen and (min-width: 768px) {
+  .grid-photo {width: 33.33%; border: 10px solid white}
+}
+@media screen and (min-width: 992px) {
+  .grid-photo {width: 33.33%;}
+}
+@media screen and (min-width: 1200px) {
+  .grid-photo {width: 33.33%;}
+}
+@media screen and (min-width: 1400px) {
+  .grid-photo {width: 33.33%;}
+}
+
+
+.grid-item.grid-photo img {
+  opacity: 1;
+  transition: opacity .2s;
+}
+
+.grid-item.grid-photo:hover img {
+  opacity: .5
+}

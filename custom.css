@@ -976,7 +976,7 @@ padding:0
   .grid-photo {width: 33.33%;}
 }
 @media screen and (min-width: 1400px) {
-  .grid-photo {width: 25%;}
+  .grid-photo {width: 33%;}
 }
 
 #Photos .offcanvas-end.hiding {transform: translateX(-100%);}
