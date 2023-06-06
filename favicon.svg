@@ -4,14 +4,10 @@
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#02B2B3;}
-	.st1{fill:#FFFFFF;}
 </style>
-<circle class="st0" cx="256" cy="256" r="256"/>
-<g>
-	<circle class="st1" cx="221.6" cy="170.9" r="36.2"/>
-	<circle class="st1" cx="124.7" cy="340.2" r="36.2"/>
-	<path class="st1" d="M89.3,207.5c0,40.2,32.6,72.7,72.7,72.7V134.8C121.8,134.8,89.3,167.3,89.3,207.5z"/>
-	<path class="st1" d="M185,231.8v145.5c40.2,0,72.7-32.6,72.7-72.7C257.7,264.3,225.2,231.8,185,231.8z"/>
-	<polygon class="st1" points="350.8,135 282.9,304.7 326.5,377.5 423.5,135 	"/>
-</g>
+<circle class="st0" cx="203.5" cy="125.9" r="55.3"/>
+<circle class="st0" cx="55.3" cy="384.7" r="55.3"/>
+<path class="st0" d="M1.2,181.9C1.2,243.3,50.9,293,112.3,293V70.7C50.9,70.7,1.2,120.5,1.2,181.9z"/>
+<path class="st0" d="M147.5,218.9v222.4c61.4,0,111.2-49.8,111.2-111.2C258.7,268.7,208.9,218.9,147.5,218.9z"/>
+<polygon class="st0" points="400.8,71 297.1,330.4 363.8,441.6 512,71 "/>
 </svg>
