@@ -2027,12 +2027,12 @@
     <div id="infoModal" class="modal modal-lg fade" aria-modal="true" role="dialog">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content w-auto mx-auto border border-0 rounded-0">
-          <div class="container">
-            <div class="row ">
-              <div class="col-5 pt-4 ps-0">
-                <img src="img/self.jpg" class="img-fluid">
+          <div class="container p-4">
+            <div class="row">
+              <div class="col-lg-5">
+                <img src="img/me.png" class="img-fluid d-block mx-auto">
               </div>
-              <div class="col-7 py-4 pe-4">
+              <div class="col-lg-7">
                 <h4>Hi!</h4>
                 <p>I'm Sebas. I enjoy making eye candy and ear sores.<br><small>That doesn't really pay the bills though, so i got pretty good at making complex information more digestible and easier to understand, which seems to be something people will hire me for.</small></p>
                 <p>Here's some other stuff i do:</p>
@@ -2041,14 +2041,11 @@
                   <li><a href="https://www.beacons.ai/fastfoodsociety" target="_blank">Scream in a punk band.</a></li>
                   <li><a href="https://github.com/sebasverdikt" target="_blank">Play with code.</a></li>
                 </ul>
-                <h5>Say hello!</h5>
-                <a type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="img/icons/contact-16.svg" height="24" />
-                    <source media="(min-width: 768px)" srcset="img/icons/contact.svg" height="32" />
-                    <img src="img/icons/contact.svg" alt="contact icon" />
-                  </picture>
-                </a>     
+                <div class="text-end position-relative">
+                  <h5 class="d-inline">Say hello!</h5>
+                  <img src="img/icons/contact-16.svg" height="24" alt="contact icon" />
+                  <a type="button" data-bs-toggle="modal" class="stretched-link" data-bs-target="#contactModal"></a>   
+                </div>  
               </div>
             </div>
           </div>
