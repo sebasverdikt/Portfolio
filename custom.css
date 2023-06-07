@@ -627,6 +627,9 @@ span.inner {
 @media screen and (min-width:576px) {
   .navbar .filters {border: none!important;}
 }
+@media screen and (min-width:576px) {
+  #Photos .navbar .filters {border: none!important;}
+}
 @media screen and (max-width:370px) {
   .navbar.sticky .infocom {display: none!important;}
   .navbar.sticky .filters {width: 100%!important;}

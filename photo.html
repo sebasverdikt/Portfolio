@@ -15,7 +15,7 @@
     <script>document.cookie = "SameSite=Strict; Domain=.imagekit.io";</script>
   </head>
 
-  <body>
+  <body id="Photos">
 
     <div class="preloader">
       <div class="spinner-border" role="status">
@@ -25,7 +25,7 @@
 
     <header>
     <!-- Main Menu -->
-      <nav class="navbar navbar-expand-lg bg-light mx-2 mx-sm-0 py-0 py-md-4" id="nav-filters">
+      <nav class="navbar navbar-expand-lg bg-light mx-2 pb-md-0 pb-lg-4 mx-sm-0 py-0 py-md-4 mb-2 mb-sm-0" id="nav-filters">
         <div class="container p-0 px-sm-2">
           <div class="logo d-flex py-2 order-1">
             <a class="navbar-brand topped fs-4 ps-1 ps-sm-0 me-0" href="/photo.html">Sebas Verdikt</a>
@@ -33,7 +33,7 @@
               <img src="favicon.svg" height="32">
             </a>
           </div>
-          <div class="filters d-flex justify-content-around justify-content-sm-evenly order-3 order-sm-2 w-100 w-sm-auto border-top" id="filter-btns">
+          <div class="filters d-flex justify-content-around justify-content-lg-center order-3 order-lg-2 w-100 w-lg-auto border-top" id="filter-btns">
             <button type="button" class="btn btn-filters" data-filter=".urban">Urban</button>
             <button type="button" class="btn btn-filters" data-filter=".people">People</button>
             <button type="button" class="btn btn-filters" data-filter=".nature">Nature</button>
@@ -41,7 +41,14 @@
             <button type="button" class="btn btn-filters" data-filter=".food">Food</button>
             <!--button type="button" class="btn btn-filters active" data-filter="*">All</button-->
           </div>
-          <div class="infocom d-flex flex-row justify-content-evenly order-2 order-sm-3 pe-1 pe-sm-0">
+          <div class="infocom d-flex flex-row justify-content-evenly order-2 order-lg-3 pe-1 pe-sm-0">
+            <a class="nav-link" type="button" href="index.html" target="_self">
+              <picture class="pe-3 pe-sm-4">
+                <source media="(max-width: 767px)" srcset="img/icons/gallery-16.svg" height="24" />
+                <source media="(min-width: 768px)" srcset="img/icons/gallery.svg" height="32" />
+                <img src="img/icons/gallery.svg" alt="about icon" />
+              </picture>
+            </a>
             <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#infoModal">
               <picture class="pe-3 pe-sm-4">
                 <source media="(max-width: 767px)" srcset="img/icons/about-16.svg" height="24" />
@@ -979,7 +986,7 @@
                 <p>Here's some other stuff i do:</p>
                 <ul>
                   <li><a href="index.html" target="_self">Design cool things</a></li>
-                  <li><a href="https://www.beacons.ai/fastfoodsociety" target="_blank">Scream in a band</a></li>
+                  <li><a href="https://www.beacons.ai/fastfoodsociety" target="_blank">Scream in a punk band</a></li>
                   <li><a href="https://github.com/sebasverdikt" target="_blank">Play with code</a></li>
                 </ul>
                 <div class="text-end position-relative">
@@ -989,6 +996,7 @@
                 </div>  
               </div>
             </div>
+            <button type="button" class="btn-clos-mod" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
         </div>
       </div>
